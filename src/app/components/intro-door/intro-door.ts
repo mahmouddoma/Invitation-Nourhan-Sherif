@@ -50,14 +50,75 @@ export class IntroDoorComponent implements OnDestroy {
         this.audioEl.volume = 1.0;
       }
 
-      // Elegant entrance animation on page load — button stays stable
-      const card = this.doorWrapRef()?.nativeElement;
-      if (card && !this.animationService.prefersReducedMotion) {
-        gsap.fromTo(
-          card,
-          { y: 20, opacity: 0, scale: 0.97 },
-          { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: 'power2.out' },
-        );
+      // Romantic Choreographed Entrance Animation on page load
+      if (!this.animationService.prefersReducedMotion) {
+        const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+        tl.fromTo(
+          '.corner-floral-tl',
+          { opacity: 0, scale: 0.88, rotation: -4 },
+          { opacity: 1, scale: 1, rotation: 0, duration: 1.0, ease: 'power3.out' },
+        )
+          .fromTo(
+            '.corner-lineart-br',
+            { opacity: 0, scale: 0.88, rotation: -14 },
+            { opacity: 0.85, scale: 1, rotation: -8, duration: 1.0, ease: 'power3.out' },
+            '-=0.85',
+          )
+          .fromTo(
+            '.arched-card',
+            { opacity: 0, y: 28, scale: 0.96 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power2.out' },
+            '-=0.75',
+          )
+          .fromTo(
+            '.top-controls',
+            { opacity: 0, y: -10 },
+            { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' },
+            '-=0.5',
+          )
+          .fromTo(
+            '.card-top-accent',
+            { opacity: 0, scale: 0, rotation: -45 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: 'back.out(2)' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.card-names-block',
+            { opacity: 0, y: 16, filter: 'blur(4px)' },
+            { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' },
+            '-=0.3',
+          )
+          .fromTo(
+            '.card-invite-sub',
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+            '-=0.4',
+          )
+          .fromTo(
+            '.card-date-trio',
+            { opacity: 0, scale: 0.94, y: 10 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.65, ease: 'power2.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.card-venue-row',
+            { opacity: 0, scaleX: 0.85 },
+            { opacity: 1, scaleX: 1, duration: 0.6, ease: 'power2.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.card-couple-photo-wrapper',
+            { opacity: 0, y: 20, scale: 0.97 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.royal-open-invitation-btn',
+            { opacity: 0, scale: 0.9, y: 10 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: 'back.out(1.5)' },
+            '-=0.3',
+          );
       }
 
       // Try autoplay on page load and setup gesture triggers

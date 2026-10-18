@@ -1,6 +1,5 @@
 /* ==========================================================================
    Luxury Arched Wedding Card Intro Screen — Fatma & Ramadan
-   Completely Scroll-Free, Perfectly Proportioned, Stable & Refined
    ========================================================================== */
 
 .intro-screen {
@@ -13,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Strictly no scrollbar */
+  overflow: hidden;
   padding: clamp(0.5rem, 1.8vh, 1.2rem) 0.75rem;
   box-sizing: border-box;
   background: radial-gradient(circle at 85% 15%, #fae2cc 0%, #fdf5ec 48%, #f7ebd9 100%);
