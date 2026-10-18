@@ -126,23 +126,58 @@ export class IntroDoorComponent implements OnDestroy {
     });
   }
 
+  private audioContext: AudioContext | null = null;
+  private readonly interactionEvents = [
+    'pointerdown',
+    'touchstart',
+    'touchend',
+    'click',
+    'mousedown',
+    'mouseup',
+    'keydown',
+    'scroll',
+    'wheel',
+    'pointermove',
+  ];
+
   private setupAudioAutoplay(): void {
     if (!this.audioEl) return;
 
-    // 1. Attempt standard unmuted play
+    this.audioEl.load();
+
+    // 1. Attempt standard unmuted play immediately
     this.playAudioDirectly();
 
     // 2. Setup universal user-gesture listeners across window and document
     this.userInteractionHandler = () => {
-      this.playAudioDirectly();
-      this.removeInteractionListener();
+      this.unlockAndPlay();
     };
 
-    const events = ['click', 'touchstart', 'touchend', 'pointerdown', 'mousedown', 'keydown'];
-    events.forEach((evt) => {
-      window.addEventListener(evt, this.userInteractionHandler!, { capture: true, once: true });
-      document.addEventListener(evt, this.userInteractionHandler!, { capture: true, once: true });
+    this.interactionEvents.forEach((evt) => {
+      window.addEventListener(evt, this.userInteractionHandler!, { capture: true, passive: true });
+      document.addEventListener(evt, this.userInteractionHandler!, {
+        capture: true,
+        passive: true,
+      });
     });
+  }
+
+  private unlockAndPlay(): void {
+    if (this.musicPlaying()) return;
+
+    try {
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioCtx) {
+        if (!this.audioContext) {
+          this.audioContext = new AudioCtx();
+        }
+        if (this.audioContext.state === 'suspended') {
+          this.audioContext.resume();
+        }
+      }
+    } catch {}
+
+    this.playAudioDirectly();
   }
 
   private playAudioDirectly(): void {
@@ -156,9 +191,11 @@ export class IntroDoorComponent implements OnDestroy {
       playPromise
         .then(() => {
           this.musicPlaying.set(true);
+          this.removeInteractionListener();
         })
         .catch(() => {
-          // Will be unlocked on first user tap/click
+          // If browser blocked unmuted autoplay without gesture,
+          // will unlock on first touch/move/scroll
         });
     }
   }
@@ -166,14 +203,13 @@ export class IntroDoorComponent implements OnDestroy {
   /** Called when the user clicks or touches the screen */
   onScreenClick(): void {
     if (!this.musicPlaying()) {
-      this.playAudioDirectly();
+      this.unlockAndPlay();
     }
   }
 
   private removeInteractionListener(): void {
     if (this.userInteractionHandler) {
-      const events = ['click', 'touchstart', 'touchend', 'pointerdown', 'mousedown', 'keydown'];
-      events.forEach((evt) => {
+      this.interactionEvents.forEach((evt) => {
         window.removeEventListener(evt, this.userInteractionHandler!, { capture: true } as any);
         document.removeEventListener(evt, this.userInteractionHandler!, { capture: true } as any);
       });
@@ -186,7 +222,7 @@ export class IntroDoorComponent implements OnDestroy {
     if (this.isOpen() || this.isOpening()) return;
 
     this.isOpening.set(true);
-    this.playAudioDirectly();
+    this.unlockAndPlay();
 
     if (this.animationService.prefersReducedMotion) {
       this.isOpen.set(true);

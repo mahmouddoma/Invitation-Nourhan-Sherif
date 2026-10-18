@@ -164,6 +164,16 @@
 </section>
 
 <!-- Background Audio Element -->
-<audio id="wedding-audio" loop preload="auto">
+<audio
+  id="wedding-audio"
+  [src]="config.audioSrc"
+  autoplay
+  loop
+  preload="auto"
+  playsinline
+  webkit-playsinline
+>
   <source [src]="config.audioSrc" type="audio/mpeg" />
+  <source src="wedding-song.mp3" type="audio/mpeg" />
+  <source src="music.mp3" type="audio/mpeg" />
 </audio>
