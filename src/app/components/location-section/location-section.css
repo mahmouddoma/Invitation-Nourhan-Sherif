@@ -102,7 +102,15 @@
 }
 
 .btn-icon {
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.venue-btn:hover .btn-icon {
+  transform: scale(1.12);
 }
 
 .primary-btn {

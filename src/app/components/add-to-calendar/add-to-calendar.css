@@ -83,10 +83,19 @@
 }
 
 .btn-icon {
-  font-size: 1.25rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   color: #c8963e;
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.calendar-action-btn:hover .btn-icon {
+  color: #ffffff;
+  transform: scale(1.1);
 }
 
 @media (max-width: 600px) {
