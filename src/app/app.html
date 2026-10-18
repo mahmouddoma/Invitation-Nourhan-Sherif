@@ -1,13 +1,15 @@
 <!-- Intro Door (full-screen overlay — hides when opened) -->
 <app-intro-door (doorOpened)="onDoorOpened()" />
 
-<!-- Floating Romantic Rose Petals Ambient Layer -->
+<!-- Floating Romantic Rose & Petals Ambient Layer -->
 <div class="romantic-petals-layer" aria-hidden="true" [class.visible]="doorOpen()">
+  <span class="bg-bloom bloom-1"></span>
   <span class="petal petal-1"></span>
+  <span class="bg-bloom bloom-2"></span>
   <span class="petal petal-2"></span>
   <span class="petal petal-3"></span>
+  <span class="bg-bloom bloom-3"></span>
   <span class="petal petal-4"></span>
-  <span class="petal petal-5"></span>
 </div>
 
 <!-- Main Wedding Content (visible after door opens) -->

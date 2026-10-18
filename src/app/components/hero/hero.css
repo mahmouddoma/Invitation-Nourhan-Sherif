@@ -9,12 +9,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: clip;
 }
 
 /* Botanical Flowers and Arched Card */
 .botanical-card-wrapper {
   position: relative;
-  width: min(94vw, 640px);
+  width: min(92vw, 640px);
   margin: 0 auto;
   border-radius: 300px 300px 24px 24px / 240px 240px 24px 24px;
   box-shadow:
