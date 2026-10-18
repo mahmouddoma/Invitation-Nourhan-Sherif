@@ -10,12 +10,12 @@
 
 .location-container {
   width: min(94vw, 680px);
-  background: linear-gradient(145deg, rgba(255, 253, 249, 0.94), rgba(247, 240, 229, 0.9));
-  border: 1px solid rgba(184, 141, 73, 0.28);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(253, 246, 238, 0.92));
+  border: 1.5px solid rgba(212, 180, 126, 0.45);
   border-radius: 30px;
   padding: clamp(24px, 5vw, 44px);
   box-shadow:
-    0 18px 45px rgba(76, 63, 44, 0.08),
+    0 18px 45px rgba(185, 135, 80, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
 }
@@ -29,7 +29,7 @@
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #b88d49;
+  color: #c8963e;
   letter-spacing: 0.08em;
   margin-bottom: 0.35rem;
 }
@@ -37,16 +37,17 @@
 .location-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-  font-weight: 700;
-  color: #3b2a1e;
+  font-weight: 800;
+  color: #1a3048;
   line-height: 1.3;
 }
 
 .location-subtitle {
   font-family: var(--font-body);
   font-size: clamp(0.85rem, 2.2vw, 1rem);
-  color: #8a6038;
+  color: #6a829a;
   margin-top: 0.25rem;
+  font-weight: 600;
 }
 
 /* 2-Column Content Grid */
@@ -60,9 +61,14 @@
 .location-desc {
   font-family: var(--font-body);
   font-size: clamp(0.9rem, 2.2vw, 1rem);
-  color: #5c4228;
+  color: #3a5068;
   line-height: 1.8;
   margin-bottom: 1.5rem;
+}
+
+.location-desc strong {
+  color: #1a3048;
+  font-weight: 700;
 }
 
 .location-buttons {
@@ -81,12 +87,14 @@
   gap: 12px;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   border: none;
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .venue-btn:hover {
@@ -99,32 +107,37 @@
 
 .primary-btn {
   color: #ffffff;
-  background: linear-gradient(135deg, #5f6d59, #7f8e75);
-  box-shadow: 0 8px 20px rgba(95, 109, 89, 0.25);
+  background: linear-gradient(135deg, #1a3048, #2a4868);
+  border: 1px solid rgba(212, 180, 126, 0.4);
+  box-shadow: 0 8px 20px rgba(26, 48, 72, 0.25);
 }
 
 .primary-btn:hover {
-  box-shadow: 0 12px 26px rgba(95, 109, 89, 0.35);
+  background: linear-gradient(135deg, #d4a038, #b57a16);
+  box-shadow: 0 12px 26px rgba(181, 122, 22, 0.35);
 }
 
 .secondary-btn {
-  color: #4f5b4a;
-  background: #edf1e9;
-  border: 1px solid rgba(95, 109, 89, 0.18);
+  color: #1a3048;
+  background: #ffffff;
+  border: 1.5px solid rgba(212, 180, 126, 0.5);
+  box-shadow: 0 4px 14px rgba(185, 135, 80, 0.08);
 }
 
 .secondary-btn:hover {
-  background: #e2e9dd;
+  background: #fdf6ee;
+  border-color: #c8963e;
 }
 
 .ghost-btn {
-  color: #6f5731;
-  background: #fbf5e9;
-  border: 1px solid rgba(184, 141, 73, 0.22);
+  color: #1a3048;
+  background: #fdf6ee;
+  border: 1.5px solid rgba(212, 180, 126, 0.35);
 }
 
 .ghost-btn:hover {
-  background: #f5ebd5;
+  background: #faecd6;
+  border-color: #c8963e;
 }
 
 /* QR Code Panel */
@@ -140,10 +153,10 @@
   align-items: center;
   gap: 0.75rem;
   background: #ffffff;
-  border: 1px solid rgba(184, 141, 73, 0.22);
+  border: 1.5px solid rgba(212, 180, 126, 0.4);
   border-radius: 20px;
   padding: 16px;
-  box-shadow: 0 10px 24px rgba(76, 63, 44, 0.06);
+  box-shadow: 0 10px 24px rgba(185, 135, 80, 0.1);
 }
 
 .qr-frame {
@@ -163,8 +176,9 @@
 .qr-caption {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: #8a6038;
+  color: #8c7658;
   text-align: center;
+  font-weight: 600;
 }
 
 /* Mobile Responsive */

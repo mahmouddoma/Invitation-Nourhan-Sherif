@@ -18,8 +18,8 @@
   margin: 0 auto;
   border-radius: 300px 300px 24px 24px / 240px 240px 24px 24px;
   box-shadow:
-    0 20px 50px rgba(58, 82, 110, 0.12),
-    0 4px 16px rgba(58, 82, 110, 0.06);
+    0 22px 60px rgba(185, 135, 80, 0.16),
+    0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
 /* Botanical Corners */
@@ -27,30 +27,24 @@
   position: absolute;
   pointer-events: none;
   z-index: 10;
-  width: clamp(95px, 22vw, 155px);
+  width: clamp(100px, 24vw, 160px);
   height: auto;
   opacity: 0.95;
-  filter: drop-shadow(0 2px 8px rgba(50, 75, 105, 0.12));
+  filter: drop-shadow(0 4px 10px rgba(160, 100, 40, 0.12));
 }
 
 .corner-tl {
-  top: -6px;
-  left: -6px;
-}
-
-.corner-tr {
-  top: -6px;
-  right: -6px;
-}
-
-.corner-bl {
-  bottom: -6px;
-  left: -6px;
+  top: -18px;
+  left: -18px;
+  width: clamp(140px, 30vw, 240px);
 }
 
 .corner-br {
-  bottom: -6px;
-  right: -6px;
+  bottom: -18px;
+  right: -18px;
+  width: clamp(130px, 28vw, 220px);
+  transform: rotate(-8deg);
+  opacity: 0.9;
 }
 
 /* Outer Arch Frame with Gold Hairline Border */
@@ -58,21 +52,21 @@
   position: relative;
   width: 100%;
   border-radius: 280px 280px 20px 20px / 230px 230px 20px 20px;
-  border: 1.5px solid #d4b47e;
+  border: 1.5px solid #d4a038;
   padding: 6px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   box-sizing: border-box;
 }
 
-/* Inner Arch Frame with Pale Dusty-Blue Watercolor Fill */
+/* Inner Arch Frame with Warm Peach & Ivory Watercolor Fill */
 .card-arch-inner {
   position: relative;
   width: 100%;
   border-radius: 274px 274px 16px 16px / 224px 224px 16px 16px;
   border: 1px solid rgba(212, 180, 126, 0.45);
   background:
-    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.95), transparent 60%),
-    linear-gradient(180deg, #edf4fa 0%, #e2edf7 45%, #ecf4fa 100%);
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 1) 0%, rgba(254, 249, 243, 0.7) 60%),
+    linear-gradient(180deg, #ffffff 0%, #fdf8f2 50%, #faf2e6 100%);
   padding: clamp(3rem, 7vw, 4.6rem) clamp(1rem, 3.5vw, 2.5rem) clamp(2rem, 4.5vw, 3rem);
   text-align: center;
   display: flex;
@@ -163,7 +157,7 @@
   font-family: var(--font-body);
   font-size: clamp(1.15rem, 3.4vw, 1.45rem);
   font-weight: 700;
-  color: #38526d;
+  color: #1a3048;
   margin: 0;
   letter-spacing: 0.02em;
 }
@@ -250,10 +244,11 @@
 
 .card-phrase-secondary {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 3vw, 1.25rem);
-  font-weight: 600;
-  color: #4a6682;
+  font-size: clamp(1.1rem, 3.2vw, 1.35rem);
+  font-weight: 700;
+  color: #1a3048;
   margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .mini-divider {
@@ -307,7 +302,7 @@ a.trio-item,
   font-family: var(--font-body);
   font-size: clamp(0.85rem, 2.4vw, 0.98rem);
   font-weight: 700;
-  color: #2c4257;
+  color: #1a3048;
   margin: 0;
   white-space: nowrap;
 }
@@ -321,8 +316,15 @@ a.trio-item,
   font-family: var(--font-body);
   font-size: clamp(0.72rem, 2vw, 0.82rem);
   font-weight: 600;
-  color: #5c7b9b;
+  color: #6a829a;
   margin: 0;
+}
+
+.trio-link-hint {
+  color: #c8963e !important;
+  font-weight: 700 !important;
+  font-size: clamp(0.76rem, 2.1vw, 0.86rem) !important;
+  margin-top: 1px !important;
 }
 
 .trio-sub-divider {
@@ -364,9 +366,9 @@ a.trio-item,
   width: 100%;
   padding: 12px 16px;
   border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 247, 253, 0.85));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(254, 248, 242, 0.9));
   border: 1.5px solid rgba(212, 180, 126, 0.5);
-  box-shadow: 0 6px 18px rgba(50, 75, 105, 0.08);
+  box-shadow: 0 6px 18px rgba(185, 135, 80, 0.1);
   direction: rtl;
 }
 
@@ -388,10 +390,10 @@ a.trio-item,
 }
 
 .parent-name-text {
-  font-family: 'Amiri', serif;
+  font-family: 'Cairo', sans-serif;
   font-size: clamp(0.98rem, 2.8vw, 1.18rem);
-  font-weight: 700;
-  color: #2c4257;
+  font-weight: 800;
+  color: #1a3048;
   margin: 0;
   line-height: 1.3;
 }
@@ -430,13 +432,13 @@ a.trio-item,
   gap: 8px;
   padding: 9px 24px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #ffffff, #f2f7fb);
-  border: 1.5px solid #d4b47e;
-  color: #38526d;
+  background: linear-gradient(180deg, #ffffff, #fdf6ee);
+  border: 1.5px solid #d4a038;
+  color: #1a3048;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(50, 75, 105, 0.1);
+  box-shadow: 0 4px 14px rgba(185, 135, 80, 0.15);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -445,9 +447,9 @@ a.trio-item,
 
 .btn-maps-action:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(50, 75, 105, 0.18);
+  box-shadow: 0 8px 20px rgba(185, 135, 80, 0.22);
   border-color: #c8963e;
-  color: #2c4257;
+  color: #1a3048;
 }
 
 /* Responsive Mobile Adaptations */
@@ -467,8 +469,16 @@ a.trio-item,
     padding: 2.8rem 0.75rem 2rem;
   }
 
-  .botanical-corner {
-    width: 70px;
+  .corner-tl {
+    width: 115px;
+    top: -12px;
+    left: -12px;
+  }
+
+  .corner-br {
+    width: 105px;
+    bottom: -12px;
+    right: -12px;
   }
 
   .gold-calligraphy-basmala {

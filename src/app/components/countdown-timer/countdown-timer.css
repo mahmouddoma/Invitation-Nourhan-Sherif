@@ -47,12 +47,12 @@
   align-items: center;
   justify-content: center;
   gap: clamp(6px, 2vw, 16px);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 244, 252, 0.9));
-  border: 1px solid rgba(212, 180, 126, 0.38);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(253, 246, 238, 0.92));
+  border: 1px solid rgba(212, 180, 126, 0.42);
   border-radius: 28px;
   padding: clamp(14px, 3vh, 22px) clamp(12px, 3vw, 28px);
   box-shadow:
-    0 16px 40px rgba(50, 75, 105, 0.08),
+    0 16px 40px rgba(185, 135, 80, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
 }
@@ -65,8 +65,8 @@
   min-width: clamp(52px, 14vw, 84px);
   padding: 8px 4px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(212, 180, 126, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(212, 180, 126, 0.25);
   transition: transform 0.25s ease;
 }
 
@@ -80,7 +80,7 @@
   font-size: clamp(1.6rem, 5vw, 2.6rem);
   font-weight: 700;
   line-height: 1;
-  color: #38526d;
+  color: #1a3048;
   letter-spacing: 0.02em;
 }
 

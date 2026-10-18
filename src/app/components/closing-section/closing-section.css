@@ -14,12 +14,12 @@
 }
 
 .closing-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 244, 252, 0.92));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(253, 246, 238, 0.92));
   border: 1.5px solid rgba(212, 180, 126, 0.45);
   border-radius: 30px;
   padding: clamp(36px, 6vw, 56px) clamp(20px, 4vw, 40px);
   box-shadow:
-    0 18px 45px rgba(50, 75, 105, 0.08),
+    0 18px 45px rgba(185, 135, 80, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   margin-bottom: 2.5rem;
@@ -35,8 +35,8 @@
 .closing-heading {
   font-family: 'Cairo', sans-serif;
   font-size: clamp(1.6rem, 4.2vw, 2.2rem);
-  font-weight: 700;
-  color: #2c4257;
+  font-weight: 800;
+  color: #1a3048;
   margin-bottom: 0.75rem;
   line-height: 1.4;
 }
@@ -44,7 +44,7 @@
 .closing-text {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 2.6vw, 1.15rem);
-  color: #4a6682;
+  color: #3a5068;
   line-height: 1.8;
   max-width: 480px;
   margin: 0 auto 1.5rem;
@@ -76,8 +76,8 @@
 .footer-names {
   font-family: 'Cairo', sans-serif;
   font-size: clamp(1.6rem, 4.2vw, 2.2rem);
-  font-weight: 700;
-  color: #2c4257;
+  font-weight: 800;
+  color: #1a3048;
   margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
@@ -94,7 +94,8 @@
   display: block;
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: #5c7b9b;
+  color: #c8963e;
+  font-weight: 700;
   margin-bottom: 1.75rem;
 }
 
@@ -111,10 +112,10 @@
   gap: 8px;
   padding: 10px 24px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(235, 245, 253, 0.94));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(253, 246, 238, 0.94));
   border: 1.5px solid rgba(212, 180, 126, 0.45);
-  box-shadow: 0 6px 18px rgba(50, 75, 105, 0.1);
-  color: #2c4257;
+  box-shadow: 0 6px 18px rgba(185, 135, 80, 0.1);
+  color: #1a3048;
   font-family: var(--font-body);
   font-size: 0.9rem;
   text-decoration: none;
@@ -126,9 +127,9 @@
 
 .designer-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(50, 75, 105, 0.18);
+  box-shadow: 0 10px 24px rgba(185, 135, 80, 0.18);
   border-color: #c8963e;
-  color: #2c4257;
+  color: #1a3048;
 }
 
 .badge-icon {

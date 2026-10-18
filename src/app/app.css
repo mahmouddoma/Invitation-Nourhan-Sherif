@@ -2,10 +2,9 @@
   display: block;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 10% 6%, rgba(185, 210, 235, 0.5), transparent 28%),
-    radial-gradient(circle at 90% 16%, rgba(240, 222, 185, 0.45), transparent 30%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.85), transparent 60%),
-    linear-gradient(180deg, #f4f8fc 0%, #ebf3fb 45%, #e1edf8 100%);
+    radial-gradient(circle at 10% 15%, rgba(245, 205, 170, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(240, 195, 150, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, #fae2cc 0%, #fdf5ec 48%, #f7ebd9 100%);
 }
 
 /* Wedding content — revealed seamlessly after door opens */
