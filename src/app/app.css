@@ -1,14 +1,145 @@
 :host {
   display: block;
   min-height: 100vh;
+  position: relative;
   background:
     radial-gradient(circle at 10% 15%, rgba(245, 205, 170, 0.35) 0%, transparent 45%),
     radial-gradient(circle at 90% 80%, rgba(240, 195, 150, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 85% 15%, #fae2cc 0%, #fdf5ec 48%, #f7ebd9 100%);
 }
 
+/* Ambient Romantic Floating Petals Layer */
+.romantic-petals-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.2s ease 0.4s;
+}
+
+.romantic-petals-layer.visible {
+  opacity: 1;
+}
+
+.petal {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(185, 135, 80, 0.16));
+  will-change: transform, opacity;
+}
+
+.petal-1 {
+  top: 14%;
+  left: clamp(1%, 3vw, 6%);
+  width: clamp(28px, 5vw, 42px);
+  height: clamp(28px, 5vw, 42px);
+  background-image: url('/images/petal_1_trans.png');
+  animation: floatPetal 11s ease-in-out infinite alternate;
+}
+
+.petal-2 {
+  top: 36%;
+  right: clamp(1%, 4vw, 7%);
+  width: clamp(34px, 5.5vw, 48px);
+  height: clamp(34px, 5.5vw, 48px);
+  background-image: url('/images/petal_2_trans.png');
+  animation: floatPetalReverse 13s ease-in-out infinite alternate 1.5s;
+}
+
+.petal-3 {
+  top: 58%;
+  left: clamp(1%, 2.5vw, 5%);
+  width: clamp(26px, 4.5vw, 38px);
+  height: clamp(26px, 4.5vw, 38px);
+  background-image: url('/images/petal_3_trans.png');
+  animation: floatPetal 15s ease-in-out infinite alternate 2s;
+}
+
+.petal-4 {
+  top: 76%;
+  right: clamp(2%, 3.5vw, 6%);
+  width: clamp(30px, 4.8vw, 44px);
+  height: clamp(30px, 4.8vw, 44px);
+  background-image: url('/images/petal_1_trans.png');
+  transform: rotate(45deg);
+  animation: floatPetalReverse 12s ease-in-out infinite alternate 3s;
+}
+
+.petal-5 {
+  top: 90%;
+  left: clamp(2%, 4vw, 8%);
+  width: clamp(32px, 5.2vw, 46px);
+  height: clamp(32px, 5.2vw, 46px);
+  background-image: url('/images/petal_2_trans.png');
+  animation: floatPetal 14s ease-in-out infinite alternate 4s;
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(-20px) translateX(12px) rotate(16deg) scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-38px) translateX(-8px) rotate(-10deg) scale(0.98);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatPetalReverse {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(22px) translateX(-14px) rotate(-18deg) scale(1.06);
+    opacity: 0.92;
+  }
+  100% {
+    transform: translateY(40px) translateX(10px) rotate(12deg) scale(0.95);
+    opacity: 0.75;
+  }
+}
+
+/* Floral Interlude between Sections */
+.floral-interlude {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 420px;
+  margin: 0.5rem auto 1.5rem;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.interlude-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 180, 126, 0.45), transparent);
+}
+
+.interlude-rose {
+  width: clamp(65px, 14vw, 92px);
+  height: auto;
+  opacity: 0.95;
+  filter: drop-shadow(0 4px 10px rgba(185, 135, 80, 0.14));
+  transform: rotate(-6deg);
+  transition: transform 0.3s ease;
+}
+
 /* Wedding content — revealed seamlessly after door opens */
 .wedding-content {
+  position: relative;
+  z-index: 10;
   max-width: 760px;
   margin: 0 auto;
   opacity: 0;

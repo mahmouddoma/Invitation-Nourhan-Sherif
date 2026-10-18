@@ -25,6 +25,24 @@
   margin-bottom: 2.5rem;
 }
 
+.closing-rose-crowning {
+  display: flex;
+  justify-content: center;
+  margin: -1rem auto 0.5rem;
+}
+
+.closing-rose-img {
+  width: clamp(75px, 15vw, 105px);
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(185, 135, 80, 0.16));
+  transform: rotate(3deg);
+  transition: transform 0.3s ease;
+}
+
+.closing-rose-crowning:hover .closing-rose-img {
+  transform: rotate(6deg) scale(1.05);
+}
+
 .closing-heart {
   display: inline-block;
   font-size: 2rem;

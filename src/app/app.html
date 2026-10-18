@@ -1,10 +1,26 @@
 <!-- Intro Door (full-screen overlay — hides when opened) -->
 <app-intro-door (doorOpened)="onDoorOpened()" />
 
+<!-- Floating Romantic Rose Petals Ambient Layer -->
+<div class="romantic-petals-layer" aria-hidden="true" [class.visible]="doorOpen()">
+  <span class="petal petal-1"></span>
+  <span class="petal petal-2"></span>
+  <span class="petal petal-3"></span>
+  <span class="petal petal-4"></span>
+  <span class="petal petal-5"></span>
+</div>
+
 <!-- Main Wedding Content (visible after door opens) -->
 <main class="wedding-content" [class.visible]="doorOpen()">
   <!-- Royal Arched Invitation Card -->
   <app-hero />
+
+  <!-- Romantic Floral Divider -->
+  <div class="floral-interlude">
+    <span class="interlude-line"></span>
+    <img src="images/single_peach_rose_trans.png" alt="" class="interlude-rose" />
+    <span class="interlude-line"></span>
+  </div>
 
   <!-- Refined Luxury Countdown Strip -->
   <app-countdown-timer />

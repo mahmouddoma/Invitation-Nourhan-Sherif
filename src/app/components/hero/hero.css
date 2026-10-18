@@ -37,14 +37,26 @@
   top: -18px;
   left: -18px;
   width: clamp(140px, 30vw, 240px);
+  filter: drop-shadow(0 6px 16px rgba(160, 100, 40, 0.14));
+}
+
+.corner-bl {
+  bottom: -15px;
+  left: -15px;
+  width: clamp(95px, 20vw, 150px);
+  transform: rotate(-12deg);
+  opacity: 0.95;
+  filter: drop-shadow(0 4px 12px rgba(160, 100, 40, 0.12));
 }
 
 .corner-br {
   bottom: -18px;
   right: -18px;
-  width: clamp(130px, 28vw, 220px);
+  width: clamp(120px, 26vw, 200px);
   transform: rotate(-8deg);
-  opacity: 0.9;
+  opacity: 0.92;
+  filter: drop-shadow(0 4px 12px rgba(185, 135, 80, 0.15));
+  mix-blend-mode: multiply;
 }
 
 /* Outer Arch Frame with Gold Hairline Border */
@@ -473,6 +485,12 @@ a.trio-item,
     width: 115px;
     top: -12px;
     left: -12px;
+  }
+
+  .corner-bl {
+    width: 80px;
+    bottom: -10px;
+    left: -10px;
   }
 
   .corner-br {
