@@ -27,8 +27,8 @@ export interface WeddingConfig {
 export const WEDDING_CONFIG: WeddingConfig = {
   groomName: 'رمضان',
   brideName: 'فاطمة',
-  groomFather: 'جمال السيد عبدالوهاب',
-  brideFather: 'محمد أحمد عبدالرازق',
+  groomFather: 'أ / جمال السيد عبدالوهاب',
+  brideFather: 'أ / محمد أحمد عبدالرازق',
   weddingDate: '2026-10-23T19:30:00',
   weddingTime: 'الساعة 7:30 مساءً',
   venueName: 'قاعة بورتوسيف',
