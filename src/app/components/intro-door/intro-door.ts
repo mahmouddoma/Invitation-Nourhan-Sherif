@@ -135,11 +135,11 @@ export class IntroDoorComponent implements OnDestroy {
       return;
     }
 
-    // After the door opening sequence completes (approx 2s), transition to main page
+    // After the card opening sequence completes (approx 1.1s), transition to main page
     setTimeout(() => {
       this.isOpen.set(true);
       this.doorOpened.emit();
-    }, 2000);
+    }, 1100);
   }
 
   /** Toggle background music */

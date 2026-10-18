@@ -1,18 +1,39 @@
 <section
-  class="door-screen"
+  class="door-screen intro-screen"
   id="doorScreen"
   [class.hidden]="isOpen()"
+  [class.opening]="isOpening()"
   (click)="onScreenClick()"
   (touchstart)="onScreenClick()"
   aria-label="فتح الدعوة"
 >
-  <!-- Top Controls -->
+  <!-- Background Ambient / Watercolor Wash -->
+  <div class="intro-bg-ambient"></div>
+
+  <!-- Top-Left Corner: Watercolor Peach & Yellow Roses Bouquet -->
+  <img
+    src="images/peach_floral_corner.jpg"
+    alt=""
+    class="corner-floral corner-floral-tl"
+    aria-hidden="true"
+  />
+
+  <!-- Bottom-Right Corner: Golden Lineart Lotus Flower -->
+  <img
+    src="images/botanical_lineart_flower.jpg"
+    alt=""
+    class="corner-lineart corner-lineart-br"
+    aria-hidden="true"
+  />
+
+  <!-- Top Controls: Music Toggle & Monogram Emblem -->
   <header class="top-controls">
     <button
       class="control-btn music-btn"
-      (click)="toggleMusic()"
+      (click)="toggleMusic(); $event.stopPropagation()"
       [attr.aria-label]="musicPlaying() ? 'إيقاف الموسيقى' : 'تشغيل الموسيقى'"
       [class.playing]="musicPlaying()"
+      type="button"
     >
       @if (musicPlaying()) {
         <svg
@@ -48,235 +69,101 @@
         </svg>
       }
     </button>
+
+    <div class="top-monogram" aria-hidden="true">
+      <span class="mono-initial">ف</span>
+      <span class="mono-heart">♡</span>
+      <span class="mono-initial">ر</span>
+    </div>
   </header>
 
-  <!-- Architectural Gate Wrap -->
-  <div class="door-wrap" [class.open]="isOpening()" #doorWrapEl>
-    <div class="door-ambient"></div>
-
-    <!-- Arch Keystone & Top Molding -->
-    <div class="door-arch-frame">
-      <div class="arch-keystone">
-        <span class="keystone-gem">✦</span>
-      </div>
-    </div>
-    <div class="door-inner-arch"></div>
-
-    <!-- Left Column with Capital & Base -->
-    <div class="door-column door-column-left">
-      <span class="column-capital"></span>
-      <span class="column-ring top-ring"></span>
-      <span class="column-ring bottom-ring"></span>
-      <span class="column-base"></span>
-    </div>
-
-    <!-- Right Column with Capital & Base -->
-    <div class="door-column door-column-right">
-      <span class="column-capital"></span>
-      <span class="column-ring top-ring"></span>
-      <span class="column-ring bottom-ring"></span>
-      <span class="column-base"></span>
-    </div>
-
-    <!-- Door Threshold Step -->
-    <div class="door-threshold"></div>
-
-    <!-- Opening Light Flare -->
-    <div class="door-opening-light"></div>
-
-    <!-- Inside Door Preview (Revealed when doors swing open) -->
-    <div class="door-preview" id="doorPreview" aria-hidden="true">
-      <p class="door-preview-title">{{ config.invitationTitle }}</p>
-      <p class="door-preview-basmala">{{ config.bismillah }}</p>
-      <p class="door-preview-line">{{ config.invitationIntro }}</p>
-
-      <div class="door-preview-names">
-        <span class="door-person">
-          <strong>{{ config.brideName }}</strong>
-        </span>
-        <span class="love-rings-wrapper">
-          <svg
-            class="love-rings-svg"
-            viewBox="0 0 38 28"
-            width="32"
-            height="24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="ringGoldDoor" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#F3D382" />
-                <stop offset="50%" stop-color="#C9922B" />
-                <stop offset="100%" stop-color="#8F6215" />
-              </linearGradient>
-            </defs>
-            <ellipse
-              cx="13.5"
-              cy="14.5"
-              rx="8.5"
-              ry="9.5"
-              stroke="url(#ringGoldDoor)"
-              stroke-width="2.2"
-              transform="rotate(-15 13.5 14.5)"
-            />
-            <ellipse
-              cx="24.5"
-              cy="14.5"
-              rx="8.5"
-              ry="9.5"
-              stroke="url(#ringGoldDoor)"
-              stroke-width="2.2"
-              transform="rotate(15 24.5 14.5)"
-            />
-            <path
-              d="M19 4 L20.2 7 L23 8 L20.2 9 L19 12 L17.8 9 L15 8 L17.8 7 Z"
-              fill="#FFFDF8"
-              stroke="url(#ringGoldDoor)"
-              stroke-width="0.8"
-            />
-            <path
-              d="M19 12.5 C18.2 11.3 16.5 11.3 15.6 12.3 C14.6 13.5 14.8 15.5 16.8 17.5 C18 18.7 19 19.7 19 19.7 C19 19.7 20 18.7 21.2 17.5 C23.2 15.5 23.4 13.5 22.4 12.3 C21.5 11.3 19.8 11.3 19 12.5 Z"
-              fill="url(#ringGoldDoor)"
-            />
-          </svg>
-        </span>
-        <span class="door-person">
-          <strong>{{ config.groomName }}</strong>
-        </span>
-      </div>
-
-      <p class="door-preview-greeting">
-        {{ config.invitationSubline }}
-      </p>
-
-      <div class="door-preview-date">
-        <span>الجمعة، 23 أكتوبر 2026</span>
-        <i>•</i>
-        <span>{{ config.weddingTime }}</span>
-      </div>
-    </div>
-
-    <!-- 3D Double Doors (Left and Right Wings) -->
-    <div class="door-leaf door-leaf-left" #leftLeafEl>
-      <!-- Hinges -->
-      <span class="door-hinge hinge-top"></span>
-      <span class="door-hinge hinge-mid"></span>
-      <span class="door-hinge hinge-bottom"></span>
-
-      <div class="door-leaf-inner">
-        <!-- Top Arched Panel -->
-        <div class="door-panel door-panel-top">
-          <span class="panel-inner-bevel"></span>
-          <span class="panel-rosette">✦</span>
-        </div>
-
-        <!-- Middle Decorative Accent -->
-        <div class="door-panel door-panel-mid">
-          <span class="panel-inner-bevel"></span>
-        </div>
-
-        <!-- Bottom Panel -->
-        <div class="door-panel door-panel-bottom">
-          <span class="panel-inner-bevel"></span>
-          <span class="panel-rosette">✦</span>
-        </div>
-
-        <!-- Left Handle & Escutcheon -->
-        <div class="door-handle door-handle-left">
-          <span class="handle-plate"></span>
-          <span class="handle-bar"></span>
-          <span class="handle-keyhole"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Door Leaf -->
-    <div class="door-leaf door-leaf-right" #rightLeafEl>
-      <!-- Hinges -->
-      <span class="door-hinge hinge-top"></span>
-      <span class="door-hinge hinge-mid"></span>
-      <span class="door-hinge hinge-bottom"></span>
-
-      <div class="door-leaf-inner">
-        <!-- Top Arched Panel -->
-        <div class="door-panel door-panel-top">
-          <span class="panel-inner-bevel"></span>
-          <span class="panel-rosette">✦</span>
-        </div>
-
-        <!-- Middle Decorative Accent -->
-        <div class="door-panel door-panel-mid">
-          <span class="panel-inner-bevel"></span>
-        </div>
-
-        <!-- Bottom Panel -->
-        <div class="door-panel door-panel-bottom">
-          <span class="panel-inner-bevel"></span>
-          <span class="panel-rosette">✦</span>
-        </div>
-
-        <!-- Right Handle & Escutcheon -->
-        <div class="door-handle door-handle-right">
-          <span class="handle-plate"></span>
-          <span class="handle-bar"></span>
-          <span class="handle-keyhole"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Royal Interactive Wedding Lock (اضغط لفتح الدعوة) -->
-    <button
-      class="royal-door-lock"
-      id="openInvitation"
-      type="button"
-      #openBtnEl
-      (click)="openDoor()"
-      [disabled]="isOpen() || isOpening()"
-      [class.unlocking]="isOpening()"
-      aria-label="اضغط لفتح دعوة الزفاف"
-    >
-      <!-- Lock Shackle / Loop -->
-      <div class="lock-shackle">
-        <svg viewBox="0 0 44 32" width="44" height="32" fill="none">
+  <!-- Central Arched Wedding Card Container -->
+  <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
+    <div class="arched-card">
+      
+      <!-- Top Decorative Star Accent -->
+      <div class="card-top-accent">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
           <path
-            d="M9 30 V16 C9 8.8 14.8 3 22 3 C29.2 3 35 8.8 35 16 V30"
-            stroke="url(#shackleGold)"
-            stroke-width="5"
-            stroke-linecap="round"
+            d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"
+            fill="#c8963e"
+            opacity="0.85"
           />
-          <defs>
-            <linearGradient id="shackleGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FFF0CC" />
-              <stop offset="50%" stop-color="#D4A038" />
-              <stop offset="100%" stop-color="#8F6215" />
-            </linearGradient>
-          </defs>
         </svg>
       </div>
 
-      <!-- Lock Body / Royal Seal -->
-      <div class="lock-body">
-        <div class="lock-ring-outer"></div>
-        <div class="lock-ring-inner">
-          <div class="lock-monogram">
-            <span class="mono-letter">ف</span>
-            <span class="mono-heart">♡</span>
-            <span class="mono-letter">ر</span>
-          </div>
-          <div class="lock-keyhole">
-            <span class="keyhole-dot"></span>
-            <span class="keyhole-slot"></span>
-          </div>
+      <!-- Couple Names in Dark Royal Navy with Cairo font -->
+      <div class="card-names-block">
+        <h1 class="card-names-primary">
+          <span class="name-part">{{ config.brideName }}</span>
+          <span class="name-amp">&amp;</span>
+          <span class="name-part">{{ config.groomName }}</span>
+        </h1>
+        <p class="card-names-en">Fatma &amp; Ramadan</p>
+      </div>
+
+      <!-- Invitation Subtitle -->
+      <div class="card-invite-sub">
+        <p class="invite-ar">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
+        <p class="invite-en">INVITE YOU TO JOIN THEIR WEDDING CELEBRATION</p>
+      </div>
+
+      <!-- Date Trio Badge (SAT | 19 JULY | AT 8 PM style) -->
+      <div class="card-date-trio">
+        <div class="date-col">
+          <span class="date-lbl">الجمعة</span>
+          <span class="date-sub">FRI</span>
+        </div>
+        <div class="date-vsep"></div>
+        <div class="date-col date-col-main">
+          <span class="date-day-num">23</span>
+          <span class="date-month-txt">أكتوبر • OCT</span>
+        </div>
+        <div class="date-vsep"></div>
+        <div class="date-col">
+          <span class="date-lbl">7:30 م</span>
+          <span class="date-sub">AT 7:30 PM</span>
         </div>
       </div>
 
-      <!-- Pill Label Beneath Lock -->
-      <div class="lock-label-pill">
-        <span class="pulse-dot"></span>
-        <span class="label-text">اضغط لفتح الدعوة</span>
-        <span class="label-icon">✦</span>
+      <!-- Venue Title with Fine Border -->
+      <div class="card-venue-row">
+        <span class="venue-line"></span>
+        <p class="card-venue-txt">{{ config.venueName }} • PORTO SEIF</p>
+        <span class="venue-line"></span>
       </div>
-    </button>
+
+      <!-- Bride and Groom Cutout Photo -->
+      <div class="card-couple-photo-wrapper">
+        <img
+          src="images/couple.png"
+          alt="فاطمة ورمضان"
+          class="card-couple-img"
+          loading="eager"
+        />
+        <div class="couple-fade-overlay"></div>
+      </div>
+
+      <!-- Floating Interactive Unlock Button (اضغط لفتح تفاصيل الدعوة) -->
+      <div class="card-action-bar">
+        <button
+          class="royal-open-invitation-btn"
+          id="openInvitation"
+          type="button"
+          #openBtnEl
+          (click)="openDoor(); $event.stopPropagation()"
+          [disabled]="isOpen() || isOpening()"
+          [class.btn-unlocking]="isOpening()"
+          aria-label="اضغط لفتح دعوة الزفاف"
+        >
+          <span class="btn-glow-pulse"></span>
+          <span class="btn-sparkle-icon">✦</span>
+          <span class="btn-main-label">اضغط لفتح تفاصيل الدعوة</span>
+          <span class="btn-arrow-icon">♡</span>
+        </button>
+      </div>
+
+    </div>
   </div>
 </section>
 
