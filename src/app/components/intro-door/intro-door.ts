@@ -50,16 +50,14 @@ export class IntroDoorComponent implements OnDestroy {
         this.audioEl.volume = 1.0;
       }
 
-      // Pulse lock animation
-      const openBtn = this.openBtnRef()?.nativeElement;
-      if (openBtn && !this.animationService.prefersReducedMotion) {
-        gsap.to(openBtn, {
-          y: -4,
-          duration: 1.5,
-          yoyo: true,
-          repeat: -1,
-          ease: 'sine.inOut',
-        });
+      // Elegant entrance animation on page load — button stays stable
+      const card = this.doorWrapRef()?.nativeElement;
+      if (card && !this.animationService.prefersReducedMotion) {
+        gsap.fromTo(
+          card,
+          { y: 20, opacity: 0, scale: 0.97 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.9, ease: 'power2.out' },
+        );
       }
 
       // Try autoplay on page load and setup gesture triggers

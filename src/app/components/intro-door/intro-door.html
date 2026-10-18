@@ -10,24 +10,34 @@
   <!-- Background Ambient / Watercolor Wash -->
   <div class="intro-bg-ambient"></div>
 
-  <!-- Top-Left Corner: Watercolor Peach & Yellow Roses Bouquet -->
-  <img
-    src="images/peach_floral_corner.jpg"
-    alt=""
-    class="corner-floral corner-floral-tl"
-    aria-hidden="true"
-  />
+  <!-- Top-Left Corner: Watercolor Peach & Yellow Roses Bouquet (Pure Transparent PNG) -->
+  <div class="corner-floral-wrapper">
+    <img
+      src="images/peach_floral_corner_trans.png"
+      alt=""
+      class="corner-floral corner-floral-tl"
+      aria-hidden="true"
+    />
+  </div>
 
-  <!-- Bottom-Right Corner: Golden Lineart Lotus Flower -->
-  <img
-    src="images/botanical_lineart_flower.jpg"
-    alt=""
-    class="corner-lineart corner-lineart-br"
-    aria-hidden="true"
-  />
+  <!-- Bottom-Right Corner: Golden Lineart Lotus Flower (Pure Transparent PNG) -->
+  <div class="corner-lineart-wrapper">
+    <img
+      src="images/botanical_lineart_flower_trans.png"
+      alt=""
+      class="corner-lineart corner-lineart-br"
+      aria-hidden="true"
+    />
+  </div>
 
-  <!-- Top Controls: Music Toggle & Monogram Emblem -->
+  <!-- Top Controls: Anchored gracefully at Top-Right so it never covers the flowers -->
   <header class="top-controls">
+    <div class="top-monogram" aria-hidden="true">
+      <span class="mono-initial">ف</span>
+      <span class="mono-heart">♡</span>
+      <span class="mono-initial">ر</span>
+    </div>
+
     <button
       class="control-btn music-btn"
       (click)="toggleMusic(); $event.stopPropagation()"
@@ -69,21 +79,14 @@
         </svg>
       }
     </button>
-
-    <div class="top-monogram" aria-hidden="true">
-      <span class="mono-initial">ف</span>
-      <span class="mono-heart">♡</span>
-      <span class="mono-initial">ر</span>
-    </div>
   </header>
 
   <!-- Central Arched Wedding Card Container -->
   <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
     <div class="arched-card">
-      
       <!-- Top Decorative Star Accent -->
       <div class="card-top-accent">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
           <path
             d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"
             fill="#c8963e"
@@ -135,16 +138,11 @@
 
       <!-- Bride and Groom Cutout Photo -->
       <div class="card-couple-photo-wrapper">
-        <img
-          src="images/couple.png"
-          alt="فاطمة ورمضان"
-          class="card-couple-img"
-          loading="eager"
-        />
+        <img src="images/couple.png" alt="فاطمة ورمضان" class="card-couple-img" loading="eager" />
         <div class="couple-fade-overlay"></div>
       </div>
 
-      <!-- Floating Interactive Unlock Button (اضغط لفتح تفاصيل الدعوة) -->
+      <!-- Floating Stable Interactive Button (اضغط لفتح تفاصيل الدعوة) -->
       <div class="card-action-bar">
         <button
           class="royal-open-invitation-btn"
@@ -156,13 +154,11 @@
           [class.btn-unlocking]="isOpening()"
           aria-label="اضغط لفتح دعوة الزفاف"
         >
-          <span class="btn-glow-pulse"></span>
           <span class="btn-sparkle-icon">✦</span>
           <span class="btn-main-label">اضغط لفتح تفاصيل الدعوة</span>
           <span class="btn-arrow-icon">♡</span>
         </button>
       </div>
-
     </div>
   </div>
 </section>
