@@ -28,7 +28,7 @@ export class ShareService {
 
   /** Get the share text */
   private getShareText(): string {
-    return `دعوة زفاف ${WEDDING_CONFIG.groomName} ♡ ${WEDDING_CONFIG.brideName} — الجمعة 2 أكتوبر 2026 الساعة 7:30 مساءً`;
+    return `دعوة زفاف ${WEDDING_CONFIG.brideName} ♡ ${WEDDING_CONFIG.groomName} — الجمعة 23 أكتوبر 2026 الساعة 7:30 مساءً في قاعة بورتوسيف`;
   }
 
   /** Native Web Share API */
@@ -36,7 +36,7 @@ export class ShareService {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: `دعوة زفاف ${WEDDING_CONFIG.groomName} و ${WEDDING_CONFIG.brideName}`,
+          title: `دعوة زفاف ${WEDDING_CONFIG.brideName} و ${WEDDING_CONFIG.groomName}`,
           text: this.getShareText(),
           url: this.getInvitationUrl(),
         });

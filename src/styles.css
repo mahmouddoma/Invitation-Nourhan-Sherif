@@ -16,8 +16,8 @@
   --color-divider: #d4b47e;
   --color-white: #ffffff;
 
-  /* Typography */
-  --font-display: 'Aref Ruqaa', serif;
+  /* Typography — Cairo across all elements */
+  --font-display: 'Cairo', sans-serif;
   --font-body: 'Cairo', sans-serif;
 
   /* Spacing Scale */

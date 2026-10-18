@@ -168,7 +168,7 @@
   letter-spacing: 0.02em;
 }
 
-/* 5. Centerpiece: مصطفى & أروى in 3D Diwani Gold Calligraphy */
+/* 5. Centerpiece: فاطمه & رمضان in Gold Calligraphy */
 .card-names-wrap {
   margin: 0.6rem 0;
   width: 100%;
@@ -176,9 +176,9 @@
 }
 
 .card-names-gold {
-  font-family: 'Amiri', 'Amiri Quran', serif;
-  font-size: clamp(2.6rem, 8.2vw, 4.4rem);
-  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(2.4rem, 7.8vw, 4.2rem);
+  font-weight: 800;
   line-height: 1.45;
   margin: 0;
   display: inline-flex;

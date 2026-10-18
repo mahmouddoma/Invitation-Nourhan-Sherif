@@ -15,7 +15,7 @@ export class IcsService {
 
     const link = document.createElement('a');
     link.href = url;
-    link.download = `wedding-${WEDDING_CONFIG.groomName}-${WEDDING_CONFIG.brideName}.ics`;
+    link.download = `wedding-${WEDDING_CONFIG.brideName}-${WEDDING_CONFIG.groomName}.ics`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -45,16 +45,16 @@ export class IcsService {
       `DTSTART:${formatDate(startDate)}`,
       `DTEND:${formatDate(endDate)}`,
       `DTSTAMP:${formatDate(now)}`,
-      `UID:wedding-${WEDDING_CONFIG.groomName}-${WEDDING_CONFIG.brideName}@invitation`,
-      `SUMMARY:حفل زفاف ${WEDDING_CONFIG.groomName} و ${WEDDING_CONFIG.brideName}`,
-      `DESCRIPTION:يتشرف الأهل بدعوتكم لحضور حفل زفاف ${WEDDING_CONFIG.groomName} و ${WEDDING_CONFIG.brideName}\\n📍 ${WEDDING_CONFIG.venueName}\\n🗺️ ${WEDDING_CONFIG.venueAddress}`,
+      `UID:wedding-${WEDDING_CONFIG.brideName}-${WEDDING_CONFIG.groomName}@invitation`,
+      `SUMMARY:حفل زفاف ${WEDDING_CONFIG.brideName} و ${WEDDING_CONFIG.groomName}`,
+      `DESCRIPTION:يتشرف الأهل بدعوتكم لحضور حفل زفاف ${WEDDING_CONFIG.brideName} و ${WEDDING_CONFIG.groomName}\\n📍 ${WEDDING_CONFIG.venueName}\\n🗺️ ${WEDDING_CONFIG.venueAddress}`,
       `LOCATION:${WEDDING_CONFIG.venueName}\, ${WEDDING_CONFIG.venueAddress}`,
       `URL:${WEDDING_CONFIG.locationUrl}`,
       'STATUS:CONFIRMED',
       'BEGIN:VALARM',
       'TRIGGER:-PT1H',
       'ACTION:DISPLAY',
-      `DESCRIPTION:حفل زفاف ${WEDDING_CONFIG.groomName} و ${WEDDING_CONFIG.brideName} بعد ساعة`,
+      `DESCRIPTION:حفل زفاف ${WEDDING_CONFIG.brideName} و ${WEDDING_CONFIG.groomName} بعد ساعة`,
       'END:VALARM',
       'END:VEVENT',
       'END:VCALENDAR',

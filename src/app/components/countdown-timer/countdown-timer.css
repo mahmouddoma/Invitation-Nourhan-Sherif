@@ -76,7 +76,7 @@
 }
 
 .countdown-num {
-  font-family: 'Cinzel', 'Amiri', serif;
+  font-family: 'Cairo', sans-serif;
   font-size: clamp(1.6rem, 5vw, 2.6rem);
   font-weight: 700;
   line-height: 1;

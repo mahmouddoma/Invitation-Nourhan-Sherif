@@ -25,16 +25,16 @@ export interface WeddingConfig {
 }
 
 export const WEDDING_CONFIG: WeddingConfig = {
-  groomName: 'مصطفى',
-  brideName: 'أروى',
-  groomFather: 'م / أحمد مصطفى سيف النصر',
-  brideFather: 'أ / أنور محمد عبد المجيد',
-  weddingDate: '2026-10-02T19:30:00',
+  groomName: 'رمضان',
+  brideName: 'فاطمة',
+  groomFather: 'جمال السيد عبدالوهاب',
+  brideFather: 'محمد أحمد عبدالرازق',
+  weddingDate: '2026-10-23T19:30:00',
   weddingTime: 'الساعة 7:30 مساءً',
-  venueName: 'دريم جاردن (تاليا) بنادي ضباط القوات المسلحة',
-  venueAddress: 'كورنيش المعادي',
-  locationUrl: 'https://maps.app.goo.gl/pHf7JHsT5c84VCvs9?g_st=aw',
-  locationQrImage: 'qrcode_399260104_c7930ad1328dc1da7504b1f5e97244a5.png',
+  venueName: 'قاعة بورتوسيف',
+  venueAddress: 'بورتوسيف',
+  locationUrl: 'https://maps.app.goo.gl/cugxJ3BUUuZNCy2e6',
+  locationQrImage: 'location_qr.png',
   invitationTitle: 'دعوة زفاف',
   bismillah: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',
   quranVerse:
@@ -43,5 +43,5 @@ export const WEDDING_CONFIG: WeddingConfig = {
   invitationSubline: 'بحضوركم تكتمل فرحتنا، وبدعواتكم تبدأ أجمل حكايتنا',
   closingMessage: 'وجودكم يتمم فرحتنا',
   closingSubMessage: 'ننتظركم بكل الحب في ليلة لا تكتمل إلا بحضوركم',
-  audioSrc: 'music.mp3',
+  audioSrc: 'wedding-song.mp3',
 };

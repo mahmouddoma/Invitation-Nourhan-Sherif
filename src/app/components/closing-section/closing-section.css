@@ -33,8 +33,8 @@
 }
 
 .closing-heading {
-  font-family: 'Amiri', 'Amiri Quran', serif;
-  font-size: clamp(1.8rem, 4.8vw, 2.5rem);
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
   font-weight: 700;
   color: #2c4257;
   margin-bottom: 0.75rem;
@@ -74,8 +74,8 @@
 }
 
 .footer-names {
-  font-family: 'Amiri', 'Aref Ruqaa', serif;
-  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
   font-weight: 700;
   color: #2c4257;
   margin-bottom: 0.25rem;

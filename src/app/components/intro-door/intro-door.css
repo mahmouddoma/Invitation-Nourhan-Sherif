@@ -558,7 +558,7 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
-  font-family: 'Amiri', 'Aref Ruqaa', serif;
+  font-family: 'Cairo', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: #52330e;
@@ -749,8 +749,8 @@
   justify-content: center;
   gap: clamp(8px, 2vw, 16px);
   direction: rtl;
-  font-family: 'Amiri', 'Aref Ruqaa', serif;
-  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.8rem, 5.5vw, 2.6rem);
   font-weight: 700;
   line-height: 1.4;
   padding: 4px 12px;
