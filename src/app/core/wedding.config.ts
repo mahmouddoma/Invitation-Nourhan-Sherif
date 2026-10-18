@@ -32,7 +32,7 @@ export const WEDDING_CONFIG: WeddingConfig = {
   weddingDate: '2026-10-23T19:30:00',
   weddingTime: 'الساعة 7:30 مساءً',
   venueName: 'قاعة بورتوسيف',
-  venueAddress: 'بورتوسيف',
+  venueAddress: 'Porto Seif',
   locationUrl: 'https://maps.app.goo.gl/cugxJ3BUUuZNCy2e6',
   locationQrImage: 'location_qr.png',
   invitationTitle: 'دعوة زفاف',
