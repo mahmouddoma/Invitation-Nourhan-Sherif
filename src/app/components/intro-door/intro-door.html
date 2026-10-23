@@ -3,6 +3,22 @@
   <!-- Background Ambient / Luxury Pearl Silk Wash -->
   <div class="intro-bg-ambient"></div>
 
+  <!-- Ambient Floating Pearl & Gold Dust Particles -->
+  <div class="floating-pearl-dust-field" aria-hidden="true">
+    <span class="pearl-dust p1"></span>
+    <span class="pearl-dust p2"></span>
+    <span class="pearl-dust p3"></span>
+    <span class="pearl-dust p4"></span>
+    <span class="pearl-dust p5"></span>
+    <span class="pearl-dust p6"></span>
+    <span class="pearl-dust p7"></span>
+    <span class="pearl-dust p8"></span>
+    <span class="pearl-dust p9"></span>
+    <span class="pearl-dust p10"></span>
+    <span class="pearl-dust p11"></span>
+    <span class="pearl-dust p12"></span>
+  </div>
+
   <!-- Top-Right Pearl & Crystal Floral (Screen Corner — Z-INDEX 50) -->
   <div class="corner-pearl-tr-wrapper" aria-hidden="true">
     <img src="images/pearl_floral_tr_trans.png" alt="" class="corner-pearl-tr" />
@@ -71,16 +87,33 @@
       <span class="date-dash"></span>
     </div>
 
-    <!-- 3D Wax Seal & Interactive Touchpoint -->
-    <div class="wax-seal-interactive-anchor" [class.seal-unlocked]="isOpening()"
-      (click)="openDoor(); $event.stopPropagation()" (touchstart)="openDoor(); $event.stopPropagation()" role="button"
-      tabindex="0" aria-label="المس الختم الملكي لفتح الدعوة">
-      <div class="seal-halo-pulse" aria-hidden="true"></div>
-      <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="seal-graphic-img" />
-      <div class="seal-inviting-pill">
-        <span class="pill-sparkle">✦</span>
-        <span class="pill-txt">المس الختم لفتح الدعوة</span>
-        <span class="pill-sparkle">✦</span>
+    <!-- Seal & Full-Width Silk Belly Band Interactive Zone -->
+    <div class="seal-ribbon-stage-zone">
+      <!-- Full-Width Luxury Cashmere Silk Belly Band (Spanning 100vw Behind Seal) -->
+      <div class="silk-belly-band-full" [class.band-unraveling]="isOpening()" aria-hidden="true">
+        <div class="ribbon-wing ribbon-wing-left">
+          <span class="ribbon-edge-stitch"></span>
+          <span class="ribbon-sheen"></span>
+          <span class="ribbon-edge-stitch bottom"></span>
+        </div>
+        <div class="ribbon-wing ribbon-wing-right">
+          <span class="ribbon-edge-stitch"></span>
+          <span class="ribbon-sheen"></span>
+          <span class="ribbon-edge-stitch bottom"></span>
+        </div>
+      </div>
+
+      <!-- 3D Wax Seal & Interactive Touchpoint -->
+      <div class="wax-seal-interactive-anchor" [class.seal-unlocked]="isOpening()"
+        (click)="openDoor(); $event.stopPropagation()" (touchstart)="openDoor(); $event.stopPropagation()" role="button"
+        tabindex="0" aria-label="المس الختم الملكي لفتح الدعوة">
+        <div class="seal-halo-pulse" aria-hidden="true"></div>
+        <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="seal-graphic-img" />
+        <div class="seal-inviting-pill">
+          <span class="pill-sparkle">✦</span>
+          <span class="pill-txt">المس الختم لفتح الدعوة</span>
+          <span class="pill-sparkle">✦</span>
+        </div>
       </div>
     </div>
   </div>

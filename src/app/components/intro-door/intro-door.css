@@ -50,6 +50,61 @@
   z-index: 1;
 }
 
+/* ==========================================================================
+   Ambient Floating Pearl & Gold Dust Particles Field
+   ========================================================================== */
+
+.floating-pearl-dust-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.pearl-dust {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 15%, rgba(245, 235, 220, 0.85) 55%, rgba(215, 185, 145, 0) 100%);
+  box-shadow:
+    0 0 8px rgba(255, 250, 240, 0.85),
+    0 0 16px rgba(215, 185, 140, 0.35);
+  pointer-events: none;
+  animation: floatPearlDust 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.pearl-dust.p1  { width: 6px; height: 6px; top: 18%; left: 16%; animation-delay: 0s;   animation-duration: 9s; }
+.pearl-dust.p2  { width: 4px; height: 4px; top: 28%; left: 78%; animation-delay: 1.8s; animation-duration: 12s; }
+.pearl-dust.p3  { width: 7px; height: 7px; top: 45%; left: 22%; animation-delay: 3.5s; animation-duration: 10s; }
+.pearl-dust.p4  { width: 5px; height: 5px; top: 62%; left: 82%; animation-delay: 0.8s; animation-duration: 13s; }
+.pearl-dust.p5  { width: 4px; height: 4px; top: 75%; left: 14%; animation-delay: 4.2s; animation-duration: 11s; }
+.pearl-dust.p6  { width: 8px; height: 8px; top: 82%; left: 68%; animation-delay: 2.3s; animation-duration: 14s; }
+.pearl-dust.p7  { width: 5px; height: 5px; top: 12%; left: 45%; animation-delay: 5s;   animation-duration: 10.5s; }
+.pearl-dust.p8  { width: 6px; height: 6px; top: 38%; left: 88%; animation-delay: 2.9s; animation-duration: 12.5s; }
+.pearl-dust.p9  { width: 4px; height: 4px; top: 58%; left: 32%; animation-delay: 1.2s; animation-duration: 9.5s; }
+.pearl-dust.p10 { width: 7px; height: 7px; top: 70%; left: 52%; animation-delay: 6s;   animation-duration: 11.5s; }
+.pearl-dust.p11 { width: 5px; height: 5px; top: 22%; left: 35%; animation-delay: 3.8s; animation-duration: 13.5s; }
+.pearl-dust.p12 { width: 4px; height: 4px; top: 88%; left: 38%; animation-delay: 0.5s; animation-duration: 10s; }
+
+@keyframes floatPearlDust {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.9);
+    opacity: 0.25;
+  }
+  30% {
+    transform: translateY(-16px) translateX(8px) scale(1.15);
+    opacity: 0.85;
+  }
+  70% {
+    transform: translateY(-38px) translateX(-6px) scale(1);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(-56px) translateX(4px) scale(0.85);
+    opacity: 0.2;
+  }
+}
+
 /* Top-Right Pearl & Crystal Floral (Screen Corner — Z-INDEX 50) */
 .corner-pearl-tr-wrapper {
   position: absolute;
@@ -290,7 +345,7 @@
   align-items: center;
   justify-content: center;
   gap: clamp(10px, 3vw, 16px);
-  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+  margin-bottom: clamp(1.4rem, 3.2vh, 2.2rem);
   width: 100%;
 }
 
@@ -310,9 +365,99 @@
 }
 
 /* ==========================================================================
-   5. 3D Wax Seal Interactive Anchor & Touchpoint
+   5. Full-Width Luxury Cashmere Silk Belly Band & 3D Wax Seal Zone
    ========================================================================== */
 
+.seal-ribbon-stage-zone {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full-Width Luxury Cashmere Silk Belly Band */
+.silk-belly-band-full {
+  position: absolute;
+  top: clamp(44px, 11vw, 55px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: clamp(38px, 9vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.ribbon-wing {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(180deg, #d5c7b8 0%, #ede2d5 24%, #f8f3eb 50%, #e0d2c4 76%, #cbbba9 100%);
+  box-shadow:
+    0 8px 24px rgba(65, 50, 36, 0.14),
+    0 2px 6px rgba(65, 50, 36, 0.08);
+  transition:
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s ease;
+}
+
+.ribbon-wing-left {
+  transform-origin: left center;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.ribbon-wing-right {
+  transform-origin: right center;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+/* Metallic Fine Stitched Edge Highlights */
+.ribbon-edge-stitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(180, 160, 135, 0.4), rgba(215, 195, 170, 0.9), rgba(180, 160, 135, 0.4));
+}
+
+.ribbon-edge-stitch.bottom {
+  top: auto;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(165, 145, 120, 0.4), rgba(195, 175, 150, 0.8), rgba(165, 145, 120, 0.4));
+}
+
+/* Subtle Satin Sheen Line */
+.ribbon-sheen {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 35%;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+/* Ribbon Unraveling Animation when door opens */
+.silk-belly-band-full.band-unraveling .ribbon-wing-left {
+  transform: translateX(-110%) rotate(-4deg);
+  opacity: 0;
+}
+
+.silk-belly-band-full.band-unraveling .ribbon-wing-right {
+  transform: translateX(110%) rotate(4deg);
+  opacity: 0;
+}
+
+/* Wax Seal Interactive Anchor */
 .wax-seal-interactive-anchor {
   position: relative;
   display: flex;
@@ -324,6 +469,7 @@
   outline: none;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  z-index: 5;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -379,7 +525,7 @@
   object-fit: contain;
   display: block;
   position: relative;
-  z-index: 2;
+  z-index: 6;
   filter:
     drop-shadow(0 12px 28px rgba(65, 50, 36, 0.32))
     drop-shadow(0 3px 8px rgba(180, 150, 100, 0.28));
@@ -401,14 +547,14 @@
   gap: 8px;
   padding: 7px 20px;
   border-radius: 999px;
-  background: rgba(253, 250, 246, 0.92);
+  background: rgba(253, 250, 246, 0.94);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(188, 170, 148, 0.55);
   box-shadow:
     0 6px 20px rgba(85, 72, 60, 0.1),
     0 1px 3px rgba(0, 0, 0, 0.03);
   position: relative;
-  z-index: 2;
+  z-index: 6;
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
@@ -466,6 +612,9 @@
     width: 78px !important;
     height: 78px !important;
   }
+  .silk-belly-band-full {
+    height: 36px;
+  }
   .seal-inviting-pill {
     margin-top: 8px;
     padding: 5px 16px;
@@ -479,7 +628,9 @@
   .corner-pearl-tr,
   .corner-pearl-bl,
   .seal-halo-pulse,
-  .pill-sparkle {
+  .pill-sparkle,
+  .pearl-dust,
+  .silk-belly-band-full .ribbon-wing {
     animation: none !important;
     transition: none !important;
   }

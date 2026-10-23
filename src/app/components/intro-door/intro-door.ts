@@ -99,10 +99,16 @@ export class IntroDoorComponent implements OnDestroy {
             '-=0.3',
           )
           .fromTo(
+            '.silk-belly-band-full',
+            { opacity: 0, scaleX: 0.6 },
+            { opacity: 1, scaleX: 1, duration: 0.85, ease: 'power3.out' },
+            '-=0.35',
+          )
+          .fromTo(
             '.wax-seal-interactive-anchor',
             { opacity: 0, scale: 0.45, rotation: -12 },
             { opacity: 1, scale: 1, rotation: 0, duration: 0.85, ease: 'back.out(1.8)' },
-            '-=0.3',
+            '-=0.55',
           );
       }
 
@@ -202,7 +208,7 @@ export class IntroDoorComponent implements OnDestroy {
     }
   }
 
-  /** Step: User taps the wax seal -> Unlocks, smoothly dissolves intro, plays music, reveals inner invitation */
+  /** Step: User taps the wax seal -> Unlocks, unravels silk ribbon wings, plays music, reveals inner invitation */
   openDoor(): void {
     if (this.isOpen() || this.isOpening()) return;
 
@@ -215,7 +221,7 @@ export class IntroDoorComponent implements OnDestroy {
       return;
     }
 
-    // After the smooth dissolving sequence completes (approx 850ms), transition to main page
+    // After the unravelling ribbon sequence completes (approx 850ms), transition to main page
     setTimeout(() => {
       this.isOpen.set(true);
       this.doorOpened.emit();
