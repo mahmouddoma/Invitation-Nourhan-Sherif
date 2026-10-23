@@ -1,271 +1,93 @@
 <section class="hero-section">
   <div class="botanical-card-wrapper" appScrollReveal>
-    <img src="images/peach_floral_corner_trans.png" alt="" class="botanical-corner corner-tl" aria-hidden="true" />
-    <img src="images/single_peach_rose_trans.png" alt="" class="botanical-corner corner-bl" aria-hidden="true" />
-    <img src="images/botanical_lineart_flower_trans.png" alt="" class="botanical-corner corner-br" aria-hidden="true" />
+    <!-- Top-Right Haute-Couture Pearl & Crystal Bouquet -->
+    <div class="pearl-corner-tr-wrap" aria-hidden="true" #ornamentTR>
+      <img src="images/pearl_floral_tr_trans.png" alt="" class="pearl-corner-tr" />
+    </div>
 
-    <!-- Outer Double Hairline Gold Arch Frame -->
+    <!-- Bottom-Left Haute-Couture Pearl & Crystal Bouquet -->
+    <div class="pearl-corner-bl-wrap" aria-hidden="true" #ornamentBL>
+      <img src="images/pearl_floral_bottom_left.png" alt="" class="pearl-corner-bl" />
+    </div>
+
+    <!-- Outer Cashmere Arch Frame -->
     <div class="card-arch-outer">
       <div class="card-arch-inner">
-        <!-- 1. Gold Calligraphic Basmala -->
+        <!-- 1. Sacred Basmala in Classical Calligraphy -->
         <div class="card-basmala-wrap" appScrollReveal [revealDelay]="0.1">
-          <h2 class="gold-calligraphy-basmala">{{ config.bismillah }}</h2>
+          <h2 class="sacred-basmala-txt">{{ config.bismillah }}</h2>
         </div>
 
-        <!-- 2. Delicate Heart Divider -->
-        <div class="gold-heart-divider" appScrollReveal [revealDelay]="0.15">
-          <span class="divider-line"></span>
-          <svg class="gold-heart-svg" viewBox="0 0 16 14" width="14" height="12" fill="none">
-            <path
-              d="M8 12.5 C7.2 11.7 1.5 7.8 1.5 4.2 C1.5 2.2 3.1 0.8 5 0.8 C6.2 0.8 7.3 1.5 8 2.4 C8.7 1.5 9.8 0.8 11 0.8 C12.9 0.8 14.5 2.2 14.5 4.2 C14.5 7.8 8.8 11.7 8 12.5 Z"
-              stroke="#c8963e" stroke-width="1.2" />
-          </svg>
-          <span class="divider-line"></span>
+        <!-- 2. Refined Editorial Header -->
+        <div class="card-editorial-header" appScrollReveal [revealDelay]="0.15">
+          <span class="editorial-save-date">SAVE THE DATE</span>
+          <span class="editorial-wedding-of">FOR THE WEDDING OF</span>
+          <p class="editorial-invite-phrase">يتشرفون بدعوتكم لحضور حفل الزفاف</p>
         </div>
 
-        <!-- SVG Global Gradient Defs -->
-        <svg width="0" height="0" class="svg-defs" aria-hidden="true">
-          <defs>
-            <linearGradient id="goldGradBranch" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#f5d794" />
-              <stop offset="35%" stop-color="#e2b45e" />
-              <stop offset="70%" stop-color="#c69136" />
-              <stop offset="100%" stop-color="#9a6518" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <!-- 3. Greeting 1: فرحنا هيكمل بيكم -->
-        <div class="card-greeting-block" appScrollReveal [revealDelay]="0.2">
-          <!-- Realistic Botanical Gold Branch (Left) -->
-          <svg class="gold-botanical-branch branch-left" viewBox="0 0 70 26" width="46" height="17" fill="none">
-            <path d="M 66,13 C 45,13 25,12 5,13" stroke="url(#goldGradBranch)" stroke-width="1.4"
-              stroke-linecap="round" />
-            <g fill="url(#goldGradBranch)">
-              <path d="M 6.0,13.0 Q 3.2,10.6 0.5,13.0 Q 3.2,15.4 6.0,13.0 Z" />
-              <path d="M 15.0,12.8 Q 13.6,6.5 7.5,4.5 Q 8.9,10.8 15.0,12.8 Z" />
-              <path d="M 24.0,13.0 Q 17.9,15.1 17.0,21.5 Q 23.1,19.4 24.0,13.0 Z" />
-              <path d="M 33.0,12.8 Q 31.9,6.1 25.5,3.8 Q 26.6,10.5 33.0,12.8 Z" />
-              <path d="M 42.0,13.0 Q 35.6,15.4 35.0,22.2 Q 41.4,19.8 42.0,13.0 Z" />
-              <path d="M 51.0,12.8 Q 49.9,6.2 43.5,4.2 Q 44.6,10.8 51.0,12.8 Z" />
-              <path d="M 60.0,13.0 Q 53.8,15.3 53.0,21.8 Q 59.2,19.5 60.0,13.0 Z" />
-            </g>
-            <g stroke="#b57e28" stroke-width="0.75" stroke-linecap="round" opacity="0.7">
-              <path d="M 15,12.8 L 9,6" />
-              <path d="M 24,13.0 L 18.5,19.5" />
-              <path d="M 33,12.8 L 27,5.5" />
-              <path d="M 42,13.0 L 36.5,20" />
-              <path d="M 51,12.8 L 45,6" />
-              <path d="M 60,13.0 L 54.5,19.8" />
-            </g>
-          </svg>
-
-          <h3 class="card-phrase-primary">فرحنا هيكمل بيكم</h3>
-
-          <!-- Realistic Botanical Gold Branch (Right) -->
-          <svg class="gold-botanical-branch branch-right" viewBox="0 0 70 26" width="46" height="17" fill="none">
-            <path d="M 4,13 C 25,13 45,12 65,13" stroke="url(#goldGradBranch)" stroke-width="1.4"
-              stroke-linecap="round" />
-            <g fill="url(#goldGradBranch)">
-              <path d="M 64.0,13.0 Q 66.8,10.6 69.5,13.0 Q 66.8,15.4 64.0,13.0 Z" />
-              <path d="M 55.0,12.8 Q 56.4,6.5 62.5,4.5 Q 61.1,10.8 55.0,12.8 Z" />
-              <path d="M 46.0,13.0 Q 52.1,15.1 53.0,21.5 Q 46.9,19.4 46.0,13.0 Z" />
-              <path d="M 37.0,12.8 Q 38.1,6.1 44.5,3.8 Q 43.4,10.5 37.0,12.8 Z" />
-              <path d="M 28.0,13.0 Q 34.4,15.4 35.0,22.2 Q 28.6,19.8 28.0,13.0 Z" />
-              <path d="M 19.0,12.8 Q 20.1,6.2 26.5,4.2 Q 25.4,10.8 19.0,12.8 Z" />
-              <path d="M 10.0,13.0 Q 16.2,15.3 17.0,21.8 Q 10.8,19.5 10.0,13.0 Z" />
-            </g>
-            <g stroke="#b57e28" stroke-width="0.75" stroke-linecap="round" opacity="0.7">
-              <path d="M 55,12.8 L 61,6" />
-              <path d="M 46,13.0 L 51.5,19.5" />
-              <path d="M 37,12.8 L 43,5.5" />
-              <path d="M 28,13.0 L 33.5,20" />
-              <path d="M 19,12.8 L 25,6" />
-              <path d="M 10,13.0 L 15.5,19.8" />
-            </g>
-          </svg>
-        </div>
-
-        <!-- 4. Delicate Heart Divider -->
-        <div class="gold-heart-divider" appScrollReveal [revealDelay]="0.25">
-          <span class="divider-line"></span>
-          <svg class="gold-heart-svg" viewBox="0 0 16 14" width="14" height="12" fill="none">
-            <path
-              d="M8 12.5 C7.2 11.7 1.5 7.8 1.5 4.2 C1.5 2.2 3.1 0.8 5 0.8 C6.2 0.8 7.3 1.5 8 2.4 C8.7 1.5 9.8 0.8 11 0.8 C12.9 0.8 14.5 2.2 14.5 4.2 C14.5 7.8 8.8 11.7 8 12.5 Z"
-              stroke="#c8963e" stroke-width="1.2" />
-          </svg>
-          <span class="divider-line"></span>
-        </div>
-
-        <!-- 5. Centerpiece: نورهان & شريف in Gold Calligraphy -->
-        <div class="card-names-wrap" appScrollReveal [revealDelay]="0.3">
-          <h1 class="card-names-gold">
-            <span class="name-text name-bride">{{ config.brideName }}</span>
-            <span class="gold-ampersand">&</span>
-            <span class="name-text name-groom">{{ config.groomName }}</span>
+        <!-- 3. Centerpiece: The Names (Royal Arabic + Flowing English Script) -->
+        <div class="card-names-showcase" appScrollReveal [revealDelay]="0.2">
+          <h1 class="card-arabic-names">
+            <span class="name-part">{{ config.brideName }}</span>
+            <span class="name-amp">&amp;</span>
+            <span class="name-part">{{ config.groomName }}</span>
           </h1>
+          <p class="card-script-names">Nourhan &amp; Sherif</p>
         </div>
 
-        <!-- 6. Royal Filigree Divider -->
-        <div class="royal-filigree-divider" appScrollReveal [revealDelay]="0.35">
-          <svg class="filigree-flourish-svg" viewBox="0 0 110 18" width="95" height="16" fill="none">
-            <!-- Left Flourish -->
-            <path d="M45 9 C35 9 30 3 20 4 C12 5 8 12 2 12" stroke="#c8963e" stroke-width="1.2"
-              stroke-linecap="round" />
-            <circle cx="2" cy="12" r="1.5" fill="#c8963e" />
-            <!-- Center Heart -->
-            <path
-              d="M55 14 C54.3 13.3 49.5 10 49.5 7 C49.5 5.3 50.8 4 52.4 4 C53.4 4 54.3 4.6 55 5.4 C55.7 4.6 56.6 4 57.6 4 C59.2 4 60.5 5.3 60.5 7 C60.5 10 55.7 13.3 55 14 Z"
-              fill="#c8963e" />
-            <!-- Right Flourish -->
-            <path d="M65 9 C75 9 80 3 90 4 C98 5 102 12 108 12" stroke="#c8963e" stroke-width="1.2"
-              stroke-linecap="round" />
-            <circle cx="108" cy="12" r="1.5" fill="#c8963e" />
-          </svg>
+        <!-- Delicate Hairline Divider -->
+        <div class="cashmere-divider-row" appScrollReveal [revealDelay]="0.25">
+          <span class="divider-hairline"></span>
+          <span class="divider-heart-glyph">♡</span>
+          <span class="divider-hairline"></span>
         </div>
 
-        <!-- 7. Greeting 2: مستنينكم تنورونا -->
-        <div class="card-greeting-sub" appScrollReveal [revealDelay]="0.4">
-          <p class="card-phrase-secondary">مستنينكم تنورونا</p>
-          <div class="gold-heart-divider mini-divider">
-            <span class="divider-line"></span>
-            <svg class="gold-heart-svg" viewBox="0 0 16 14" width="12" height="10" fill="none">
-              <path
-                d="M8 12.5 C7.2 11.7 1.5 7.8 1.5 4.2 C1.5 2.2 3.1 0.8 5 0.8 C6.2 0.8 7.3 1.5 8 2.4 C8.7 1.5 9.8 0.8 11 0.8 C12.9 0.8 14.5 2.2 14.5 4.2 C14.5 7.8 8.8 11.7 8 12.5 Z"
-                stroke="#c8963e" stroke-width="1.2" />
+        <!-- 4. Honoring the Parents (مقام الأهل) — Clean, Unboxed & Dignified -->
+        <div class="card-parents-dignity" appScrollReveal [revealDelay]="0.3">
+          <div class="parent-column">
+            <span class="parent-role-tag">والد العريس</span>
+            <p class="parent-full-name">{{ config.groomFather }}</p>
+          </div>
+
+          <div class="parents-center-knot">
+            <span class="knot-dot">•</span>
+          </div>
+
+          <div class="parent-column">
+            <span class="parent-role-tag">والد العروسة</span>
+            <p class="parent-full-name">{{ config.brideFather }}</p>
+          </div>
+        </div>
+
+        <!-- 5. Editorial Spaced Date & Time Showcase -->
+        <div class="card-date-venue-editorial" appScrollReveal [revealDelay]="0.35">
+          <div class="editorial-numeric-date">13 . 11 . 2026</div>
+
+          <div class="editorial-meta-line">
+            <span class="meta-segment">الجمعة • FRI</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-segment">8:00 مساءً • AT 8 PM</span>
+          </div>
+
+          <div class="editorial-venue-line">
+            <span class="venue-dash"></span>
+            <p class="venue-title-editorial">{{ config.venueName }} • HILTON HOTEL</p>
+            <span class="venue-dash"></span>
+          </div>
+        </div>
+
+        <!-- 6. Catchy Direct Location Button -->
+        <div class="card-cta-action" appScrollReveal [revealDelay]="0.4">
+          <a [href]="config.locationUrl" target="_blank" rel="noopener noreferrer" class="btn-cashmere-map"
+            aria-label="افتح موقع القاعة على الخريطة">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21 C16 16 20 12.5 20 8.5 A8 8 0 0 0 4 8.5 C4 12.5 8 16 12 21 Z" />
+              <circle cx="12" cy="8.5" r="2.5" />
             </svg>
-            <span class="divider-line"></span>
-          </div>
-        </div>
-
-        <!-- 8. Event Details 3-Pill Trio Grid with Premium Gold SVG Icons -->
-        <div class="card-details-trio" appScrollReveal [revealDelay]="0.45">
-          <!-- Item 1: Date -->
-          <div class="trio-item">
-            <div class="trio-icon">
-              <!-- Premium Calendar Icon with Heart -->
-              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-                <rect x="4" y="6" width="24" height="22" rx="5" stroke="#c8963e" stroke-width="1.6" />
-                <line x1="4" y1="13" x2="28" y2="13" stroke="#c8963e" stroke-width="1.4" />
-                <line x1="10" y1="3" x2="10" y2="8" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round" />
-                <line x1="22" y1="3" x2="22" y2="8" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round" />
-                <!-- Center Heart -->
-                <path
-                  d="M16 23 C15.4 22.4 11.5 19.5 11.5 17 C11.5 15.5 12.7 14.3 14.1 14.3 C15 14.3 15.7 14.8 16 15.5 C16.3 14.8 17 14.3 17.9 14.3 C19.3 14.3 20.5 15.5 20.5 17 C20.5 19.5 16.6 22.4 16 23 Z"
-                  stroke="#c8963e" stroke-width="1.2" />
-              </svg>
-            </div>
-            <p class="trio-val">13/11/2026</p>
-            <div class="trio-sub-divider">
-              <span class="sub-dash"></span>
-              <svg viewBox="0 0 10 8" width="8" height="7" fill="none">
-                <path
-                  d="M5 7 C4.6 6.5 1 4 1 2.2 C1 1.2 1.8 0.5 2.8 0.5 C3.4 0.5 4.1 0.9 5 1.5 C5.9 0.9 6.6 0.5 7.2 0.5 C8.2 0.5 9 1.2 9 2.2 C9 4 5.4 6.5 5 7 Z"
-                  stroke="#c8963e" stroke-width="0.9" />
-              </svg>
-              <span class="sub-dash"></span>
-            </div>
-          </div>
-
-          <div class="trio-separator"></div>
-
-          <!-- Item 2: Time -->
-          <div class="trio-item">
-            <div class="trio-icon">
-              <!-- Premium Clock Icon -->
-              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-                <circle cx="16" cy="16" r="12" stroke="#c8963e" stroke-width="1.6" />
-                <polyline points="16 9 16 16 21 18.5" stroke="#c8963e" stroke-width="1.6" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <circle cx="16" cy="16" r="1.5" fill="#c8963e" />
-              </svg>
-            </div>
-            <p class="trio-val">08:00 PM</p>
-            <div class="trio-sub-divider">
-              <span class="sub-dash"></span>
-              <svg viewBox="0 0 10 8" width="8" height="7" fill="none">
-                <path
-                  d="M5 7 C4.6 6.5 1 4 1 2.2 C1 1.2 1.8 0.5 2.8 0.5 C3.4 0.5 4.1 0.9 5 1.5 C5.9 0.9 6.6 0.5 7.2 0.5 C8.2 0.5 9 1.2 9 2.2 C9 4 5.4 6.5 5 7 Z"
-                  stroke="#c8963e" stroke-width="0.9" />
-              </svg>
-              <span class="sub-dash"></span>
-            </div>
-          </div>
-
-          <div class="trio-separator"></div>
-
-          <!-- Item 3: Location -->
-          <a [href]="config.locationUrl" target="_blank" rel="noopener noreferrer" class="trio-item trio-link">
-            <div class="trio-icon">
-              <!-- Premium Map Pin Icon with Heart -->
-              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-                <path d="M16 28 C21.5 21.5 26 17 26 12 A10 10 0 0 0 6 12 C6 17 10.5 21.5 16 28 Z" stroke="#c8963e"
-                  stroke-width="1.6" />
-                <!-- Small Inner Heart -->
-                <path
-                  d="M16 15 C15.5 14.5 13 12.7 13 11 C13 9.9 13.9 9 14.9 9 C15.5 9 16 9.4 16 9.8 C16 9.4 16.5 9 17.1 9 C18.1 9 19 9.9 19 11 C19 12.7 16.5 14.5 16 15 Z"
-                  stroke="#c8963e" stroke-width="1.1" />
-              </svg>
-            </div>
-            <p class="trio-val venue-title">{{ config.venueName }}</p>
-            <p class="trio-subval">{{ config.venueAddress }}</p>
-            <p class="trio-subval trio-link-hint">اضغط لفتح الخريطة</p>
-            <div class="trio-sub-divider">
-              <span class="sub-dash"></span>
-              <svg viewBox="0 0 10 8" width="8" height="7" fill="none">
-                <path
-                  d="M5 7 C4.6 6.5 1 4 1 2.2 C1 1.2 1.8 0.5 2.8 0.5 C3.4 0.5 4.1 0.9 5 1.5 C5.9 0.9 6.6 0.5 7.2 0.5 C8.2 0.5 9 1.2 9 2.2 C9 4 5.4 6.5 5 7 Z"
-                  stroke="#c8963e" stroke-width="0.9" />
-              </svg>
-              <span class="sub-dash"></span>
-            </div>
+            <span class="btn-txt">مكان القاعة على الخريطة</span>
+            <span class="btn-sparkle">✦</span>
           </a>
-        </div>
-
-        <!-- 9. Parents Honor Showcase (مكان السكان) -->
-        <div class="card-parents-section" appScrollReveal [revealDelay]="0.5">
-          <div class="parents-grid-royal">
-            <!-- Groom's Father -->
-            <div class="parent-box parent-box-groom">
-              <span class="parent-title-tag">والد العريس</span>
-              <p class="parent-name-text">{{ config.groomFather }}</p>
-            </div>
-
-            <!-- Central Mini Gold Emblem -->
-            <div class="parents-center-emblem">
-              <span class="emblem-line"></span>
-              <span class="emblem-heart">♡</span>
-              <span class="emblem-line"></span>
-            </div>
-
-            <!-- Bride's Father -->
-            <div class="parent-box parent-box-bride">
-              <span class="parent-title-tag">والد العروسة</span>
-              <p class="parent-name-text">{{ config.brideFather }}</p>
-            </div>
-          </div>
-
-          <div class="gold-heart-divider">
-            <span class="divider-line"></span>
-            <svg class="gold-heart-svg" viewBox="0 0 16 14" width="14" height="12" fill="none">
-              <path
-                d="M8 12.5 C7.2 11.7 1.5 7.8 1.5 4.2 C1.5 2.2 3.1 0.8 5 0.8 C6.2 0.8 7.3 1.5 8 2.4 C8.7 1.5 9.8 0.8 11 0.8 C12.9 0.8 14.5 2.2 14.5 4.2 C14.5 7.8 8.8 11.7 8 12.5 Z"
-                stroke="#c8963e" stroke-width="1.2" />
-            </svg>
-            <span class="divider-line"></span>
-          </div>
-
-          <!-- Direct Location Actions -->
-          <div class="location-actions-row">
-            <a [href]="config.locationUrl" target="_blank" rel="noopener noreferrer" class="btn-maps-action">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 21 C16 16 20 12.5 20 8.5 A8 8 0 0 0 4 8.5 C4 12.5 8 16 12 21 Z" />
-                <circle cx="12" cy="8.5" r="2.5" />
-              </svg>
-              <span>مكان القاعة على الخريطة</span>
-            </a>
-          </div>
         </div>
       </div>
     </div>

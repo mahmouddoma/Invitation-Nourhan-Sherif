@@ -4,21 +4,21 @@
 /* ===== Wedding Design System — Solid Colors Only ===== */
 
 :root {
-  /* Warm Peach, Ivory & Royal Gold Wedding Palette (Matches Intro) */
-  --color-bg: #fbf5ee;
-  --color-primary: #1a3048;
-  --color-secondary: #55708c;
-  --color-text-deep: #1e354d;
-  --color-highlight: #c8963e;
-  --color-gold-light: #faecd6;
-  --color-card-bg: #ffffff;
-  --color-arch-bg: #fdf8f2;
-  --color-divider: #e0caa8;
+  /* Haute-Couture Pearl & Cashmere Wedding Palette (Pinterest Reference) */
+  --color-bg: #f4efeb;
+  --color-primary: #5A5148;
+  --color-secondary: #7D7368;
+  --color-text-deep: #4A423B;
+  --color-highlight: #8A8074;
+  --color-gold-light: #ECE5DC;
+  --color-card-bg: #FAF6F1;
+  --color-arch-bg: #FAF6F1;
+  --color-divider: rgba(185, 172, 155, 0.45);
   --color-white: #ffffff;
 
-  /* Typography — Cairo across all elements */
-  --font-display: 'Cairo', sans-serif;
-  --font-body: 'Cairo', sans-serif;
+  /* Typography */
+  --font-display: 'Amiri', 'Cinzel', serif;
+  --font-body: 'Cairo', 'Amiri', sans-serif;
 
   /* Spacing Scale */
   --space-xs: 0.25rem;

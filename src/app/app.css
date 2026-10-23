@@ -17,8 +17,8 @@
   max-height: 100vh !important;
 }
 
-/* Ambient Romantic Floating Petals & Mini Roses Layer */
-.romantic-petals-layer {
+/* Subtle Pearl & Cashmere Ambient Shimmer Layer */
+.cashmere-ambient-layer {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -31,157 +31,78 @@
   transition: opacity 1.2s ease 0.4s;
 }
 
-.romantic-petals-layer.visible {
+.cashmere-ambient-layer.visible {
   opacity: 1;
 }
 
-/* Mini Rose Blooms in Background */
-.bg-bloom {
+.ambient-glow {
   position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  border-radius: 50%;
+  filter: blur(40px);
   pointer-events: none;
-  filter: drop-shadow(0 6px 14px rgba(185, 135, 80, 0.22));
-  will-change: transform;
-  background-image: url('/images/mini_rose_trans.png');
 }
 
-.bloom-1 {
+.glow-1 {
+  top: 15%;
+  left: 5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+}
+
+.glow-2 {
+  bottom: 20%;
+  right: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(215, 203, 191, 0.35) 0%, transparent 70%);
+}
+
+.pearl-sparkle {
+  position: absolute;
+  color: rgba(185, 172, 155, 0.6);
+  font-size: 0.95rem;
+  pointer-events: none;
+  animation: sparkleTwinkle 5s ease-in-out infinite alternate;
+}
+
+.sparkle-1 {
   top: 18%;
-  left: clamp(8px, 2.8vw, 36px);
-  width: clamp(48px, 9vw, 75px);
-  height: clamp(48px, 9vw, 75px);
-  opacity: 0.95;
-  animation: floatBloom 11s ease-in-out infinite alternate;
+  right: 12%;
+  animation-delay: 0s;
 }
 
-.bloom-2 {
-  top: 50%;
-  right: clamp(8px, 2.8vw, 36px);
-  width: clamp(44px, 8.5vw, 70px);
-  height: clamp(44px, 8.5vw, 70px);
-  opacity: 0.92;
-  transform: scaleX(-1);
-  animation: floatBloomReverse 13s ease-in-out infinite alternate 1.5s;
+.sparkle-2 {
+  top: 55%;
+  left: 10%;
+  font-size: 0.8rem;
+  animation-delay: 1.8s;
 }
 
-.bloom-3 {
-  top: 82%;
-  left: clamp(10px, 3.2vw, 40px);
-  width: clamp(46px, 8.8vw, 72px);
-  height: clamp(46px, 8.8vw, 72px);
-  opacity: 0.94;
-  animation: floatBloom 14s ease-in-out infinite alternate 2.5s;
+.sparkle-3 {
+  bottom: 22%;
+  right: 15%;
+  animation-delay: 3.2s;
 }
 
-/* Individual Floating Rose Petals */
-.petal {
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
-  filter: drop-shadow(0 4px 10px rgba(185, 135, 80, 0.2));
-  will-change: transform;
-}
-
-.petal-1 {
-  top: 8%;
-  right: clamp(12px, 3.5vw, 45px);
-  width: clamp(34px, 6vw, 50px);
-  height: clamp(34px, 6vw, 50px);
-  opacity: 0.95;
-  background-image: url('/images/petal_1_trans.png');
-  animation: floatPetal 10s ease-in-out infinite alternate;
-}
-
-.petal-2 {
-  top: 34%;
-  left: clamp(12px, 3.2vw, 40px);
-  width: clamp(32px, 5.5vw, 46px);
-  height: clamp(32px, 5.5vw, 46px);
-  opacity: 0.92;
-  background-image: url('/images/petal_2_trans.png');
-  animation: floatPetalReverse 12s ease-in-out infinite alternate 1s;
-}
-
-.petal-3 {
-  top: 66%;
-  right: clamp(14px, 3.5vw, 45px);
-  width: clamp(30px, 5vw, 44px);
-  height: clamp(30px, 5vw, 44px);
-  opacity: 0.94;
-  background-image: url('/images/petal_3_trans.png');
-  animation: floatPetal 13s ease-in-out infinite alternate 2s;
-}
-
-.petal-4 {
-  top: 92%;
-  right: clamp(15px, 4vw, 48px);
-  width: clamp(32px, 5.5vw, 46px);
-  height: clamp(32px, 5.5vw, 46px);
-  opacity: 0.92;
-  background-image: url('/images/petal_4_trans.png');
-  animation: floatPetalReverse 11s ease-in-out infinite alternate 3s;
-}
-
-/* Vertical-only floating animations with rotation (Strictly zero horizontal overflow) */
-@keyframes floatBloom {
+@keyframes sparkleTwinkle {
   0% {
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(-16px) rotate(8deg) scale(1.04);
+    opacity: 0.2;
+    transform: scale(0.85);
   }
   100% {
-    transform: translateY(-30px) rotate(-6deg) scale(0.98);
+    opacity: 0.85;
+    transform: scale(1.15);
   }
 }
 
-@keyframes floatBloomReverse {
-  0% {
-    transform: scaleX(-1) translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: scaleX(-1) translateY(18px) rotate(-8deg) scale(1.04);
-  }
-  100% {
-    transform: scaleX(-1) translateY(32px) rotate(6deg) scale(0.98);
-  }
-}
-
-@keyframes floatPetal {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(-18px) rotate(14deg) scale(1.06);
-  }
-  100% {
-    transform: translateY(-34px) rotate(-10deg) scale(0.97);
-  }
-}
-
-@keyframes floatPetalReverse {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(18px) rotate(-14deg) scale(1.06);
-  }
-  100% {
-    transform: translateY(34px) rotate(10deg) scale(0.97);
-  }
-}
-
-/* Floral Interlude between Sections */
-.floral-interlude {
+/* Haute-Couture Cashmere Monogram Divider */
+.cashmere-interlude {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  max-width: 420px;
+  max-width: 360px;
   margin: 0.5rem auto 1.5rem;
   padding: 0 1rem;
   pointer-events: none;
@@ -190,16 +111,19 @@
 .interlude-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 180, 126, 0.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(175, 160, 142, 0.45), transparent);
 }
 
-.interlude-rose {
-  width: clamp(65px, 14vw, 92px);
-  height: auto;
-  opacity: 0.95;
-  filter: drop-shadow(0 4px 10px rgba(185, 135, 80, 0.14));
-  transform: rotate(-6deg);
-  transition: transform 0.3s ease;
+.interlude-monogram {
+  font-family: 'Amiri', 'Cinzel', serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #7D7368;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(246, 241, 235, 0.85);
+  border: 1px solid rgba(175, 160, 142, 0.4);
 }
 
 /* Wedding content — revealed seamlessly after door opens */
@@ -226,4 +150,33 @@
   display: block !important;
   opacity: 1;
   visibility: visible;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(74, 66, 59, 0.94);
+  color: #FAF6F1;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(60, 50, 42, 0.28);
+  border: 1px solid rgba(185, 172, 155, 0.45);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 99999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

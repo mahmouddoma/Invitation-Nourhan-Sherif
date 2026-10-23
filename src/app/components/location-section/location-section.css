@@ -3,49 +3,50 @@
 }
 
 .location-section {
-  padding: 2.5rem 1rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
 }
 
 .location-container {
-  width: min(94vw, 680px);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(253, 246, 238, 0.92));
-  border: 1.5px solid rgba(212, 180, 126, 0.45);
-  border-radius: 30px;
-  padding: clamp(24px, 5vw, 44px);
+  width: min(92vw, 560px);
+  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 45%, #E5DDD3 100%);
+  border: 1.5px solid rgba(185, 172, 155, 0.45);
+  border-radius: 28px;
+  padding: clamp(22px, 5vw, 38px);
   box-shadow:
-    0 18px 45px rgba(185, 135, 80, 0.12),
+    0 18px 45px rgba(95, 82, 70, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  box-sizing: border-box;
 }
 
 .location-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .location-eyebrow {
   display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #c8963e;
-  letter-spacing: 0.08em;
+  font-family: 'Cinzel', 'Cairo', serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #7D7368;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   margin-bottom: 0.35rem;
 }
 
 .location-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
-  font-weight: 800;
-  color: #1a3048;
+  font-family: 'Amiri', 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  font-weight: 700;
+  color: #5A5148;
   line-height: 1.3;
 }
 
 .location-subtitle {
-  font-family: var(--font-body);
-  font-size: clamp(0.85rem, 2.2vw, 1rem);
-  color: #6a829a;
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  color: #7D7368;
   margin-top: 0.25rem;
   font-weight: 600;
 }
@@ -54,20 +55,20 @@
 .location-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1.75rem;
   align-items: center;
 }
 
 .location-desc {
-  font-family: var(--font-body);
-  font-size: clamp(0.9rem, 2.2vw, 1rem);
-  color: #3a5068;
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(0.88rem, 2.2vw, 0.96rem);
+  color: #5A5148;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .location-desc strong {
-  color: #1a3048;
+  color: #4A423B;
   font-weight: 700;
 }
 
@@ -78,15 +79,15 @@
 }
 
 .venue-btn {
-  min-height: 52px;
-  border-radius: 14px;
+  min-height: 48px;
+  border-radius: 24px;
   padding: 0 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  gap: 10px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
   border: none;
@@ -101,96 +102,92 @@
   transform: translateY(-2px);
 }
 
-.btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.venue-btn:hover .btn-icon {
-  transform: scale(1.12);
-}
-
 .primary-btn {
-  color: #ffffff;
-  background: linear-gradient(135deg, #1a3048, #2a4868);
-  border: 1px solid rgba(212, 180, 126, 0.4);
-  box-shadow: 0 8px 20px rgba(26, 48, 72, 0.25);
+  background: linear-gradient(135deg, #7A7065 0%, #5A5148 100%);
+  color: #FAF6F1;
+  box-shadow: 0 4px 14px rgba(85, 75, 65, 0.22);
+  border: 1px solid rgba(225, 215, 202, 0.45);
 }
 
 .primary-btn:hover {
-  background: linear-gradient(135deg, #d4a038, #b57a16);
-  box-shadow: 0 12px 26px rgba(181, 122, 22, 0.35);
+  background: linear-gradient(135deg, #857B70 0%, #635A50 100%);
+  box-shadow: 0 6px 18px rgba(85, 75, 65, 0.32);
 }
 
 .secondary-btn {
-  color: #1a3048;
-  background: #ffffff;
-  border: 1.5px solid rgba(212, 180, 126, 0.5);
-  box-shadow: 0 4px 14px rgba(185, 135, 80, 0.08);
+  background: rgba(250, 246, 241, 0.95);
+  color: #5A5148;
+  border: 1px solid rgba(185, 172, 155, 0.5);
 }
 
 .secondary-btn:hover {
-  background: #fdf6ee;
-  border-color: #c8963e;
+  background: #ffffff;
+  border-color: #8A8074;
 }
 
 .ghost-btn {
-  color: #1a3048;
-  background: #fdf6ee;
-  border: 1.5px solid rgba(212, 180, 126, 0.35);
+  background: transparent;
+  color: #7D7368;
+  border: 1px solid rgba(185, 172, 155, 0.4);
 }
 
 .ghost-btn:hover {
-  background: #faecd6;
-  border-color: #c8963e;
+  background: rgba(250, 246, 241, 0.6);
+  color: #5A5148;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* QR Code Panel */
 .location-qr-panel {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .qr-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  background: #ffffff;
-  border: 1.5px solid rgba(212, 180, 126, 0.4);
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: 0 10px 24px rgba(185, 135, 80, 0.1);
+  text-align: center;
+  gap: 12px;
 }
 
 .qr-frame {
-  width: clamp(140px, 32vw, 170px);
-  height: clamp(140px, 32vw, 170px);
-  border-radius: 12px;
-  overflow: hidden;
+  width: clamp(140px, 30vw, 175px);
+  height: clamp(140px, 30vw, 175px);
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(185, 172, 155, 0.45);
+  box-shadow: 0 8px 24px rgba(95, 82, 70, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .qr-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
 .qr-caption {
-  font-family: var(--font-body);
+  font-family: 'Cairo', sans-serif;
   font-size: 0.78rem;
-  color: #8c7658;
-  text-align: center;
+  color: #7D7368;
   font-weight: 600;
+  max-width: 175px;
+  line-height: 1.4;
 }
 
-/* Mobile Responsive */
-@media (max-width: 650px) {
+/* Mobile responsive */
+@media (max-width: 640px) {
   .location-content-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -200,12 +197,8 @@
     order: -1;
   }
 
-  .qr-card {
-    padding: 12px;
-  }
-
   .qr-frame {
-    width: 140px;
-    height: 140px;
+    width: 145px;
+    height: 145px;
   }
 }

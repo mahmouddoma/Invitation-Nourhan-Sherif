@@ -5,527 +5,379 @@
 .hero-section {
   position: relative;
   width: 100%;
-  padding: clamp(1rem, 3vw, 2.5rem) clamp(0.5rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 3.5vw, 2.5rem) clamp(0.75rem, 2.5vw, 1.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: clip;
-}
-
-/* Botanical Flowers and Arched Card */
-.botanical-card-wrapper {
-  position: relative;
-  width: min(92vw, 640px);
-  margin: 0 auto;
-  border-radius: 300px 300px 24px 24px / 240px 240px 24px 24px;
-  box-shadow:
-    0 22px 60px rgba(185, 135, 80, 0.16),
-    0 4px 18px rgba(0, 0, 0, 0.04);
-}
-
-/* Botanical Corners */
-.botanical-corner {
-  position: absolute;
-  pointer-events: none;
-  z-index: 10;
-  width: clamp(100px, 24vw, 160px);
-  height: auto;
-  opacity: 0.95;
-  filter: drop-shadow(0 4px 10px rgba(160, 100, 40, 0.12));
-}
-
-.corner-tl {
-  top: -18px;
-  left: -18px;
-  width: clamp(140px, 30vw, 240px);
-  filter: drop-shadow(0 6px 16px rgba(160, 100, 40, 0.14));
-}
-
-.corner-bl {
-  bottom: -15px;
-  left: -15px;
-  width: clamp(95px, 20vw, 150px);
-  transform: rotate(-12deg);
-  opacity: 0.95;
-  filter: drop-shadow(0 4px 12px rgba(160, 100, 40, 0.12));
-}
-
-.corner-br {
-  bottom: -18px;
-  right: -18px;
-  width: clamp(120px, 26vw, 200px);
-  transform: rotate(-8deg);
-  opacity: 0.92;
-  filter: drop-shadow(0 4px 12px rgba(185, 135, 80, 0.15));
-  mix-blend-mode: multiply;
-}
-
-/* Outer Arch Frame with Gold Hairline Border */
-.card-arch-outer {
-  position: relative;
-  width: 100%;
-  border-radius: 280px 280px 20px 20px / 230px 230px 20px 20px;
-  border: 1.5px solid #d4a038;
-  padding: 6px;
-  background: rgba(255, 255, 255, 0.95);
   box-sizing: border-box;
 }
 
-/* Inner Arch Frame with Warm Peach & Ivory Watercolor Fill */
+/* Botanical / Pearl Card Outer Wrapper */
+.botanical-card-wrapper {
+  position: relative;
+  width: min(92vw, 560px);
+  margin: 0 auto;
+}
+
+/* Top-Right Haute-Couture Pearl Bouquet */
+.pearl-corner-tr-wrap {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.pearl-corner-tr {
+  width: clamp(140px, 32vw, 220px);
+  max-height: 38vh;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 12px 24px rgba(65, 52, 42, 0.22));
+  animation: pearlSwayTR 8s ease-in-out infinite alternate;
+}
+
+@keyframes pearlSwayTR {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-3px, 4px) rotate(1deg);
+  }
+}
+
+/* Bottom-Left Haute-Couture Pearl Bouquet */
+.pearl-corner-bl-wrap {
+  position: absolute;
+  bottom: -22px;
+  left: -22px;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.pearl-corner-bl {
+  width: clamp(120px, 28vw, 185px);
+  max-height: 32vh;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(65, 52, 42, 0.2));
+  animation: pearlSwayBL 9s ease-in-out infinite alternate;
+}
+
+@keyframes pearlSwayBL {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(3px, -3px) rotate(-1deg);
+  }
+}
+
+/* Outer Cashmere Arch Frame */
+.card-arch-outer {
+  position: relative;
+  width: 100%;
+  border-radius: 260px 260px 24px 24px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(215, 203, 191, 0.8) 0%, rgba(185, 172, 155, 0.45) 100%);
+  box-shadow:
+    0 24px 60px rgba(90, 78, 66, 0.14),
+    0 4px 16px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+/* Inner Cashmere Card — Exactly Matching Pinterest Reference */
 .card-arch-inner {
   position: relative;
   width: 100%;
-  border-radius: 274px 274px 16px 16px / 224px 224px 16px 16px;
-  border: 1px solid rgba(212, 180, 126, 0.45);
-  background:
-    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 1) 0%, rgba(254, 249, 243, 0.7) 60%),
-    linear-gradient(180deg, #ffffff 0%, #fdf8f2 50%, #faf2e6 100%);
-  padding: clamp(3rem, 7vw, 4.6rem) clamp(1rem, 3.5vw, 2.5rem) clamp(2rem, 4.5vw, 3rem);
+  border-radius: 259px 259px 23px 23px;
+  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 45%, #E5DDD3 100%);
+  padding: clamp(3.2rem, 8vw, 4.8rem) clamp(1.2rem, 4vw, 2.6rem) clamp(2rem, 5vw, 3rem);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* 1. Gold Calligraphy Basmala */
+/* 1. Sacred Basmala */
 .card-basmala-wrap {
-  margin-top: 0.5rem;
-  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+  margin-bottom: clamp(0.5rem, 1.6vh, 0.9rem);
   width: 100%;
-  overflow: visible;
-  display: flex;
-  justify-content: center;
 }
 
-.gold-calligraphy-basmala {
-  font-family: 'Amiri', 'Amiri Quran', 'Aref Ruqaa Ink', 'Aref Ruqaa', serif;
-  font-size: clamp(1.85rem, 5.4vw, 2.75rem);
+.sacred-basmala-txt {
+  font-family: 'Amiri', 'Amiri Quran', serif;
+  font-size: clamp(1.6rem, 4.8vw, 2.3rem);
   font-weight: 700;
-  line-height: 1.65;
+  line-height: 1.6;
   margin: 0;
-  display: inline-block;
-  color: #b57a16;
-  background: linear-gradient(180deg, #df9f2e 0%, #b37715 50%, #8c5506 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(100, 68, 16, 0.35));
-  letter-spacing: 0.01em;
-  padding: 4px 14px 14px;
-  overflow: visible;
+  color: #5A5148;
+  letter-spacing: 0.02em;
 }
 
-/* 2. Heart Divider */
-.gold-heart-divider {
+/* 2. Editorial Header */
+.card-editorial-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: clamp(0.5rem, 1.8vh, 1rem);
+}
+
+.editorial-save-date {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: clamp(0.74rem, 2.1vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  color: #7D7368;
+  text-transform: uppercase;
+}
+
+.editorial-wedding-of {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: clamp(0.62rem, 1.8vw, 0.74rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #7D7368;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.editorial-invite-phrase {
+  margin: 6px 0 0;
+  font-family: 'Amiri', serif;
+  font-size: clamp(1rem, 2.8vw, 1.18rem);
+  font-weight: 700;
+  color: #5A5148;
+  letter-spacing: 0.01em;
+}
+
+/* 3. The Names Showcase */
+.card-names-showcase {
+  margin: clamp(0.4rem, 1.2vh, 0.8rem) 0;
+  width: 100%;
+}
+
+.card-arabic-names {
+  margin: 0;
+  font-family: 'Amiri', 'Aref Ruqaa', serif;
+  font-size: clamp(2.3rem, 7vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #5A5148;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  direction: rtl;
+}
+
+.name-part {
+  letter-spacing: 0;
+}
+
+.name-amp {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7em;
+  font-weight: 400;
+  color: #7D7368;
+  padding: 0 4px;
+}
+
+.card-script-names {
+  margin: 2px 0 0;
+  font-family: 'Alex Brush', 'Pinyon Script', cursive;
+  font-size: clamp(2.1rem, 6.4vw, 2.85rem);
+  font-weight: 400;
+  color: #7D7368;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+/* Delicate Hairline Divider */
+.cashmere-divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+  margin: clamp(0.6rem, 1.8vh, 1.1rem) auto;
+}
+
+.divider-hairline {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(175, 160, 142, 0.5), transparent);
+}
+
+.divider-heart-glyph {
+  font-size: 0.85rem;
+  color: #8A8074;
+}
+
+/* 4. Honoring the Parents — Clean & Dignified */
+.card-parents-dignity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  width: 100%;
+  max-width: 440px;
+  margin: clamp(0.4rem, 1.4vh, 0.9rem) auto;
+  padding: 0.5rem 0;
+  direction: rtl;
+}
+
+.parent-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+}
+
+.parent-role-tag {
+  font-family: 'Cinzel', 'Cairo', serif;
+  font-size: clamp(0.72rem, 2vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #7D7368;
+  text-transform: uppercase;
+}
+
+.parent-full-name {
+  margin: 0;
+  font-family: 'Amiri', serif;
+  font-size: clamp(1.15rem, 3.4vw, 1.42rem);
+  font-weight: 700;
+  color: #5A5148;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.parents-center-knot {
+  color: #A39686;
+  font-size: 1rem;
+}
+
+/* 5. Editorial Spaced Date & Venue */
+.card-date-venue-editorial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  max-width: 360px;
+  margin: clamp(0.6rem, 1.8vh, 1.2rem) auto;
+}
+
+.editorial-numeric-date {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #5A5148;
+  line-height: 1.2;
+}
+
+.editorial-meta-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Cinzel', 'Cairo', serif;
+  font-size: clamp(0.75rem, 2vw, 0.84rem);
+  font-weight: 600;
+  color: #7D7368;
+  letter-spacing: 0.08em;
+}
+
+.meta-dot {
+  color: #A39686;
+  font-size: 0.7rem;
+}
+
+.editorial-venue-line {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   width: 100%;
-  max-width: 220px;
-  margin: 0.5rem auto;
+  max-width: 310px;
+  margin-top: 3px;
 }
 
-.divider-line {
+.venue-dash {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #d4b47e, transparent);
+  background: linear-gradient(90deg, transparent, rgba(175, 160, 142, 0.5), transparent);
 }
 
-.gold-heart-svg {
-  flex-shrink: 0;
-  display: block;
-}
-
-/* 3. Greeting 1: فرحنا هيكمل بيكم */
-.card-greeting-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(8px, 2vw, 14px);
-  margin: 0.4rem 0;
-}
-
-.gold-botanical-branch {
-  flex-shrink: 0;
-  display: block;
-  filter: drop-shadow(0 1px 2px rgba(180, 130, 40, 0.22));
-  transition: transform 0.3s ease;
-}
-
-.gold-botanical-branch.branch-mini {
-  width: clamp(24px, 5vw, 32px);
-  height: auto;
-}
-
-.card-greeting-block:hover .gold-botanical-branch.branch-left {
-  transform: translateX(-2px);
-}
-
-.card-greeting-block:hover .gold-botanical-branch.branch-right {
-  transform: translateX(2px);
-}
-
-.card-phrase-primary {
-  font-family: var(--font-body);
-  font-size: clamp(1.15rem, 3.4vw, 1.45rem);
-  font-weight: 700;
-  color: #1a3048;
+.venue-title-editorial {
   margin: 0;
-  letter-spacing: 0.02em;
-}
-
-/* 5. Centerpiece: نورهان & شريف in Gold Calligraphy */
-.card-names-wrap {
-  margin: 0.6rem 0;
-  width: 100%;
-  overflow: visible;
-}
-
-.card-names-gold {
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(2.4rem, 7.8vw, 4.2rem);
-  font-weight: 800;
-  line-height: 1.45;
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(10px, 2.5vw, 22px);
-  direction: rtl;
-  padding: 4px 14px;
-  overflow: visible;
-}
-
-.name-text {
-  display: inline-block;
-  white-space: nowrap;
-  color: #b57a16;
-  background: linear-gradient(180deg, #df9f2e 0%, #b37715 50%, #8c5506 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(100, 68, 16, 0.4));
-  overflow: visible;
-  padding: 0 4px;
-}
-
-.name-bride {
-  color: #b57a16;
-  background: linear-gradient(180deg, #df9f2e 0%, #b37715 50%, #8c5506 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(100, 68, 16, 0.4));
-}
-
-.name-groom {
-  color: #b57a16;
-  background: linear-gradient(180deg, #df9f2e 0%, #b37715 50%, #8c5506 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(100, 68, 16, 0.4));
-}
-
-.gold-ampersand {
-  font-family: 'Cinzel', serif;
-  font-size: 0.8em;
-  font-weight: 700;
-  color: #b57a16;
-  margin: 0 4px;
-  filter: drop-shadow(0 1px 2px rgba(100, 68, 16, 0.25));
-}
-
-/* 6. Royal Filigree Divider */
-.royal-filigree-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.4rem 0;
-}
-
-.filigree-flourish-svg {
-  display: block;
-}
-
-/* 7. Greeting 2: مستنينكم تنورونا */
-.card-greeting-sub {
-  margin: 0.3rem 0 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.card-phrase-secondary {
-  font-family: var(--font-body);
-  font-size: clamp(1.1rem, 3.2vw, 1.35rem);
-  font-weight: 700;
-  color: #1a3048;
-  margin: 0;
-  letter-spacing: 0.02em;
-}
-
-.mini-divider {
-  max-width: 140px;
-  margin: 0.3rem auto 0.4rem;
-}
-
-/* 8. Event Details 3-Pill Trio Grid */
-.card-details-trio {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 480px;
-  margin: 1.2rem auto;
-  direction: ltr;
-}
-
-.trio-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 4px;
-}
-
-a.trio-item,
-.trio-link {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.trio-icon {
-  color: #c8963e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2px;
-  transition: transform 0.25s ease;
-}
-
-.trio-item:hover .trio-icon {
-  transform: translateY(-2px);
-}
-
-.trio-val {
-  font-family: var(--font-body);
-  font-size: clamp(0.85rem, 2.4vw, 0.98rem);
-  font-weight: 700;
-  color: #1a3048;
-  margin: 0;
-  white-space: nowrap;
-}
-
-.venue-title {
-  white-space: normal;
-  line-height: 1.2;
-}
-
-.trio-subval {
-  font-family: var(--font-body);
-  font-size: clamp(0.72rem, 2vw, 0.82rem);
-  font-weight: 600;
-  color: #6a829a;
-  margin: 0;
-}
-
-.trio-link-hint {
-  color: #c8963e !important;
-  font-weight: 700 !important;
-  font-size: clamp(0.76rem, 2.1vw, 0.86rem) !important;
-  margin-top: 1px !important;
-}
-
-.trio-sub-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 2px;
-}
-
-.sub-dash {
-  width: 12px;
-  height: 1px;
-  background: #d4b47e;
-}
-
-.trio-separator {
-  width: 1px;
-  height: 52px;
-  background: linear-gradient(180deg, transparent, rgba(212, 180, 126, 0.5), transparent);
-  margin: 0 4px;
-}
-
-/* 9. Parents Honor Showcase (مكان السكان) */
-.card-parents-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 480px;
-}
-
-.parents-grid-royal {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(254, 248, 242, 0.9));
-  border: 1.5px solid rgba(212, 180, 126, 0.5);
-  box-shadow: 0 6px 18px rgba(185, 135, 80, 0.1);
-  direction: rtl;
-}
-
-.parent-box {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 4px;
-}
-
-.parent-title-tag {
-  font-family: var(--font-body);
+  font-family: 'Cinzel', 'Cairo', serif;
   font-size: clamp(0.78rem, 2.2vw, 0.88rem);
   font-weight: 700;
-  color: #c8963e;
-  letter-spacing: 0.02em;
+  color: #5A5148;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.parent-name-text {
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.98rem, 2.8vw, 1.18rem);
-  font-weight: 800;
-  color: #1a3048;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.parents-center-emblem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 0 8px;
-}
-
-.emblem-line {
-  width: 1px;
-  height: 16px;
-  background: linear-gradient(180deg, transparent, rgba(212, 180, 126, 0.8), transparent);
-}
-
-.emblem-heart {
-  color: #c8963e;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* Direct Location Actions */
-.location-actions-row {
-  margin-top: 0.8rem;
+/* 6. Catchy CTA Action */
+.card-cta-action {
+  margin-top: clamp(1rem, 2.6vh, 1.6rem);
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.btn-maps-action {
+.btn-cashmere-map {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 24px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #ffffff, #fdf6ee);
-  border: 1.5px solid #d4a038;
-  color: #1a3048;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(0.65rem, 1.8vh, 0.85rem) clamp(1.6rem, 5vw, 2.4rem);
+  border-radius: 30px;
+  border: 1px solid rgba(225, 215, 202, 0.45);
+  background: linear-gradient(135deg, #7A7065 0%, #5A5148 100%);
+  color: #FAF6F1;
+  font-family: 'Cairo', 'Cinzel', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.02rem);
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(185, 135, 80, 0.15);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(85, 75, 65, 0.22);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
 }
 
-.btn-maps-action:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(185, 135, 80, 0.22);
-  border-color: #c8963e;
-  color: #1a3048;
+.btn-cashmere-map:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(85, 75, 65, 0.32);
+  background: linear-gradient(135deg, #857B70 0%, #635A50 100%);
+  color: #ffffff;
 }
 
-/* Responsive Mobile Adaptations */
-@media (max-width: 480px) {
-  .botanical-card-wrapper {
-    width: 95vw;
-    border-radius: 220px 220px 18px 18px / 180px 180px 18px 18px;
-  }
+.btn-sparkle {
+  color: #EFE7DE;
+  font-size: 0.9rem;
+}
 
-  .card-arch-outer {
-    border-radius: 210px 210px 16px 16px / 170px 170px 16px 16px;
-    padding: 4px;
-  }
-
-  .card-arch-inner {
-    border-radius: 206px 206px 14px 14px / 166px 166px 14px 14px;
-    padding: 2.8rem 0.75rem 2rem;
-  }
-
-  .corner-tl {
-    width: 115px;
-    top: -12px;
-    left: -12px;
-  }
-
-  .corner-bl {
-    width: 80px;
-    bottom: -10px;
-    left: -10px;
-  }
-
-  .corner-br {
-    width: 105px;
-    bottom: -12px;
-    right: -12px;
-  }
-
-  .gold-calligraphy-basmala {
-    font-size: 1.75rem;
-  }
-
-  .card-names-gold {
-    font-size: 2.3rem;
-    gap: 8px;
-  }
-
-  .card-phrase-primary {
-    font-size: 1.1rem;
-  }
-
-  .card-phrase-secondary {
-    font-size: 0.98rem;
-  }
-
-  .card-details-trio {
-    margin: 1rem 0;
-  }
-
-  .trio-val {
-    font-size: 0.82rem;
-  }
-
-  .trio-subval {
-    font-size: 0.7rem;
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .pearl-corner-tr,
+  .pearl-corner-bl,
+  .btn-cashmere-map {
+    animation: none !important;
+    transition: none !important;
   }
 }
