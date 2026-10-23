@@ -49,18 +49,19 @@
   z-index: 1;
 }
 
-/* Top-Right Pearl & Crystal Jewelry Cascade (Adorning the Card Directly in Front) */
-.card-pearl-tr-wrapper {
+/* Top-Right Pearl & Crystal Jewelry Cascade (Screen Corner — Z-INDEX 50: ALWAYS IN FRONT) */
+.corner-pearl-tr-wrapper {
   position: absolute;
-  top: -16px;
-  right: -22px;
+  top: -10px;
+  right: -10px;
   pointer-events: none;
-  z-index: 20;
+  z-index: 50;
+  /* Always in front of the card, never behind it! */
 }
 
-.card-pearl-tr {
-  width: clamp(140px, 35vw, 220px);
-  max-height: 38vh;
+.corner-pearl-tr {
+  width: clamp(155px, 34vw, 255px);
+  max-height: 36vh;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.28));
@@ -77,18 +78,19 @@
   }
 }
 
-/* Bottom-Left Pearl & Crystal Jewelry Filigree (Adorning the Card Directly in Front) */
-.card-pearl-bl-wrapper {
+/* Bottom-Left Pearl & Crystal Jewelry Filigree (Screen Corner — Z-INDEX 50: ALWAYS IN FRONT) */
+.corner-pearl-bl-wrapper {
   position: absolute;
-  bottom: -16px;
-  left: -22px;
+  bottom: -10px;
+  left: -10px;
   pointer-events: none;
-  z-index: 20;
+  z-index: 50;
+  /* Always in front of the card, never behind it! */
 }
 
-.card-pearl-bl {
-  width: clamp(140px, 35vw, 215px);
-  max-height: 36vh;
+.corner-pearl-bl {
+  width: clamp(155px, 34vw, 250px);
+  max-height: 35vh;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.26));
@@ -113,7 +115,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  z-index: 25;
+  z-index: 60;
 }
 
 /* Top Monogram */
@@ -171,16 +173,17 @@
   border-color: #8A8074;
 }
 
-/* Arched Card Outer Container */
+/* Arched Card Outer Container — Perfectly Proportioned & Elegant */
 .arched-card-container {
   position: relative;
   z-index: 10;
-  width: 100%;
-  max-width: 410px;
-  max-height: calc(100dvh - clamp(0.8rem, 2.5vh, 1.8rem));
+  width: min(80%, 328px);
+  max-width: 328px;
+  max-height: calc(100dvh - clamp(1rem, 3vh, 2rem));
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
   transition:
     transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);

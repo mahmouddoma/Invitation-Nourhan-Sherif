@@ -3,6 +3,16 @@
   <!-- Background Ambient / Luxury Pearl Silk Wash -->
   <div class="intro-bg-ambient"></div>
 
+  <!-- Top-Right Pearl & Crystal Floral (Screen Corner — z-index 50, always in front) -->
+  <div class="corner-pearl-tr-wrapper" aria-hidden="true">
+    <img src="images/pearl_floral_tr_trans.png" alt="" class="corner-pearl-tr" />
+  </div>
+
+  <!-- Bottom-Left Pearl & Crystal Floral (Screen Corner — z-index 50, always in front) -->
+  <div class="corner-pearl-bl-wrapper" aria-hidden="true">
+    <img src="images/pearl_floral_bottom_left.png" alt="" class="corner-pearl-bl" />
+  </div>
+
   <!-- Top Controls: Anchored gracefully at Top-Left so it never covers the pearl bouquet -->
   <header class="top-controls">
     <div class="top-monogram" aria-hidden="true">
@@ -34,16 +44,6 @@
 
   <!-- Central Arched Wedding Card Container -->
   <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
-    <!-- Top-Right Pearl & Crystal Jewelry Cascade (Adorning the Card Directly in Front) -->
-    <div class="card-pearl-tr-wrapper" aria-hidden="true">
-      <img src="images/pearl_floral_tr_trans.png" alt="" class="card-pearl-tr corner-pearl-tr" />
-    </div>
-
-    <!-- Bottom-Left Pearl & Crystal Jewelry Filigree (Adorning the Card Directly in Front) -->
-    <div class="card-pearl-bl-wrapper" aria-hidden="true">
-      <img src="images/pearl_floral_bottom_left.png" alt="" class="card-pearl-bl corner-pearl-bl" />
-    </div>
-
     <div class="arched-card">
       <!-- 1. Editorial Classical Header (Matching Reference Image) -->
       <div class="card-save-date-block">
