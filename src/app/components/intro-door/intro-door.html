@@ -3,12 +3,12 @@
   <!-- Background Ambient / Luxury Pearl Silk Wash -->
   <div class="intro-bg-ambient"></div>
 
-  <!-- Top-Right Pearl & Crystal Floral (Screen Corner — Always in Front) -->
+  <!-- Top-Right Pearl & Crystal Floral (Screen Corner) -->
   <div class="corner-pearl-tr-wrapper" aria-hidden="true">
     <img src="images/pearl_floral_tr_trans.png" alt="" class="corner-pearl-tr" />
   </div>
 
-  <!-- Bottom-Left Pearl & Crystal Floral (Screen Corner — Always in Front) -->
+  <!-- Bottom-Left Pearl & Crystal Floral (Screen Corner) -->
   <div class="corner-pearl-bl-wrapper" aria-hidden="true">
     <img src="images/pearl_floral_bottom_left.png" alt="" class="corner-pearl-bl" />
   </div>
@@ -43,10 +43,10 @@
   </header>
 
   <!-- Central Haute-Couture Cashmere Envelope & 3D Wax Seal Experience -->
-  <div class="luxury-envelope-container" [class.envelope-unfolding]="isOpening()" #doorWrapEl>
-    <div class="envelope-wrapper">
-      <!-- 1. The Arched Wedding Card Inside -->
-      <div class="envelope-card-slot">
+  <div class="luxury-envelope-container" [class.envelope-opened]="isOpening()" #doorWrapEl>
+    <div class="envelope-base">
+      <!-- 1. The Inner Arched Card (Nestled inside, slides out gracefully on open) -->
+      <div class="envelope-card-drawer">
         <div class="arched-card">
           <!-- Editorial Classical Header -->
           <div class="card-save-date-block">
@@ -55,7 +55,7 @@
             <p class="invite-ar-elegant">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
           </div>
 
-          <!-- Names: Arabic Calligraphy + English Script -->
+          <!-- Names -->
           <div class="card-names-block">
             <h1 class="card-names-arabic">
               <span class="name-part">{{ config.brideName }}</span>
@@ -65,7 +65,7 @@
             <p class="card-names-script">Nourhan &amp; Sherif</p>
           </div>
 
-          <!-- Classic Spaced Roman Date -->
+          <!-- Date & Venue -->
           <div class="card-date-classic">
             <div class="date-numbers-spaced">13 . 11 . 2026</div>
             <div class="date-meta-row">
@@ -80,7 +80,7 @@
             </div>
           </div>
 
-          <!-- Bride and Groom Royal Arched Portrait Frame -->
+          <!-- Couple Arched Portrait Frame -->
           <div class="card-couple-photo-wrapper">
             <div class="couple-arched-frame">
               <img src="images/nourhan_sherif_arched.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
@@ -89,31 +89,39 @@
         </div>
       </div>
 
-      <!-- 2. Envelope Front Pocket (Luxury angled folds with pearl borders) -->
-      <div class="envelope-pocket-front" aria-hidden="true">
-        <div class="pocket-side-left"></div>
-        <div class="pocket-side-right"></div>
-        <div class="pocket-bottom-fold"></div>
-      </div>
-
-      <!-- 3. Envelope Top Flap (Folds open upwards in 3D) -->
-      <div class="envelope-flap-top" aria-hidden="true">
-        <div class="flap-triangle-shape"></div>
-      </div>
-
-      <!-- 4. The 3D Wax Seal & Interactive Touchpoint -->
-      <div class="wax-seal-interactive" [class.seal-popped]="isOpening()"
-        (click)="openDoor(); $event.stopPropagation()"
-        (touchstart)="openDoor(); $event.stopPropagation()"
-        role="button" tabindex="0" aria-label="اضغط على الختم الملكي لفتح الدعوة">
-        <div class="wax-seal-pulse-ring"></div>
-        <div class="wax-seal-disc">
-          <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="wax-seal-graphic" />
+      <!-- 2. Envelope Front Pocket (Holds card inside with gold calligraphy stamp) -->
+      <div class="envelope-front-pocket" aria-hidden="true">
+        <div class="envelope-foil-calligraphy">
+          <span class="env-foil-eyebrow">WEDDING INVITATION</span>
+          <h2 class="env-foil-names">
+            <span>{{ config.brideName }}</span>
+            <span class="env-amp">&amp;</span>
+            <span>{{ config.groomName }}</span>
+          </h2>
+          <p class="env-foil-script">Nourhan &amp; Sherif</p>
+          <div class="env-foil-date-row">
+            <span class="foil-dash"></span>
+            <span class="foil-date-txt">13 . 11 . 2026</span>
+            <span class="foil-dash"></span>
+          </div>
         </div>
-        <div class="wax-seal-badge-prompt">
-          <span class="seal-prompt-sparkle">✦</span>
-          <span class="seal-prompt-text">المس الختم الملكي لفتح الدعوة</span>
-          <span class="seal-prompt-sparkle">✦</span>
+      </div>
+
+      <!-- 3. Envelope Top Flap (Opens upwards in 3D) -->
+      <div class="envelope-top-flap" aria-hidden="true">
+        <div class="flap-triangle"></div>
+      </div>
+
+      <!-- 4. The 3D Wax Seal & Interaction Anchor -->
+      <div class="wax-seal-anchor" [class.seal-broken]="isOpening()" (click)="openDoor(); $event.stopPropagation()"
+        (touchstart)="openDoor(); $event.stopPropagation()" role="button" tabindex="0"
+        aria-label="اضغط على الختم الملكي لفتح الدعوة">
+        <div class="wax-seal-pulse"></div>
+        <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="wax-seal-img" />
+        <div class="wax-seal-tap-badge">
+          <span class="badge-sparkle">✦</span>
+          <span class="badge-text">المس الختم الملكي لفتح الدعوة</span>
+          <span class="badge-sparkle">✦</span>
         </div>
       </div>
     </div>
