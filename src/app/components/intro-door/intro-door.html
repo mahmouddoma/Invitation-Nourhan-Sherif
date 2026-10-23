@@ -45,7 +45,7 @@
   <!-- Central Haute-Couture Cashmere Envelope & 3D Wax Seal Experience -->
   <div class="luxury-envelope-container" [class.envelope-opened]="isOpening()" #doorWrapEl>
     <div class="envelope-base">
-      <!-- 1. The Inner Arched Card (Nestled inside, slides out gracefully on open) -->
+      <!-- 1. The Inner Arched Card (Completely hidden inside until opened, then slides out) -->
       <div class="envelope-card-drawer">
         <div class="arched-card">
           <!-- Editorial Classical Header -->
@@ -89,7 +89,13 @@
         </div>
       </div>
 
-      <!-- 2. Envelope Front Pocket (Holds card inside with gold calligraphy stamp) -->
+      <!-- 2. Solid Side Flaps (Guarantees zero side-leaking) -->
+      <div class="envelope-side-flaps" aria-hidden="true">
+        <div class="side-flap-left"></div>
+        <div class="side-flap-right"></div>
+      </div>
+
+      <!-- 3. Envelope Front Pocket (Solid Cashmere with Gold Foil Stamping) -->
       <div class="envelope-front-pocket" aria-hidden="true">
         <div class="envelope-foil-calligraphy">
           <span class="env-foil-eyebrow">WEDDING INVITATION</span>
@@ -104,15 +110,16 @@
             <span class="foil-date-txt">13 . 11 . 2026</span>
             <span class="foil-dash"></span>
           </div>
+          <span class="env-foil-venue">{{ config.venueName }} • HILTON HOTEL</span>
         </div>
       </div>
 
-      <!-- 3. Envelope Top Flap (Opens upwards in 3D) -->
+      <!-- 4. Envelope Top Flap (Opens upwards in 3D) -->
       <div class="envelope-top-flap" aria-hidden="true">
         <div class="flap-triangle"></div>
       </div>
 
-      <!-- 4. The 3D Wax Seal & Interaction Anchor -->
+      <!-- 5. The 3D Wax Seal & Interaction Anchor -->
       <div class="wax-seal-anchor" [class.seal-broken]="isOpening()" (click)="openDoor(); $event.stopPropagation()"
         (touchstart)="openDoor(); $event.stopPropagation()" role="button" tabindex="0"
         aria-label="اضغط على الختم الملكي لفتح الدعوة">

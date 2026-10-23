@@ -198,7 +198,7 @@
   box-sizing: border-box;
 }
 
-/* 1. The Inner Arched Card (Nestled inside, slides out on open) */
+/* 1. The Inner Arched Card (Hidden while closed, slides out on open) */
 .envelope-card-drawer {
   position: absolute;
   top: 6px;
@@ -206,12 +206,18 @@
   right: 6px;
   bottom: 6px;
   z-index: 5;
-  transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s ease;
 }
 
 .luxury-envelope-container.envelope-opened .envelope-card-drawer {
+  opacity: 1;
   transform: translateY(-210px) scale(1.02);
   z-index: 40;
+  pointer-events: auto;
 }
 
 /* The Matte Cashmere Card */
@@ -389,15 +395,45 @@
   display: block;
 }
 
-/* 2. Envelope Front Pocket (Holds card inside with gold calligraphy stamp) */
+/* 2. Solid Side Flaps (Guarantees zero side-leaking) */
+.envelope-side-flaps {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.side-flap-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background: linear-gradient(135deg, #FAF6F1 0%, #E8DFC4 50%, #DFD5C8 100%);
+  border-left: 1px solid rgba(185, 172, 155, 0.45);
+}
+
+.side-flap-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  background: linear-gradient(-135deg, #FAF6F1 0%, #E8DFC4 50%, #DFD5C8 100%);
+  border-right: 1px solid rgba(185, 172, 155, 0.45);
+}
+
+/* 3. Envelope Front Pocket (Solid Cashmere with Gold Foil Calligraphy) */
 .envelope-front-pocket {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 56%;
+  height: 55%;
   border-radius: 0 0 18px 18px;
-  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 60%, #E5DDD3 100%);
+  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 60%, #E2D9CE 100%);
   border-top: 1.5px solid rgba(185, 172, 155, 0.55);
   box-shadow: 0 -4px 16px rgba(85, 72, 60, 0.12);
   z-index: 15;
@@ -405,7 +441,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 2rem;
+  padding-bottom: 2.2rem;
   box-sizing: border-box;
   transition: opacity 0.8s ease;
 }
@@ -476,13 +512,22 @@
   color: #5A5148;
 }
 
-/* 3. Envelope Top Flap (Opens upwards in 3D) */
+.env-foil-venue {
+  font-family: 'Cinzel', 'Cairo', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: #7D7368;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* 4. Envelope Top Flap (Opens upwards in 3D) */
 .envelope-top-flap {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 48%;
+  height: 50%;
   z-index: 20;
   transform-origin: top center;
   transform-style: preserve-3d;
@@ -493,10 +538,10 @@
 .flap-triangle {
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 75%, #DFD5C8 100%);
+  background: linear-gradient(180deg, #FAF6F1 0%, #EDE4D8 75%, #DFD5C8 100%);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   filter: drop-shadow(0 6px 14px rgba(75, 60, 45, 0.22));
 }
 
@@ -505,10 +550,10 @@
   opacity: 0;
 }
 
-/* 4. The 3D Wax Seal & Interaction Anchor */
+/* 5. The 3D Wax Seal & Interaction Anchor */
 .wax-seal-anchor {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 45;
