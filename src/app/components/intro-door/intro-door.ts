@@ -66,8 +66,8 @@ export class IntroDoorComponent implements OnDestroy {
             '-=0.85',
           )
           .fromTo(
-            '.envelope-base',
-            { opacity: 0, y: 26, scale: 0.95 },
+            '.arched-card',
+            { opacity: 0, y: 26, scale: 0.96 },
             { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power2.out' },
             '-=0.75',
           )
@@ -78,14 +78,32 @@ export class IntroDoorComponent implements OnDestroy {
             '-=0.5',
           )
           .fromTo(
-            '.envelope-foil-calligraphy',
-            { opacity: 0, y: 10 },
-            { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' },
+            '.card-save-date-block',
+            { opacity: 0, y: -8 },
+            { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.card-names-block',
+            { opacity: 0, y: 12, filter: 'blur(3px)' },
+            { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' },
             '-=0.3',
           )
           .fromTo(
-            '.wax-seal-anchor',
-            { opacity: 0, scale: 0.35, rotation: -20 },
+            '.card-date-classic',
+            { opacity: 0, scale: 0.95, y: 8 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.65, ease: 'power2.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.card-couple-photo-wrapper',
+            { opacity: 0, y: 18, scale: 0.97 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.card-seal-touchpoint',
+            { opacity: 0, scale: 0.4, rotation: -15 },
             { opacity: 1, scale: 1, rotation: 0, duration: 0.85, ease: 'back.out(1.8)' },
             '-=0.35',
           );
