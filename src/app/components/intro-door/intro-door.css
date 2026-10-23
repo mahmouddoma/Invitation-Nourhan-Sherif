@@ -17,6 +17,7 @@
   padding: clamp(0.5rem, 1.8vh, 1.2rem) 0.75rem;
   box-sizing: border-box;
   background: radial-gradient(ellipse at 80% 20%, #f6f0ea 0%, #ece3d8 50%, #dfd3c5 100%);
+  overscroll-behavior: none;
   transition:
     opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
     visibility 0.9s cubic-bezier(0.4, 0, 0.2, 1);

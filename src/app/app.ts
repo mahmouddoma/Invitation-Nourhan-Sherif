@@ -1,4 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, inject, afterNextRender } from '@angular/core';
 import { IntroDoorComponent } from './components/intro-door/intro-door';
 import { HeroComponent } from './components/hero/hero';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer';
@@ -21,6 +21,10 @@ import { ShareService } from './core/services/share.service';
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
+  host: {
+    '[class.door-open]': 'doorOpen()',
+    '[class.intro-active]': '!doorOpen()',
+  },
 })
 export class App {
   /** Whether the intro door has been opened */
@@ -29,7 +33,19 @@ export class App {
   /** Toast service for clipboard feedback */
   readonly shareService = inject(ShareService);
 
+  constructor() {
+    afterNextRender(() => {
+      if (!this.doorOpen()) {
+        document.documentElement.classList.add('intro-active');
+        document.body.classList.add('intro-active');
+      }
+    });
+  }
+
   onDoorOpened(): void {
     this.doorOpen.set(true);
+    document.documentElement.classList.remove('intro-active');
+    document.body.classList.remove('intro-active');
   }
 }
+
