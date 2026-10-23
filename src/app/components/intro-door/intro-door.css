@@ -49,21 +49,21 @@
   z-index: 1;
 }
 
-/* Top-Right Pearl & Crystal Jewelry Cascade (Exact Pinterest Reference) */
-.corner-pearl-tr-wrapper {
+/* Top-Right Pearl & Crystal Jewelry Cascade (Adorning the Card Directly in Front) */
+.card-pearl-tr-wrapper {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: -16px;
+  right: -22px;
   pointer-events: none;
-  z-index: 4;
+  z-index: 20;
 }
 
-.corner-pearl-tr {
-  width: clamp(165px, 36vw, 310px);
-  max-height: 40vh;
+.card-pearl-tr {
+  width: clamp(140px, 35vw, 220px);
+  max-height: 38vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 24px rgba(90, 78, 66, 0.18));
+  filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.28));
   animation: pearlShimmerTR 7s ease-in-out infinite alternate;
 }
 
@@ -71,26 +71,27 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   100% {
     transform: translate(-3px, 4px) rotate(1deg);
   }
 }
 
-/* Bottom-Left Pearl & Crystal Jewelry Filigree Ornament */
-.corner-pearl-bl-wrapper {
+/* Bottom-Left Pearl & Crystal Jewelry Filigree (Adorning the Card Directly in Front) */
+.card-pearl-bl-wrapper {
   position: absolute;
-  bottom: -12px;
-  left: -12px;
+  bottom: -16px;
+  left: -22px;
   pointer-events: none;
-  z-index: 4;
+  z-index: 20;
 }
 
-.corner-pearl-bl {
-  width: clamp(165px, 36vw, 300px);
-  max-height: 38vh;
+.card-pearl-bl {
+  width: clamp(140px, 35vw, 215px);
+  max-height: 36vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 24px rgba(90, 78, 66, 0.16));
+  filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.26));
   animation: pearlShimmerBL 8s ease-in-out infinite alternate;
 }
 
@@ -98,6 +99,7 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   100% {
     transform: translate(4px, -3px) rotate(-1deg);
   }
@@ -449,6 +451,7 @@
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
   .arched-card-container,
   .royal-open-invitation-btn,
   .corner-pearl-tr,
