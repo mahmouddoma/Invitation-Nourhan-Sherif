@@ -55,14 +55,14 @@ export class IntroDoorComponent implements OnDestroy {
         const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
         tl.fromTo(
-          '.corner-floral-tl',
-          { opacity: 0, scale: 0.88, rotation: -4 },
+          '.corner-pearl-tr',
+          { opacity: 0, scale: 0.88, rotation: 4 },
           { opacity: 1, scale: 1, rotation: 0, duration: 1.0, ease: 'power3.out' },
         )
           .fromTo(
-            '.corner-lineart-br',
-            { opacity: 0, scale: 0.88, rotation: -14 },
-            { opacity: 0.85, scale: 1, rotation: -8, duration: 1.0, ease: 'power3.out' },
+            '.corner-pearl-bl',
+            { opacity: 0, scale: 0.88, rotation: -6 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 1.0, ease: 'power3.out' },
             '-=0.85',
           )
           .fromTo(

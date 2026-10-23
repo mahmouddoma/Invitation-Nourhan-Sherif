@@ -1,25 +1,24 @@
 <section class="door-screen intro-screen" id="doorScreen" [class.hidden]="isOpen()" [class.opening]="isOpening()"
   (click)="onScreenClick()" (touchstart)="onScreenClick()" aria-label="فتح الدعوة">
-  <!-- Background Ambient / Watercolor Wash -->
+  <!-- Background Ambient / Luxury Pearl Silk Wash -->
   <div class="intro-bg-ambient"></div>
 
-  <!-- Top-Left Corner: Watercolor Peach & Yellow Roses Bouquet (Pure Transparent PNG) -->
-  <div class="corner-floral-wrapper">
-    <img src="images/peach_floral_corner_trans.png" alt="" class="corner-floral corner-floral-tl" aria-hidden="true" />
+  <!-- Top-Right Corner: Luxury Pearl & Crystal Jewelry Cascade (Matching Theme Reference) -->
+  <div class="corner-pearl-tr-wrapper">
+    <img src="images/pearl_floral_tr_trans.png" alt="" class="corner-pearl-tr" aria-hidden="true" />
   </div>
 
-  <!-- Bottom-Right Corner: Golden Lineart Lotus Flower (Pure Transparent PNG) -->
-  <div class="corner-lineart-wrapper">
-    <img src="images/botanical_lineart_flower_trans.png" alt="" class="corner-lineart corner-lineart-br"
-      aria-hidden="true" />
+  <!-- Bottom-Left Corner: Luxury Pearl & Crystal Floral Filigree Ornament -->
+  <div class="corner-pearl-bl-wrapper">
+    <img src="images/pearl_floral_bottom_left.png" alt="" class="corner-pearl-bl" aria-hidden="true" />
   </div>
 
-  <!-- Top Controls: Anchored gracefully at Top-Right so it never covers the flowers -->
+  <!-- Top Controls: Anchored gracefully at Top-Left so it never covers the pearl bouquet -->
   <header class="top-controls">
     <div class="top-monogram" aria-hidden="true">
-      <span class="mono-initial">ف</span>
+      <span class="mono-initial">ن</span>
       <span class="mono-heart">♡</span>
-      <span class="mono-initial">ر</span>
+      <span class="mono-initial">ش</span>
     </div>
 
     <button class="control-btn music-btn" (click)="toggleMusic(); $event.stopPropagation()"
@@ -46,14 +45,14 @@
   <!-- Central Arched Wedding Card Container -->
   <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
     <div class="arched-card">
-      <!-- Top Decorative Star Accent -->
+      <!-- Top Decorative Pearl Star Accent -->
       <div class="card-top-accent">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
           <path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z" fill="#c8963e" opacity="0.85" />
         </svg>
       </div>
 
-      <!-- Couple Names in Dark Royal Navy with Cairo font -->
+      <!-- Couple Names in Dark Charcoal Bronze with Cairo font -->
       <div class="card-names-block">
         <h1 class="card-names-primary">
           <span class="name-part">{{ config.brideName }}</span>
@@ -69,7 +68,7 @@
         <p class="invite-en">INVITE YOU TO JOIN THEIR WEDDING CELEBRATION</p>
       </div>
 
-      <!-- Date Trio Badge (SAT | 19 JULY | AT 8 PM style) -->
+      <!-- Date Trio Badge (FRI | 13 NOV | AT 8 PM style) -->
       <div class="card-date-trio">
         <div class="date-col">
           <span class="date-lbl">الجمعة</span>
@@ -94,10 +93,11 @@
         <span class="venue-line"></span>
       </div>
 
-      <!-- Bride and Groom Cutout Photo -->
+      <!-- Bride and Groom Royal Arched Portrait Frame -->
       <div class="card-couple-photo-wrapper">
-        <img src="images/couple.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
-        <div class="couple-fade-overlay"></div>
+        <div class="couple-arched-frame">
+          <img src="images/nourhan_sherif_arched.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
+        </div>
       </div>
 
       <!-- Floating Stable Interactive Button (اضغط لفتح تفاصيل الدعوة) -->
