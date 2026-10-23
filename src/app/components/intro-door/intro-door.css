@@ -1,6 +1,9 @@
 /* ==========================================================================
-   Haute-Couture Wedding Intro Screen — Royal Arched Card & 3D Wax Seal
-    ========================================================================== */
+   Haute-Couture Wedding Intro Screen — Pure Royal Monogram & 3D Wax Seal
+   Theme: Quiet Luxury, Unboxed Cashmere Silk, Royal Monogram, No Arch/Dome
+   Palette: Warm Cashmere (#FAF6F1 -> #DDD1C3), Deep Pewter (#4A4239), Muted Taupe (#7D7368)
+   Typography: Classical Roman Serif ('Cinzel') + English Script ('Alex Brush') + Royal Arabic ('Amiri')
+   ========================================================================== */
 
 .intro-screen {
   position: fixed;
@@ -10,16 +13,17 @@
   height: 100dvh;
   z-index: 9999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(0.4rem, 1.6vh, 1rem) 0.75rem;
+  padding: clamp(0.8rem, 2.5vh, 1.8rem) 1rem;
   box-sizing: border-box;
-  background: radial-gradient(ellipse at 75% 25%, #f1ece4 0%, #e4dacd 48%, #d6c9bc 100%);
+  background: radial-gradient(ellipse at 50% 35%, #faf6f1 0%, #ede6dc 55%, #dfd4c5 100%);
   overscroll-behavior: none;
   transition:
-    opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.85s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
 }
 
@@ -34,14 +38,14 @@
   pointer-events: none;
 }
 
-/* Background Ambient Lighting */
+/* Background Ambient Texture & Silk Radiance */
 .intro-bg-ambient {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.55) 0%, transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(215, 203, 191, 0.3) 0%, transparent 70%);
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 48%),
+    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.4) 0%, transparent 48%),
+    radial-gradient(circle at 50% 50%, rgba(220, 208, 195, 0.35) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -56,11 +60,11 @@
 }
 
 .corner-pearl-tr {
-  width: clamp(140px, 32vw, 230px);
-  max-height: 33vh;
+  width: clamp(120px, 28vw, 210px);
+  max-height: 32vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.28));
+  filter: drop-shadow(0 12px 26px rgba(65, 52, 42, 0.24));
   animation: pearlShimmerTR 7s ease-in-out infinite alternate;
 }
 
@@ -68,9 +72,8 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-
   100% {
-    transform: translate(-3px, 4px) rotate(1deg);
+    transform: translate(-4px, 4px) rotate(1deg);
   }
 }
 
@@ -84,11 +87,11 @@
 }
 
 .corner-pearl-bl {
-  width: clamp(118px, 25vw, 175px);
+  width: clamp(105px, 24vw, 165px);
   max-height: 25vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 8px 18px rgba(65, 52, 42, 0.22));
+  filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.2));
   animation: pearlShimmerBL 8s ease-in-out infinite alternate;
 }
 
@@ -96,459 +99,388 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-
   100% {
-    transform: translate(4px, -3px) rotate(-1deg);
+    transform: translate(4px, -4px) rotate(-1deg);
   }
 }
 
-/* Top-Left Controls Bar: Monogram & Music */
+/* Top Controls: Monogram Badge & Music */
 .top-controls {
   position: absolute;
-  top: clamp(0.6rem, 1.8vh, 1.2rem);
-  left: clamp(0.6rem, 2vw, 1.2rem);
+  top: clamp(0.75rem, 2vh, 1.4rem);
+  left: clamp(0.75rem, 2.5vw, 1.5rem);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   z-index: 60;
 }
 
 .top-monogram {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 14px;
-  border-radius: 20px;
-  background: rgba(246, 241, 235, 0.94);
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(253, 250, 246, 0.92);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(175, 160, 142, 0.5);
-  box-shadow: 0 3px 12px rgba(90, 78, 66, 0.1);
+  border: 1px solid rgba(185, 170, 152, 0.5);
+  box-shadow: 0 4px 14px rgba(90, 78, 66, 0.1);
   font-family: 'Amiri', 'Cinzel', serif;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #5A5148;
+  color: #4a4239;
 }
 
 .mono-heart {
-  color: #8A8074;
+  color: #9a8a77;
   font-size: 0.8rem;
 }
 
 .music-btn {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(175, 160, 142, 0.5);
-  background: rgba(246, 241, 235, 0.94);
+  border: 1px solid rgba(185, 170, 152, 0.5);
+  background: rgba(253, 250, 246, 0.92);
   backdrop-filter: blur(12px);
-  color: #5A5148;
+  color: #4a4239;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(90, 78, 66, 0.1);
+  box-shadow: 0 4px 14px rgba(90, 78, 66, 0.1);
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .music-btn:hover {
-  transform: scale(1.06);
-  background: #fbf7f2;
-  color: #5A5148;
-  border-color: #8A8074;
+  transform: scale(1.08);
+  background: #ffffff;
+  color: #4a4239;
+  border-color: #9a8a77;
 }
 
 .music-btn.playing {
-  color: #5A5148;
-  border-color: #8A8074;
+  color: #4a4239;
+  border-color: #9a8a77;
 }
 
 /* ==========================================================================
-   Central Arched Wedding Card Container
+   Central Pure Royal Monogram Stage — Minimalist, Clean & Regal
    ========================================================================== */
 
-.arched-card-container {
+.royal-monogram-stage {
   position: relative;
   z-index: 10;
-  width: min(80%, 328px);
-  max-width: 328px;
-  margin: 0 auto;
-  margin-top: clamp(-1.6rem, -2.8vh, -0.9rem);
-  transition:
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.arched-card-container.card-opening {
-  transform: scale(1.05) translateY(-12px);
-  opacity: 0;
-  filter: blur(4px);
-}
-
-/* The Matte Cashmere Card */
-.arched-card {
-  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 45%, #E5DDD3 100%);
-  border-radius: 170px 170px 22px 22px;
-  box-shadow:
-    0 18px 50px rgba(95, 82, 70, 0.16),
-    0 3px 14px rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(185, 172, 155, 0.45);
-  padding: clamp(1.2rem, 2.6vh, 1.8rem) clamp(0.9rem, 2.8vw, 1.4rem) clamp(0.6rem, 1.4vh, 1rem);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  max-height: calc(100dvh - clamp(1rem, 3vh, 2rem));
-  box-sizing: border-box;
-}
-
-/* 1. Save The Date Editorial Block */
-.card-save-date-block {
+  max-width: 400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  margin-bottom: clamp(0.15rem, 0.4vh, 0.3rem);
+  justify-content: center;
+  text-align: center;
+  padding: clamp(0.6rem, 1.8vh, 1.4rem) 1rem;
+  box-sizing: border-box;
+  transition:
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s ease,
+    filter 0.8s ease;
 }
 
-.save-date-txt {
-  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+.royal-monogram-stage.stage-opening {
+  transform: scale(1.06) translateY(-10px);
+  opacity: 0;
+  filter: blur(6px);
+}
+
+/* Soft Ambient Golden Halo Aura */
+.stage-ambient-aura {
+  position: absolute;
+  width: clamp(240px, 65vw, 340px);
+  height: clamp(240px, 65vw, 340px);
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(235, 220, 202, 0.55) 0%, rgba(246, 241, 235, 0) 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 1. Editorial Minimal Eyebrow */
+.mono-editorial-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: clamp(0.35rem, 1vh, 0.65rem);
+  width: 100%;
+}
+
+.eyebrow-dash {
+  width: clamp(18px, 4.5vw, 32px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(160, 142, 122, 0.65), transparent);
+}
+
+.eyebrow-text {
+  font-family: 'Cinzel', serif;
   font-size: clamp(0.7rem, 2vw, 0.82rem);
   font-weight: 500;
-  letter-spacing: 0.24em;
-  color: #7D7368;
-  text-transform: uppercase;
-  line-height: 1.25;
-}
-
-.wedding-of-txt {
-  font-family: 'Cinzel', 'Cormorant Garamond', serif;
-  font-size: clamp(0.58rem, 1.7vw, 0.7rem);
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  color: #7D7368;
-  text-transform: uppercase;
-  margin-top: 1px;
-}
-
-.invite-ar-elegant {
-  margin: 3px 0 0;
-  font-family: 'Amiri', serif;
-  font-size: clamp(0.9rem, 2.6vw, 1.02rem);
-  font-weight: 700;
-  color: #5A5148;
-  letter-spacing: 0.01em;
-  line-height: 1.3;
-}
-
-/* 2. Names Block */
-.card-names-block {
-  margin: clamp(0.1rem, 0.4vh, 0.3rem) 0;
-  width: 100%;
-}
-
-.card-names-arabic {
-  margin: 0;
-  font-family: 'Amiri', 'Aref Ruqaa', serif;
-  font-size: clamp(1.95rem, 6vw, 2.55rem);
-  font-weight: 700;
-  line-height: 1.25;
-  color: #5A5148;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  direction: rtl;
-}
-
-.name-part {
-  letter-spacing: 0;
-}
-
-.name-amp {
-  font-family: 'Cinzel', serif;
-  font-size: 0.75em;
-  font-weight: 400;
-  color: #7D7368;
-  padding: 0 4px;
-}
-
-.card-names-script {
-  margin: 2px 0 0;
-  font-family: 'Alex Brush', 'Pinyon Script', cursive;
-  font-size: clamp(1.8rem, 5.5vw, 2.35rem);
-  font-weight: 400;
-  color: #5A5148;
-  letter-spacing: 0.03em;
-  line-height: 1.05;
-}
-
-/* 3. Classic Spaced Roman Date */
-.card-date-classic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  width: 100%;
-  max-width: 320px;
-  margin: clamp(0.1rem, 0.4vh, 0.3rem) auto;
-}
-
-.date-numbers-spaced {
-  font-family: 'Cinzel', 'Cormorant Garamond', serif;
-  font-size: clamp(1.12rem, 3.3vw, 1.32rem);
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  color: #5A5148;
-  line-height: 1.2;
-}
-
-.date-meta-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-family: 'Cinzel', 'Cairo', serif;
-  font-size: clamp(0.66rem, 1.8vw, 0.74rem);
-  font-weight: 600;
-  color: #7D7368;
-  letter-spacing: 0.1em;
-}
-
-.date-meta-dot {
-  color: #9E9387;
-  font-size: 0.65rem;
-}
-
-.venue-row-classic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  max-width: 270px;
-  margin-top: 2px;
-}
-
-.venue-line-refined {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(165, 150, 135, 0.45), transparent);
-}
-
-.venue-classic-txt {
-  margin: 0;
-  font-family: 'Cinzel', 'Cairo', serif;
-  font-size: clamp(0.7rem, 2vw, 0.78rem);
-  font-weight: 700;
-  color: #7D7368;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.3em;
+  color: #7d7368;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
-/* 4. Couple Royal Arched Portrait Frame */
-.card-couple-photo-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 270px;
-  margin: clamp(0.1rem, 0.4vh, 0.3rem) auto 0;
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  min-height: 0;
-}
-
-.couple-arched-frame {
-  position: relative;
-  width: 100%;
-  border-radius: 36px 36px 14px 14px;
-  overflow: hidden;
-  border: 1.5px solid rgba(175, 160, 142, 0.55);
-  box-shadow:
-    0 6px 16px rgba(85, 72, 60, 0.12),
-    inset 0 0 10px rgba(175, 160, 142, 0.15);
-  background: #D9CEBF;
+/* 2. Royal Arabic Calligraphy Names */
+.mono-arabic-names {
+  margin: 0;
+  font-family: 'Amiri', serif;
+  font-size: clamp(2.3rem, 7.8vw, 3.4rem);
+  font-weight: 700;
+  color: #4a4239;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
   display: flex;
   align-items: center;
   justify-content: center;
+  direction: rtl;
+  text-align: center;
+  width: 100%;
+  gap: clamp(6px, 1.8vw, 10px);
+  text-shadow: 0 3px 12px rgba(85, 72, 60, 0.08);
 }
 
-.card-couple-img {
+.mono-arabic-names .name-part {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.mono-arabic-names .name-amp {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65em;
+  font-weight: 400;
+  color: #928271;
+  margin: 0 2px;
+  display: inline-block;
+}
+
+/* 3. Flowing English Script */
+.mono-script-names {
+  margin: clamp(0.1rem, 0.4vh, 0.3rem) 0 clamp(0.6rem, 1.6vh, 1.1rem);
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(1.8rem, 5.8vw, 2.5rem);
+  font-weight: 400;
+  color: #6f6456;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-align: center;
   width: 100%;
-  height: 100%;
-  max-height: clamp(130px, 21vh, 190px);
-  object-fit: cover;
-  object-position: center 25%;
-  display: block;
+}
+
+/* 4. Classic Spaced Roman Date */
+.mono-date-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 16px);
+  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+  width: 100%;
+}
+
+.date-dash {
+  width: clamp(20px, 5vw, 36px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b39f88, transparent);
+}
+
+.date-digits {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: #554a3f;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
-   5. Royal Silk Ribbon & 3D Wax Seal Touchpoint
+   5. 3D Wax Seal Interactive Anchor & Touchpoint
    ========================================================================== */
 
-.card-seal-touchpoint {
-  width: 100%;
+.wax-seal-interactive-anchor {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: clamp(0.4rem, 1.1vh, 0.8rem);
-  position: relative;
-  z-index: 60;
+  justify-content: center;
   cursor: pointer;
+  padding: 4px;
   outline: none;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.card-seal-touchpoint:hover {
-  transform: scale(1.03);
+.wax-seal-interactive-anchor:hover {
+  transform: scale(1.06);
 }
 
-.card-seal-touchpoint:active {
-  transform: scale(0.97);
+.wax-seal-interactive-anchor:active {
+  transform: scale(0.96);
 }
 
-/* Silk Ribbon Band */
-.silk-belly-band {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 2px;
+.wax-seal-interactive-anchor.seal-unlocked {
+  transform: scale(1.18);
+  filter: drop-shadow(0 16px 36px rgba(185, 145, 95, 0.55));
 }
 
-.ribbon-line {
-  flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(185, 172, 155, 0.5) 20%, rgba(200, 175, 135, 0.75) 50%, rgba(185, 172, 155, 0.5) 80%, transparent);
+/* Radiant Halo Pulse around Wax Seal */
+.seal-halo-pulse {
+  position: absolute;
+  top: clamp(44px, 11vw, 55px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(96px, 24vw, 120px);
+  height: clamp(96px, 24vw, 120px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 185, 140, 0.5) 0%, rgba(215, 185, 140, 0) 72%);
+  pointer-events: none;
+  animation: sealHaloBreathing 3s ease-in-out infinite;
+  z-index: 1;
 }
 
-.ribbon-glow-sparkle {
-  color: #A39686;
-  font-size: 0.75rem;
-  padding: 0 4px;
+@keyframes sealHaloBreathing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.88);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.36);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.88);
+    opacity: 0.85;
+  }
 }
 
-/* 3D Wax Seal Emblem Anchor */
-.seal-emblem-anchor {
-  position: relative;
-  margin-top: -38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.seal-stamp-img {
-  width: clamp(74px, 19vw, 86px);
-  height: clamp(74px, 19vw, 86px);
+/* The Photorealistic 3D Golden Wax Seal Image */
+.seal-graphic-img {
+  width: clamp(88px, 22vw, 108px) !important;
+  height: clamp(88px, 22vw, 108px) !important;
+  max-width: 110px !important;
+  max-height: 110px !important;
   object-fit: contain;
   display: block;
   position: relative;
-  z-index: 3;
-  filter: drop-shadow(0 8px 20px rgba(65, 48, 32, 0.36));
-  transition: transform 0.25s ease;
+  z-index: 2;
+  filter:
+    drop-shadow(0 12px 28px rgba(65, 50, 36, 0.32))
+    drop-shadow(0 3px 8px rgba(180, 150, 100, 0.28));
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.35s ease;
 }
 
-.card-seal-touchpoint:hover .seal-stamp-img {
-  transform: rotate(5deg) scale(1.06);
+.wax-seal-interactive-anchor:hover .seal-graphic-img {
+  transform: rotate(3deg);
 }
 
-/* Ambient Pulse Halo behind Seal */
-.seal-ambient-pulse {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: clamp(80px, 20vw, 95px);
-  height: clamp(80px, 20vw, 95px);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(215, 185, 140, 0.5) 0%, transparent 70%);
-  animation: sealPulse 2.6s ease-out infinite;
-  pointer-events: none;
-}
-
-@keyframes sealPulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.85);
-    opacity: 0.85;
-  }
-
-  50% {
-    transform: translate(-50%, -50%) scale(1.22);
-    opacity: 0.25;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(0.85);
-    opacity: 0.85;
-  }
-}
-
-/* Inviting Prompt Pill */
-.seal-prompt-pill {
-  margin-top: 4px;
+/* Inviting Elegant Pill beneath the seal */
+.seal-inviting-pill {
+  margin-top: clamp(10px, 2vh, 14px);
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 5px 16px;
-  border-radius: 20px;
-  background: rgba(250, 246, 241, 0.96);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(185, 172, 155, 0.55);
-  box-shadow: 0 4px 14px rgba(85, 75, 65, 0.16);
-  color: #5A5148;
-  font-family: 'Amiri', 'Cairo', serif;
-  font-size: clamp(0.84rem, 2.2vw, 0.94rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  animation: promptGlow 3s ease-in-out infinite alternate;
-  z-index: 4;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  background: rgba(253, 250, 246, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(188, 170, 148, 0.55);
+  box-shadow:
+    0 6px 20px rgba(85, 72, 60, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 2;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-@keyframes promptGlow {
-  0% {
-    box-shadow: 0 4px 12px rgba(85, 75, 65, 0.14);
-  }
-
-  100% {
-    box-shadow: 0 6px 18px rgba(185, 155, 120, 0.32);
-    border-color: rgba(185, 155, 120, 0.75);
-  }
+.wax-seal-interactive-anchor:hover .seal-inviting-pill {
+  background: #ffffff;
+  border-color: rgba(165, 140, 105, 0.8);
+  box-shadow: 0 8px 24px rgba(165, 140, 105, 0.22);
 }
 
 .pill-sparkle {
-  color: #A39686;
+  color: #b3925d;
   font-size: 0.82rem;
+  animation: sparkleTwinkle 2.8s ease-in-out infinite alternate;
 }
 
-/* Unlocked Transition */
-.card-seal-touchpoint.seal-unlocked {
-  transform: scale(1.15) rotate(12deg);
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.45s ease;
+@keyframes sparkleTwinkle {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.25) rotate(18deg);
+    opacity: 1;
+    color: #c9a56c;
+  }
+}
+
+.pill-txt {
+  font-family: 'Amiri', serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.02rem);
+  font-weight: 700;
+  color: #4a4239;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Responsive Optimizations
+   ========================================================================== */
+
+@media (max-height: 660px) {
+  .royal-monogram-stage {
+    padding: 0.4rem 0.8rem;
+  }
+  .mono-script-names {
+    margin-bottom: 0.6rem;
+  }
+  .mono-date-row {
+    margin-bottom: 1rem;
+  }
+  .seal-graphic-img {
+    width: 78px !important;
+    height: 78px !important;
+  }
+  .seal-inviting-pill {
+    margin-top: 8px;
+    padding: 5px 16px;
+  }
 }
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-
-  .arched-card-container,
-  .card-seal-touchpoint,
+  .royal-monogram-stage,
+  .wax-seal-interactive-anchor,
   .corner-pearl-tr,
-  .corner-pearl-bl {
-    transition: none !important;
+  .corner-pearl-bl,
+  .seal-halo-pulse,
+  .pill-sparkle {
     animation: none !important;
+    transition: none !important;
   }
 }
