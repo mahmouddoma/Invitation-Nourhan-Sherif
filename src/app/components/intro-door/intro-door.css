@@ -78,22 +78,22 @@
   }
 }
 
-/* Bottom-Left Pearl & Crystal Jewelry Filigree (Screen Corner — Z-INDEX 50: ALWAYS IN FRONT) */
+/* Bottom-Left Pearl & Crystal Jewelry Filigree (Screen Corner — Compact & Perfectly Positioned) */
 .corner-pearl-bl-wrapper {
   position: absolute;
-  bottom: -10px;
-  left: -10px;
+  bottom: -8px;
+  left: -8px;
   pointer-events: none;
   z-index: 50;
-  /* Always in front of the card, never behind it! */
+  /* Always in front of the card, never behind it */
 }
 
 .corner-pearl-bl {
-  width: clamp(155px, 34vw, 250px);
-  max-height: 35vh;
+  width: clamp(118px, 25vw, 175px);
+  max-height: 25vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.26));
+  filter: drop-shadow(0 8px 18px rgba(65, 52, 42, 0.22));
   animation: pearlShimmerBL 8s ease-in-out infinite alternate;
 }
 
@@ -173,7 +173,7 @@
   border-color: #8A8074;
 }
 
-/* Arched Card Outer Container — Perfectly Proportioned & Elegant */
+/* Arched Card Outer Container — Perfectly Proportioned & Elevated */
 .arched-card-container {
   position: relative;
   z-index: 10;
@@ -184,6 +184,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  margin-top: clamp(-2.2rem, -3.8vh, -1.2rem);
   transition:
     transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -405,11 +406,12 @@
   justify-content: center;
   margin-top: clamp(0.3rem, 0.9vh, 0.55rem);
   position: relative;
-  z-index: 15;
+  z-index: 60;
 }
 
 .royal-open-invitation-btn {
   position: relative;
+  z-index: 60;
   display: inline-flex;
   align-items: center;
   justify-content: center;
