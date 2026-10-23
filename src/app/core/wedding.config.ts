@@ -1,3 +1,4 @@
+
 /**
  * Central wedding configuration — edit all wedding data from this one file.
  * No component code needs to change when updating names, dates, or links.
@@ -25,15 +26,15 @@ export interface WeddingConfig {
 }
 
 export const WEDDING_CONFIG: WeddingConfig = {
-  groomName: 'رمضان',
-  brideName: 'فاطمة',
-  groomFather: 'أ / جمال السيد عبدالوهاب',
-  brideFather: 'أ / محمد أحمد عبدالرازق',
-  weddingDate: '2026-10-23T20:30:00',
-  weddingTime: 'الساعة 8:30 مساءً',
-  venueName: 'قاعة بورتوسيف',
-  venueAddress: 'Porto Seif',
-  locationUrl: 'https://maps.app.goo.gl/cugxJ3BUUuZNCy2e6',
+  groomName: 'شريف',
+  brideName: 'نورهان',
+  groomFather: 'أ / عصام عيد',
+  brideFather: 'أ / محمد الشحات',
+  weddingDate: '2026-11-13T20:00:00',
+  weddingTime: 'الساعة 8:00 مساءً',
+  venueName: 'قاعة هيلتون',
+  venueAddress: 'Hilton',
+  locationUrl: 'https://maps.app.goo.gl/sYoVgyYdXJDAm1kq5',
   locationQrImage: 'location_qr.png',
   invitationTitle: 'دعوة زفاف',
   bismillah: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',
@@ -45,3 +46,4 @@ export const WEDDING_CONFIG: WeddingConfig = {
   closingSubMessage: 'فرحتنا متكملش إلا بيكم، مستنيين نشوفكم ونسعد بوجودكم جنبنا في أحلى يوم',
   audioSrc: 'wedding-song.mp3',
 };
+
