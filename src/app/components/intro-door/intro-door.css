@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Luxury Pearl & Crystal Haute-Couture Wedding Intro Screen
+   Luxury Cashmere Envelope & 3D Wax Seal Wedding Intro Screen
    Theme: Exact Match to Pinterest Reference (Francesca & Christian)
    Palette: Matte Cashmere (#D7CBBF), Antique Pewter Text (#5A5148), Muted Taupe (#7D7368)
    Typography: Classical Roman Serif ('Cinzel') + English Script Calligraphy ('Alex Brush') + Royal Arabic ('Amiri')
@@ -49,19 +49,18 @@
   z-index: 1;
 }
 
-/* Top-Right Pearl & Crystal Jewelry Cascade (Screen Corner — Z-INDEX 50: ALWAYS IN FRONT) */
+/* Top-Right Pearl & Crystal Jewelry Cascade (Screen Corner — Z-INDEX 50) */
 .corner-pearl-tr-wrapper {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -8px;
+  right: -8px;
   pointer-events: none;
   z-index: 50;
-  /* Always in front of the card, never behind it! */
 }
 
 .corner-pearl-tr {
-  width: clamp(155px, 34vw, 255px);
-  max-height: 36vh;
+  width: clamp(140px, 32vw, 230px);
+  max-height: 33vh;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 10px 22px rgba(65, 52, 42, 0.28));
@@ -72,20 +71,18 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-
   100% {
     transform: translate(-3px, 4px) rotate(1deg);
   }
 }
 
-/* Bottom-Left Pearl & Crystal Jewelry Filigree (Screen Corner — Compact & Perfectly Positioned) */
+/* Bottom-Left Pearl & Crystal Jewelry Filigree (Screen Corner — Z-INDEX 50) */
 .corner-pearl-bl-wrapper {
   position: absolute;
   bottom: -8px;
   left: -8px;
   pointer-events: none;
   z-index: 50;
-  /* Always in front of the card, never behind it */
 }
 
 .corner-pearl-bl {
@@ -101,7 +98,6 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-
   100% {
     transform: translate(4px, -3px) rotate(-1deg);
   }
@@ -118,7 +114,6 @@
   z-index: 60;
 }
 
-/* Top Monogram */
 .top-monogram {
   display: inline-flex;
   align-items: center;
@@ -140,7 +135,6 @@
   font-size: 0.8rem;
 }
 
-/* Music Button */
 .music-btn {
   width: 38px;
   height: 38px;
@@ -173,30 +167,42 @@
   border-color: #8A8074;
 }
 
-/* Arched Card Outer Container — Perfectly Proportioned & Elevated */
-.arched-card-container {
+/* ==========================================================================
+   Central Luxury Cashmere Envelope & 3D Wax Seal Architecture
+   ========================================================================== */
+
+.luxury-envelope-container {
   position: relative;
   z-index: 10;
-  width: min(80%, 328px);
-  max-width: 328px;
-  max-height: calc(100dvh - clamp(1rem, 3vh, 2rem));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: min(82%, 335px);
+  max-width: 335px;
   margin: 0 auto;
-  margin-top: clamp(-2.2rem, -3.8vh, -1.2rem);
+  margin-top: clamp(-1.8rem, -3vh, -0.8rem);
+  perspective: 1200px;
   transition:
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.arched-card-container.card-opening {
-  transform: scale(1.05) translateY(-10px);
-  opacity: 0;
-  filter: blur(4px);
+.envelope-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* The Matte Cashmere Card — Exactly Matching Reference Theme */
+/* 1. The Arched Wedding Card Inside Envelope */
+.envelope-card-slot {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-envelope-container.envelope-unfolding .envelope-card-slot {
+  transform: translateY(-55px) scale(1.03);
+}
+
+/* The Matte Cashmere Card */
 .arched-card {
   background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 45%, #E5DDD3 100%);
   border-radius: 170px 170px 22px 22px;
@@ -204,7 +210,7 @@
     0 18px 50px rgba(95, 82, 70, 0.16),
     0 3px 14px rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(185, 172, 155, 0.45);
-  padding: clamp(1.4rem, 3vh, 2rem) clamp(1rem, 3vw, 1.5rem) clamp(0.7rem, 1.6vh, 1.1rem);
+  padding: clamp(1.4rem, 3vh, 2rem) clamp(1rem, 3vw, 1.5rem) clamp(1rem, 2.2vh, 1.4rem);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -213,11 +219,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-height: calc(100dvh - clamp(0.8rem, 2.5vh, 1.8rem));
+  max-height: calc(100dvh - clamp(1rem, 3vh, 2rem));
   box-sizing: border-box;
 }
 
-/* 1. Save The Date Editorial Block */
+/* Editorial Classical Header */
 .card-save-date-block {
   display: flex;
   flex-direction: column;
@@ -256,7 +262,7 @@
   line-height: 1.3;
 }
 
-/* 2. Names Block */
+/* Names Block */
 .card-names-block {
   margin: clamp(0.15rem, 0.5vh, 0.35rem) 0;
   width: 100%;
@@ -288,7 +294,6 @@
   padding: 0 4px;
 }
 
-/* English Script Names: Exact Copperplate Calligraphy Match */
 .card-names-script {
   margin: 2px 0 0;
   font-family: 'Alex Brush', 'Pinyon Script', cursive;
@@ -299,7 +304,7 @@
   line-height: 1.05;
 }
 
-/* 3. Classic Spaced Roman Date (Matching 07.09.2024 Reference Style) */
+/* Classic Spaced Roman Date */
 .card-date-classic {
   display: flex;
   flex-direction: column;
@@ -363,7 +368,7 @@
   white-space: nowrap;
 }
 
-/* 4. Couple Royal Arched Portrait Frame */
+/* Couple Arched Portrait */
 .card-couple-photo-wrapper {
   position: relative;
   width: 100%;
@@ -399,66 +404,176 @@
   display: block;
 }
 
-/* 5. Stable Interactive Action Bar & Button */
-.card-action-bar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: clamp(0.3rem, 0.9vh, 0.55rem);
-  position: relative;
-  z-index: 60;
+/* 2. Envelope Front Pocket (Lower Cashmere Layer) */
+.envelope-pocket-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(180deg, rgba(238, 230, 221, 0.88) 0%, rgba(225, 215, 202, 0.95) 100%);
+  border-top: 1px solid rgba(185, 172, 155, 0.45);
+  box-shadow: 0 -4px 18px rgba(85, 72, 60, 0.12);
+  z-index: 15;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.8s ease;
 }
 
-.royal-open-invitation-btn {
-  position: relative;
-  z-index: 60;
-  display: inline-flex;
+.luxury-envelope-container.envelope-unfolding .envelope-pocket-front {
+  opacity: 0.15;
+}
+
+/* 3. Envelope Top Flap (Folds Open in 3D) */
+.envelope-flap-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44%;
+  z-index: 20;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.85s ease;
+  pointer-events: none;
+}
+
+.flap-triangle-shape {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(246, 241, 235, 0.96) 0%, rgba(230, 220, 208, 0.96) 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-top: 1.5px solid rgba(185, 172, 155, 0.45);
+  filter: drop-shadow(0 6px 14px rgba(75, 60, 45, 0.16));
+}
+
+.luxury-envelope-container.envelope-unfolding .envelope-flap-top {
+  transform: rotateX(175deg);
+  opacity: 0;
+}
+
+/* 4. The 3D Pearlescent Wax Seal & Prompt */
+.wax-seal-interactive {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 45;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.wax-seal-interactive:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.wax-seal-interactive:active {
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+/* Ambient Pulse Glow behind Seal */
+.wax-seal-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(100px, 24vw, 125px);
+  height: clamp(100px, 24vw, 125px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 185, 140, 0.45) 0%, transparent 70%);
+  animation: sealPulse 2.8s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sealPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.22);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.8;
+  }
+}
+
+.wax-seal-disc {
+  width: clamp(92px, 23vw, 116px);
+  height: clamp(92px, 23vw, 116px);
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: clamp(0.55rem, 1.4vh, 0.75rem) clamp(1.4rem, 4vw, 2rem);
-  border-radius: 30px;
-  border: 1px solid rgba(225, 215, 202, 0.45);
-  background: linear-gradient(135deg, #7A7065 0%, #5A5148 100%);
-  color: #F8F4EE;
-  font-family: 'Cairo', 'Cinzel', sans-serif;
-  font-size: clamp(0.86rem, 2.3vw, 0.96rem);
+  position: relative;
+}
+
+.wax-seal-graphic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(65, 48, 32, 0.36));
+}
+
+/* Catchy Floating Seal Prompt */
+.wax-seal-badge-prompt {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(250, 246, 241, 0.96);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(185, 172, 155, 0.55);
+  box-shadow: 0 4px 16px rgba(85, 75, 65, 0.2);
+  color: #5A5148;
+  font-family: 'Amiri', 'Cairo', serif;
+  font-size: clamp(0.84rem, 2.2vw, 0.94rem);
   font-weight: 700;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(85, 75, 65, 0.25);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-  overflow: hidden;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  animation: promptGlow 3s ease-in-out infinite alternate;
 }
 
-.royal-open-invitation-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(85, 75, 65, 0.35);
-  background: linear-gradient(135deg, #857B70 0%, #635A50 100%);
+@keyframes promptGlow {
+  0% {
+    box-shadow: 0 4px 14px rgba(85, 75, 65, 0.16);
+  }
+  100% {
+    box-shadow: 0 6px 20px rgba(185, 155, 120, 0.35);
+    border-color: rgba(185, 155, 120, 0.75);
+  }
 }
 
-.royal-open-invitation-btn:active {
-  transform: scale(0.98);
-}
-
-.btn-sparkle-icon {
-  color: #EFE7DE;
-  font-size: 0.95rem;
-}
-
-.btn-arrow-icon {
-  color: #EFE7DE;
+.seal-prompt-sparkle {
+  color: #A39686;
   font-size: 0.85rem;
+}
+
+/* When the seal is tapped / popped */
+.wax-seal-interactive.seal-popped {
+  transform: translate(-50%, -50%) scale(1.22) rotate(14deg);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.45s ease;
 }
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-
-  .arched-card-container,
-  .royal-open-invitation-btn,
+  .luxury-envelope-container,
+  .envelope-card-slot,
+  .envelope-flap-top,
+  .wax-seal-interactive,
   .corner-pearl-tr,
   .corner-pearl-bl {
     transition: none !important;

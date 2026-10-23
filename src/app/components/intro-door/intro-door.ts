@@ -102,10 +102,10 @@ export class IntroDoorComponent implements OnDestroy {
             '-=0.35',
           )
           .fromTo(
-            '.royal-open-invitation-btn',
-            { opacity: 0, scale: 0.9, y: 10 },
-            { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: 'back.out(1.5)' },
-            '-=0.3',
+            '.wax-seal-interactive',
+            { opacity: 0, scale: 0.4, rotation: -20 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.85, ease: 'back.out(1.8)' },
+            '-=0.35',
           );
       }
 

@@ -3,17 +3,17 @@
   <!-- Background Ambient / Luxury Pearl Silk Wash -->
   <div class="intro-bg-ambient"></div>
 
-  <!-- Top-Right Pearl & Crystal Floral (Screen Corner — z-index 50, always in front) -->
+  <!-- Top-Right Pearl & Crystal Floral (Screen Corner — Always in Front) -->
   <div class="corner-pearl-tr-wrapper" aria-hidden="true">
     <img src="images/pearl_floral_tr_trans.png" alt="" class="corner-pearl-tr" />
   </div>
 
-  <!-- Bottom-Left Pearl & Crystal Floral (Screen Corner — z-index 50, always in front) -->
+  <!-- Bottom-Left Pearl & Crystal Floral (Screen Corner — Always in Front) -->
   <div class="corner-pearl-bl-wrapper" aria-hidden="true">
     <img src="images/pearl_floral_bottom_left.png" alt="" class="corner-pearl-bl" />
   </div>
 
-  <!-- Top Controls: Anchored gracefully at Top-Left so it never covers the pearl bouquet -->
+  <!-- Top Controls: Monogram Badge & Music -->
   <header class="top-controls">
     <div class="top-monogram" aria-hidden="true">
       <span class="mono-initial">ن</span>
@@ -42,57 +42,79 @@
     </button>
   </header>
 
-  <!-- Central Arched Wedding Card Container -->
-  <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
-    <div class="arched-card">
-      <!-- 1. Editorial Classical Header (Matching Reference Image) -->
-      <div class="card-save-date-block">
-        <span class="save-date-txt">SAVE THE DATE</span>
-        <span class="wedding-of-txt">FOR THE WEDDING OF</span>
-        <p class="invite-ar-elegant">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
-      </div>
+  <!-- Central Haute-Couture Cashmere Envelope & 3D Wax Seal Experience -->
+  <div class="luxury-envelope-container" [class.envelope-unfolding]="isOpening()" #doorWrapEl>
+    <div class="envelope-wrapper">
+      <!-- 1. The Arched Wedding Card Inside -->
+      <div class="envelope-card-slot">
+        <div class="arched-card">
+          <!-- Editorial Classical Header -->
+          <div class="card-save-date-block">
+            <span class="save-date-txt">SAVE THE DATE</span>
+            <span class="wedding-of-txt">FOR THE WEDDING OF</span>
+            <p class="invite-ar-elegant">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
+          </div>
 
-      <!-- 2. The Names: Classical Arabic Calligraphy + English Copperplate Script -->
-      <div class="card-names-block">
-        <h1 class="card-names-arabic">
-          <span class="name-part">{{ config.brideName }}</span>
-          <span class="name-amp">&amp;</span>
-          <span class="name-part">{{ config.groomName }}</span>
-        </h1>
-        <p class="card-names-script">Nourhan &amp; Sherif</p>
-      </div>
+          <!-- Names: Arabic Calligraphy + English Script -->
+          <div class="card-names-block">
+            <h1 class="card-names-arabic">
+              <span class="name-part">{{ config.brideName }}</span>
+              <span class="name-amp">&amp;</span>
+              <span class="name-part">{{ config.groomName }}</span>
+            </h1>
+            <p class="card-names-script">Nourhan &amp; Sherif</p>
+          </div>
 
-      <!-- 3. Classic Spaced Roman Date (Matching 07.09.2024 Reference Style) -->
-      <div class="card-date-classic">
-        <div class="date-numbers-spaced">13 . 11 . 2026</div>
-        <div class="date-meta-row">
-          <span class="date-meta-item">الجمعة • FRI</span>
-          <span class="date-meta-dot">•</span>
-          <span class="date-meta-item">8:00 مساءً • AT 8 PM</span>
+          <!-- Classic Spaced Roman Date -->
+          <div class="card-date-classic">
+            <div class="date-numbers-spaced">13 . 11 . 2026</div>
+            <div class="date-meta-row">
+              <span class="date-meta-item">الجمعة • FRI</span>
+              <span class="date-meta-dot">•</span>
+              <span class="date-meta-item">8:00 مساءً • AT 8 PM</span>
+            </div>
+            <div class="venue-row-classic">
+              <span class="venue-line-refined"></span>
+              <p class="venue-classic-txt">{{ config.venueName }} • HILTON HOTEL</p>
+              <span class="venue-line-refined"></span>
+            </div>
+          </div>
+
+          <!-- Bride and Groom Royal Arched Portrait Frame -->
+          <div class="card-couple-photo-wrapper">
+            <div class="couple-arched-frame">
+              <img src="images/nourhan_sherif_arched.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
+            </div>
+          </div>
         </div>
-        <div class="venue-row-classic">
-          <span class="venue-line-refined"></span>
-          <p class="venue-classic-txt">{{ config.venueName }} • HILTON HOTEL</p>
-          <span class="venue-line-refined"></span>
-        </div>
       </div>
 
-      <!-- 4. Bride and Groom Royal Arched Portrait Frame -->
-      <div class="card-couple-photo-wrapper">
-        <div class="couple-arched-frame">
-          <img src="images/nourhan_sherif_arched.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
-        </div>
+      <!-- 2. Envelope Front Pocket (Luxury angled folds with pearl borders) -->
+      <div class="envelope-pocket-front" aria-hidden="true">
+        <div class="pocket-side-left"></div>
+        <div class="pocket-side-right"></div>
+        <div class="pocket-bottom-fold"></div>
       </div>
 
-      <!-- 5. Floating Stable Interactive Button -->
-      <div class="card-action-bar">
-        <button class="royal-open-invitation-btn" id="openInvitation" type="button" #openBtnEl
-          (click)="openDoor(); $event.stopPropagation()" [disabled]="isOpen() || isOpening()"
-          [class.btn-unlocking]="isOpening()" aria-label="اضغط لفتح دعوة الزفاف">
-          <span class="btn-sparkle-icon">✦</span>
-          <span class="btn-main-label">اضغط لفتح تفاصيل الدعوة</span>
-          <span class="btn-arrow-icon">♡</span>
-        </button>
+      <!-- 3. Envelope Top Flap (Folds open upwards in 3D) -->
+      <div class="envelope-flap-top" aria-hidden="true">
+        <div class="flap-triangle-shape"></div>
+      </div>
+
+      <!-- 4. The 3D Wax Seal & Interactive Touchpoint -->
+      <div class="wax-seal-interactive" [class.seal-popped]="isOpening()"
+        (click)="openDoor(); $event.stopPropagation()"
+        (touchstart)="openDoor(); $event.stopPropagation()"
+        role="button" tabindex="0" aria-label="اضغط على الختم الملكي لفتح الدعوة">
+        <div class="wax-seal-pulse-ring"></div>
+        <div class="wax-seal-disc">
+          <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="wax-seal-graphic" />
+        </div>
+        <div class="wax-seal-badge-prompt">
+          <span class="seal-prompt-sparkle">✦</span>
+          <span class="seal-prompt-text">المس الختم الملكي لفتح الدعوة</span>
+          <span class="seal-prompt-sparkle">✦</span>
+        </div>
       </div>
     </div>
   </div>
