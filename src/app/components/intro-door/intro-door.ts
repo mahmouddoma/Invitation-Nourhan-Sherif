@@ -31,9 +31,6 @@ export class IntroDoorComponent implements OnDestroy {
   readonly musicPlaying = signal(false);
 
   readonly doorWrapRef = viewChild<ElementRef>('doorWrapEl');
-  readonly leftLeafRef = viewChild<ElementRef>('leftLeafEl');
-  readonly rightLeafRef = viewChild<ElementRef>('rightLeafEl');
-  readonly openBtnRef = viewChild<ElementRef>('openBtnEl');
 
   private audioEl: HTMLAudioElement | null = null;
   private userInteractionHandler: ((e?: Event) => void) | null = null;
@@ -50,7 +47,7 @@ export class IntroDoorComponent implements OnDestroy {
         this.audioEl.volume = 1.0;
       }
 
-      // Romantic Choreographed Entrance Animation on page load
+      // Royal Minimalist Choreographed Entrance Animation
       if (!this.animationService.prefersReducedMotion) {
         const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
@@ -66,46 +63,46 @@ export class IntroDoorComponent implements OnDestroy {
             '-=0.85',
           )
           .fromTo(
-            '.arched-card',
-            { opacity: 0, y: 26, scale: 0.96 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power2.out' },
-            '-=0.75',
-          )
-          .fromTo(
             '.top-controls',
             { opacity: 0, y: -10 },
             { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' },
-            '-=0.5',
+            '-=0.6',
           )
           .fromTo(
-            '.card-save-date-block',
+            '.royal-monogram-stage',
+            { opacity: 0, scale: 0.94 },
+            { opacity: 1, scale: 1, duration: 0.85, ease: 'power2.out' },
+            '-=0.45',
+          )
+          .fromTo(
+            '.mono-editorial-eyebrow',
             { opacity: 0, y: -8 },
             { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+            '-=0.4',
+          )
+          .fromTo(
+            '.mono-arabic-names',
+            { opacity: 0, y: 12, filter: 'blur(4px)' },
+            { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' },
             '-=0.35',
           )
           .fromTo(
-            '.card-names-block',
-            { opacity: 0, y: 12, filter: 'blur(3px)' },
-            { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' },
+            '.mono-script-names',
+            { opacity: 0, y: 8 },
+            { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out' },
+            '-=0.35',
+          )
+          .fromTo(
+            '.mono-date-row',
+            { opacity: 0, scale: 0.95, y: 6 },
+            { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'power2.out' },
             '-=0.3',
           )
           .fromTo(
-            '.card-date-classic',
-            { opacity: 0, scale: 0.95, y: 8 },
-            { opacity: 1, scale: 1, y: 0, duration: 0.65, ease: 'power2.out' },
-            '-=0.35',
-          )
-          .fromTo(
-            '.card-couple-photo-wrapper',
-            { opacity: 0, y: 18, scale: 0.97 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' },
-            '-=0.35',
-          )
-          .fromTo(
-            '.card-seal-touchpoint',
-            { opacity: 0, scale: 0.4, rotation: -15 },
+            '.wax-seal-interactive-anchor',
+            { opacity: 0, scale: 0.45, rotation: -12 },
             { opacity: 1, scale: 1, rotation: 0, duration: 0.85, ease: 'back.out(1.8)' },
-            '-=0.35',
+            '-=0.3',
           );
       }
 
@@ -205,7 +202,7 @@ export class IntroDoorComponent implements OnDestroy {
     }
   }
 
-  /** Step: User taps the lock -> Unlocks, Arch opens in 3D, preview revealed, music plays */
+  /** Step: User taps the wax seal -> Unlocks, smoothly dissolves intro, plays music, reveals inner invitation */
   openDoor(): void {
     if (this.isOpen() || this.isOpening()) return;
 
@@ -218,11 +215,11 @@ export class IntroDoorComponent implements OnDestroy {
       return;
     }
 
-    // After the card opening sequence completes (approx 1.1s), transition to main page
+    // After the smooth dissolving sequence completes (approx 850ms), transition to main page
     setTimeout(() => {
       this.isOpen.set(true);
       this.doorOpened.emit();
-    }, 1100);
+    }, 850);
   }
 
   /** Toggle background music */

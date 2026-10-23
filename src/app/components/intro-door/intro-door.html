@@ -42,71 +42,45 @@
     </button>
   </header>
 
-  <!-- Central Arched Wedding Card Container -->
-  <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
-    <div class="arched-card">
-      <!-- 1. Editorial Classical Header -->
-      <div class="card-save-date-block">
-        <span class="save-date-txt">SAVE THE DATE</span>
-        <span class="wedding-of-txt">FOR THE WEDDING OF</span>
-        <p class="invite-ar-elegant">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
-      </div>
+  <!-- Central Pure Royal Monogram Stage — Minimalist, Clean & Regal -->
+  <div class="royal-monogram-stage" [class.stage-opening]="isOpening()" #doorWrapEl>
+    <!-- Soft Ambient Halo Aura -->
+    <div class="stage-ambient-aura" aria-hidden="true"></div>
 
-      <!-- 2. The Names: Classical Arabic Calligraphy + English Script -->
-      <div class="card-names-block">
-        <h1 class="card-names-arabic">
-          <span class="name-part">{{ config.brideName }}</span>
-          <span class="name-amp">&amp;</span>
-          <span class="name-part">{{ config.groomName }}</span>
-        </h1>
-        <p class="card-names-script">Nourhan &amp; Sherif</p>
-      </div>
+    <!-- Editorial Minimal Eyebrow -->
+    <div class="mono-editorial-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span class="eyebrow-text">WEDDING INVITATION</span>
+      <span class="eyebrow-dash"></span>
+    </div>
 
-      <!-- 3. Classic Spaced Roman Date -->
-      <div class="card-date-classic">
-        <div class="date-numbers-spaced">13 . 11 . 2026</div>
-        <div class="date-meta-row">
-          <span class="date-meta-item">الجمعة • FRI</span>
-          <span class="date-meta-dot">•</span>
-          <span class="date-meta-item">8:00 مساءً • AT 8 PM</span>
-        </div>
-        <div class="venue-row-classic">
-          <span class="venue-line-refined"></span>
-          <p class="venue-classic-txt">{{ config.venueName }} • HILTON HOTEL</p>
-          <span class="venue-line-refined"></span>
-        </div>
-      </div>
+    <!-- Royal Arabic Calligraphy Names -->
+    <h1 class="mono-arabic-names">
+      <span class="name-part">{{ config.brideName }}</span>
+      <span class="name-amp">&amp;</span>
+      <span class="name-part">{{ config.groomName }}</span>
+    </h1>
 
-      <!-- 4. Bride and Groom Royal Arched Portrait Frame -->
-      <div class="card-couple-photo-wrapper">
-        <div class="couple-arched-frame">
-          <img src="images/nourhan_sherif_arched.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
-        </div>
-      </div>
+    <!-- Flowing English Script -->
+    <p class="mono-script-names">Nourhan &amp; Sherif</p>
 
-      <!-- 5. Royal Silk Ribbon & 3D Wax Seal Touchpoint -->
-      <div class="card-seal-touchpoint" [class.seal-unlocked]="isOpening()"
-        (click)="openDoor(); $event.stopPropagation()" (touchstart)="openDoor(); $event.stopPropagation()" role="button"
-        tabindex="0" aria-label="المس الختم الملكي لفتح الدعوة">
-        <!-- Silk Ribbon Band -->
-        <div class="silk-belly-band" aria-hidden="true">
-          <span class="ribbon-line"></span>
-          <span class="ribbon-glow-sparkle">✦</span>
-          <span class="ribbon-line"></span>
-        </div>
+    <!-- Classic Spaced Roman Date -->
+    <div class="mono-date-row">
+      <span class="date-dash"></span>
+      <span class="date-digits">13 . 11 . 2026</span>
+      <span class="date-dash"></span>
+    </div>
 
-        <!-- 3D Wax Seal Emblem -->
-        <div class="seal-emblem-anchor">
-          <div class="seal-ambient-pulse"></div>
-          <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="seal-stamp-img" />
-        </div>
-
-        <!-- Inviting Prompt Pill -->
-        <div class="seal-prompt-pill">
-          <span class="pill-sparkle">✦</span>
-          <span class="pill-text">المس الختم لفتح الدعوة</span>
-          <span class="pill-sparkle">✦</span>
-        </div>
+    <!-- 3D Wax Seal & Interactive Touchpoint -->
+    <div class="wax-seal-interactive-anchor" [class.seal-unlocked]="isOpening()"
+      (click)="openDoor(); $event.stopPropagation()" (touchstart)="openDoor(); $event.stopPropagation()" role="button"
+      tabindex="0" aria-label="المس الختم الملكي لفتح الدعوة">
+      <div class="seal-halo-pulse" aria-hidden="true"></div>
+      <img src="images/gold_pearl_wax_seal.png" alt="ختم نورهان وشريف الملكي" class="seal-graphic-img" />
+      <div class="seal-inviting-pill">
+        <span class="pill-sparkle">✦</span>
+        <span class="pill-txt">المس الختم لفتح الدعوة</span>
+        <span class="pill-sparkle">✦</span>
       </div>
     </div>
   </div>

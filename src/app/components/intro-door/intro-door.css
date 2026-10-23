@@ -1,9 +1,6 @@
 /* ==========================================================================
    Haute-Couture Wedding Intro Screen — Royal Arched Card & 3D Wax Seal
-   Theme: Exact Match to Pinterest Reference (Francesca & Christian)
-   Palette: Matte Cashmere (#D7CBBF), Antique Pewter Text (#5A5148), Muted Taupe (#7D7368)
-   Typography: Classical Roman Serif ('Cinzel') + English Script Calligraphy ('Alex Brush') + Royal Arabic ('Amiri')
-   ========================================================================== */
+    ========================================================================== */
 
 .intro-screen {
   position: fixed;
@@ -71,6 +68,7 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   100% {
     transform: translate(-3px, 4px) rotate(1deg);
   }
@@ -98,6 +96,7 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   100% {
     transform: translate(4px, -3px) rotate(-1deg);
   }
@@ -482,10 +481,12 @@
     transform: translate(-50%, -50%) scale(0.85);
     opacity: 0.85;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.22);
     opacity: 0.25;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(0.85);
     opacity: 0.85;
@@ -518,6 +519,7 @@
   0% {
     box-shadow: 0 4px 12px rgba(85, 75, 65, 0.14);
   }
+
   100% {
     box-shadow: 0 6px 18px rgba(185, 155, 120, 0.32);
     border-color: rgba(185, 155, 120, 0.75);
@@ -541,6 +543,7 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   .arched-card-container,
   .card-seal-touchpoint,
   .corner-pearl-tr,
