@@ -78,33 +78,21 @@ export class IntroDoorComponent implements OnDestroy {
             '-=0.5',
           )
           .fromTo(
-            '.card-top-accent',
-            { opacity: 0, scale: 0, rotation: -45 },
-            { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: 'back.out(2)' },
+            '.card-save-date-block',
+            { opacity: 0, y: -8 },
+            { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
             '-=0.35',
           )
           .fromTo(
             '.card-names-block',
-            { opacity: 0, y: 16, filter: 'blur(4px)' },
+            { opacity: 0, y: 14, filter: 'blur(3px)' },
             { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.75, ease: 'power2.out' },
             '-=0.3',
           )
           .fromTo(
-            '.card-invite-sub',
-            { opacity: 0, y: 10 },
-            { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
-            '-=0.4',
-          )
-          .fromTo(
-            '.card-date-trio',
-            { opacity: 0, scale: 0.94, y: 10 },
+            '.card-date-classic',
+            { opacity: 0, scale: 0.95, y: 8 },
             { opacity: 1, scale: 1, y: 0, duration: 0.65, ease: 'power2.out' },
-            '-=0.35',
-          )
-          .fromTo(
-            '.card-venue-row',
-            { opacity: 0, scaleX: 0.85 },
-            { opacity: 1, scaleX: 1, duration: 0.6, ease: 'power2.out' },
             '-=0.35',
           )
           .fromTo(
@@ -175,7 +163,7 @@ export class IntroDoorComponent implements OnDestroy {
           this.audioContext.resume();
         }
       }
-    } catch {}
+    } catch { }
 
     this.playAudioDirectly();
   }

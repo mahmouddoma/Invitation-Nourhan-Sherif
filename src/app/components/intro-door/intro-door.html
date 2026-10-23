@@ -45,68 +45,52 @@
   <!-- Central Arched Wedding Card Container -->
   <div class="arched-card-container" [class.card-opening]="isOpening()" #doorWrapEl>
     <div class="arched-card">
-      <!-- Top Decorative Pearl Star Accent -->
-      <div class="card-top-accent">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-          <path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z" fill="#c8963e" opacity="0.85" />
-        </svg>
+      <!-- 1. Editorial Classical Header (Matching Reference Image) -->
+      <div class="card-save-date-block">
+        <span class="save-date-txt">SAVE THE DATE</span>
+        <span class="wedding-of-txt">FOR THE WEDDING OF</span>
+        <p class="invite-ar-elegant">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
       </div>
 
-      <!-- Couple Names in Dark Charcoal Bronze with Cairo font -->
+      <!-- 2. The Names: Classical Arabic Calligraphy + English Copperplate Script -->
       <div class="card-names-block">
-        <h1 class="card-names-primary">
+        <h1 class="card-names-arabic">
           <span class="name-part">{{ config.brideName }}</span>
           <span class="name-amp">&amp;</span>
           <span class="name-part">{{ config.groomName }}</span>
         </h1>
-        <p class="card-names-en">Nourhan &amp; Sherif</p>
+        <p class="card-names-script">Nourhan &amp; Sherif</p>
       </div>
 
-      <!-- Invitation Subtitle -->
-      <div class="card-invite-sub">
-        <p class="invite-ar">يتشرفون بدعوتكم لحضور حفل زفافهم</p>
-        <p class="invite-en">INVITE YOU TO JOIN THEIR WEDDING CELEBRATION</p>
-      </div>
-
-      <!-- Date Trio Badge (FRI | 13 NOV | AT 8 PM style) -->
-      <div class="card-date-trio">
-        <div class="date-col">
-          <span class="date-lbl">الجمعة</span>
-          <span class="date-sub">FRI</span>
+      <!-- 3. Classic Spaced Roman Date (Matching 07.09.2024 Reference Style) -->
+      <div class="card-date-classic">
+        <div class="date-numbers-spaced">13 . 11 . 2026</div>
+        <div class="date-meta-row">
+          <span class="date-meta-item">الجمعة • FRI</span>
+          <span class="date-meta-dot">•</span>
+          <span class="date-meta-item">8:00 مساءً • AT 8 PM</span>
         </div>
-        <div class="date-vsep"></div>
-        <div class="date-col date-col-main">
-          <span class="date-day-num">13</span>
-          <span class="date-month-txt">نوفمبر • NOV</span>
-        </div>
-        <div class="date-vsep"></div>
-        <div class="date-col">
-          <span class="date-lbl">8:00 م</span>
-          <span class="date-sub">AT 8:00 PM</span>
+        <div class="venue-row-classic">
+          <span class="venue-line-refined"></span>
+          <p class="venue-classic-txt">{{ config.venueName }} • HILTON HOTEL</p>
+          <span class="venue-line-refined"></span>
         </div>
       </div>
 
-      <!-- Venue Title with Fine Border -->
-      <div class="card-venue-row">
-        <span class="venue-line"></span>
-        <p class="card-venue-txt">{{ config.venueName }} • HILTON</p>
-        <span class="venue-line"></span>
-      </div>
-
-      <!-- Bride and Groom Royal Arched Portrait Frame -->
+      <!-- 4. Bride and Groom Royal Arched Portrait Frame -->
       <div class="card-couple-photo-wrapper">
         <div class="couple-arched-frame">
           <img src="images/nourhan_sherif_arched.png" alt="نورهان وشريف" class="card-couple-img" loading="eager" />
         </div>
       </div>
 
-      <!-- Floating Stable Interactive Button (اضغط لفتح تفاصيل الدعوة) -->
+      <!-- 5. Floating Stable Interactive Button -->
       <div class="card-action-bar">
         <button class="royal-open-invitation-btn" id="openInvitation" type="button" #openBtnEl
           (click)="openDoor(); $event.stopPropagation()" [disabled]="isOpen() || isOpening()"
           [class.btn-unlocking]="isOpening()" aria-label="اضغط لفتح دعوة الزفاف">
           <span class="btn-sparkle-icon">✦</span>
-          <span class="btn-main-label">اضغط لفتح الدعوة</span>
+          <span class="btn-main-label">اضغط لفتح تفاصيل الدعوة</span>
           <span class="btn-arrow-icon">♡</span>
         </button>
       </div>

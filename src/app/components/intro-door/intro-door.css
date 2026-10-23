@@ -1,6 +1,8 @@
 /* ==========================================================================
    Luxury Pearl & Crystal Haute-Couture Wedding Intro Screen
-   Theme: Nourhan & Sherif — Warm Cashmere Ivory & Shimmering Pearls
+   Theme: Exact Match to Pinterest Reference (Francesca & Christian)
+   Palette: Matte Cashmere (#D7CBBF), Antique Pewter Text (#5A5148), Muted Taupe (#7D7368)
+   Typography: Classical Roman Serif ('Cinzel') + English Script Calligraphy ('Alex Brush') + Royal Arabic ('Amiri')
    ========================================================================== */
 
 .intro-screen {
@@ -14,9 +16,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(0.5rem, 1.8vh, 1.2rem) 0.75rem;
+  padding: clamp(0.4rem, 1.6vh, 1rem) 0.75rem;
   box-sizing: border-box;
-  background: radial-gradient(ellipse at 80% 20%, #f6f0ea 0%, #ece3d8 50%, #dfd3c5 100%);
+  background: radial-gradient(ellipse at 75% 25%, #f1ece4 0%, #e4dacd 48%, #d6c9bc 100%);
   overscroll-behavior: none;
   transition:
     opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
@@ -40,14 +42,14 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.65) 0%, transparent 45%),
-    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.45) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(225, 212, 198, 0.3) 0%, transparent 70%);
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.55) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(215, 203, 191, 0.3) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
 
-/* Top-Right Pearl & Crystal Jewelry Cascade (Reference Theme) */
+/* Top-Right Pearl & Crystal Jewelry Cascade (Exact Pinterest Reference) */
 .corner-pearl-tr-wrapper {
   position: absolute;
   top: -12px;
@@ -57,11 +59,11 @@
 }
 
 .corner-pearl-tr {
-  width: clamp(160px, 35vw, 300px);
+  width: clamp(165px, 36vw, 310px);
   max-height: 40vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 24px rgba(110, 95, 80, 0.2));
+  filter: drop-shadow(0 10px 24px rgba(90, 78, 66, 0.18));
   animation: pearlShimmerTR 7s ease-in-out infinite alternate;
 }
 
@@ -69,7 +71,6 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-
   100% {
     transform: translate(-3px, 4px) rotate(1deg);
   }
@@ -85,11 +86,11 @@
 }
 
 .corner-pearl-bl {
-  width: clamp(160px, 35vw, 290px);
+  width: clamp(165px, 36vw, 300px);
   max-height: 38vh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 10px 24px rgba(110, 95, 80, 0.18));
+  filter: drop-shadow(0 10px 24px rgba(90, 78, 66, 0.16));
   animation: pearlShimmerBL 8s ease-in-out infinite alternate;
 }
 
@@ -97,7 +98,6 @@
   0% {
     transform: translate(0, 0) rotate(0deg);
   }
-
   100% {
     transform: translate(4px, -3px) rotate(-1deg);
   }
@@ -118,21 +118,21 @@
 .top-monogram {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px 13px;
+  gap: 5px;
+  padding: 5px 14px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(246, 241, 235, 0.94);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 185, 140, 0.6);
-  box-shadow: 0 3px 12px rgba(110, 95, 80, 0.1);
-  font-family: 'Cairo', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: #242220;
+  border: 1px solid rgba(175, 160, 142, 0.5);
+  box-shadow: 0 3px 12px rgba(90, 78, 66, 0.1);
+  font-family: 'Amiri', 'Cinzel', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #5A5148;
 }
 
 .mono-heart {
-  color: #c8963e;
+  color: #8A8074;
   font-size: 0.8rem;
 }
 
@@ -141,15 +141,15 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(212, 185, 140, 0.6);
-  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(175, 160, 142, 0.5);
+  background: rgba(246, 241, 235, 0.94);
   backdrop-filter: blur(12px);
-  color: #242220;
+  color: #5A5148;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(110, 95, 80, 0.1);
+  box-shadow: 0 3px 12px rgba(90, 78, 66, 0.1);
   transition:
     transform 0.2s ease,
     background-color 0.2s ease,
@@ -159,14 +159,14 @@
 
 .music-btn:hover {
   transform: scale(1.06);
-  background: #ffffff;
-  color: #c8963e;
-  border-color: #c8963e;
+  background: #fbf7f2;
+  color: #5A5148;
+  border-color: #8A8074;
 }
 
 .music-btn.playing {
-  color: #c8963e;
-  border-color: #c8963e;
+  color: #5A5148;
+  border-color: #8A8074;
 }
 
 /* Arched Card Outer Container */
@@ -175,7 +175,7 @@
   z-index: 10;
   width: 100%;
   max-width: 410px;
-  max-height: calc(100dvh - clamp(1rem, 3vh, 2rem));
+  max-height: calc(100dvh - clamp(0.8rem, 2.5vh, 1.8rem));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,15 +190,15 @@
   filter: blur(4px);
 }
 
-/* The Crisp Pearl Arched Card */
+/* The Matte Cashmere Card — Exactly Matching Reference Theme */
 .arched-card {
-  background: linear-gradient(180deg, #ffffff 0%, #fbf8f4 100%);
+  background: linear-gradient(180deg, #FAF6F1 0%, #EFE8DF 45%, #E5DDD3 100%);
   border-radius: 170px 170px 22px 22px;
   box-shadow:
-    0 20px 55px rgba(125, 105, 85, 0.18),
-    0 4px 18px rgba(0, 0, 0, 0.04);
-  border: 1.5px solid rgba(218, 195, 160, 0.5);
-  padding: clamp(1.4rem, 3.2vh, 2.2rem) clamp(1rem, 3vw, 1.5rem) clamp(0.7rem, 1.8vh, 1.2rem);
+    0 18px 50px rgba(95, 82, 70, 0.16),
+    0 3px 14px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(185, 172, 155, 0.45);
+  padding: clamp(1.4rem, 3vh, 2rem) clamp(1rem, 3vw, 1.5rem) clamp(0.7rem, 1.6vh, 1.1rem);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -207,171 +207,162 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-height: calc(100dvh - clamp(1rem, 3vh, 2rem));
+  max-height: calc(100dvh - clamp(0.8rem, 2.5vh, 1.8rem));
   box-sizing: border-box;
 }
 
-/* Card Top Accent */
-.card-top-accent {
-  margin-bottom: clamp(0.15rem, 0.6vh, 0.4rem);
+/* 1. Save The Date Editorial Block */
+.card-save-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: clamp(0.2rem, 0.6vh, 0.4rem);
 }
 
-/* Names Block */
+.save-date-txt {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: clamp(0.72rem, 2vw, 0.84rem);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: #7D7368;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.wedding-of-txt {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: clamp(0.6rem, 1.7vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #7D7368;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.invite-ar-elegant {
+  margin: 4px 0 0;
+  font-family: 'Amiri', serif;
+  font-size: clamp(0.92rem, 2.7vw, 1.05rem);
+  font-weight: 700;
+  color: #5A5148;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+/* 2. Names Block */
 .card-names-block {
-  margin-bottom: clamp(0.15rem, 0.6vh, 0.35rem);
+  margin: clamp(0.15rem, 0.5vh, 0.35rem) 0;
+  width: 100%;
 }
 
-.card-names-primary {
+.card-names-arabic {
   margin: 0;
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(1.7rem, 5.2vw, 2.35rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #22201d;
+  font-family: 'Amiri', 'Aref Ruqaa', serif;
+  font-size: clamp(2rem, 6.2vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #5A5148;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   direction: rtl;
 }
 
 .name-part {
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .name-amp {
   font-family: 'Cinzel', serif;
-  font-size: 0.82em;
-  font-weight: 600;
-  color: #c8963e;
-  padding: 0 3px;
+  font-size: 0.75em;
+  font-weight: 400;
+  color: #7D7368;
+  padding: 0 4px;
 }
 
-.card-names-en {
+/* English Script Names: Exact Copperplate Calligraphy Match */
+.card-names-script {
   margin: 2px 0 0;
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.72rem, 1.8vw, 0.84rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #7b736a;
-  text-transform: uppercase;
+  font-family: 'Alex Brush', 'Pinyon Script', cursive;
+  font-size: clamp(1.85rem, 5.8vw, 2.45rem);
+  font-weight: 400;
+  color: #5A5148;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
 }
 
-/* Subtitle */
-.card-invite-sub {
-  margin: clamp(0.2rem, 0.7vh, 0.45rem) 0 clamp(0.3rem, 1vh, 0.6rem);
-}
-
-.invite-ar {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.85rem, 2.5vw, 1.02rem);
-  font-weight: 700;
-  color: #38322c;
-  letter-spacing: 0.01em;
-}
-
-.invite-en {
-  margin: 2px 0 0;
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.58rem, 1.5vw, 0.68rem);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #8c8378;
-}
-
-/* Date Trio Block */
-.card-date-trio {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0.5rem, 2vw, 1rem);
-  width: 100%;
-  max-width: 300px;
-  margin: clamp(0.2rem, 0.7vh, 0.45rem) auto;
-  padding: 0.2rem 0.4rem;
-}
-
-.date-col {
+/* 3. Classic Spaced Roman Date (Matching 07.09.2024 Reference Style) */
+.card-date-classic {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex: 1;
+  gap: 3px;
+  width: 100%;
+  max-width: 320px;
+  margin: clamp(0.15rem, 0.5vh, 0.35rem) auto;
 }
 
-.date-lbl {
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.88rem, 2.6vw, 1rem);
-  font-weight: 800;
-  color: #22201d;
+.date-numbers-spaced {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 3.4vw, 1.38rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #5A5148;
   line-height: 1.2;
 }
 
-.date-sub {
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.6rem, 1.6vw, 0.68rem);
-  font-weight: 700;
-  color: #8c8378;
-  letter-spacing: 0.06em;
+.date-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Cinzel', 'Cairo', serif;
+  font-size: clamp(0.68rem, 1.8vw, 0.76rem);
+  font-weight: 600;
+  color: #7D7368;
+  letter-spacing: 0.1em;
 }
 
-.date-col-main .date-day-num {
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(1.6rem, 4.8vw, 1.95rem);
-  font-weight: 900;
-  color: #22201d;
-  line-height: 1;
+.date-meta-dot {
+  color: #9E9387;
+  font-size: 0.65rem;
 }
 
-.date-col-main .date-month-txt {
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.65rem, 1.8vw, 0.74rem);
-  font-weight: 800;
-  color: #c8963e;
-  letter-spacing: 0.04em;
-  margin-top: 1px;
-}
-
-.date-vsep {
-  width: 1px;
-  height: clamp(28px, 4.5vh, 34px);
-  background: linear-gradient(180deg, transparent, #cda766, transparent);
-}
-
-/* Venue Row */
-.card-venue-row {
+.venue-row-classic {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: 100%;
-  max-width: 290px;
-  margin: clamp(0.15rem, 0.5vh, 0.35rem) auto;
+  max-width: 280px;
+  margin-top: 2px;
 }
 
-.venue-line {
+.venue-line-refined {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 150, 62, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(165, 150, 135, 0.45), transparent);
 }
 
-.card-venue-txt {
+.venue-classic-txt {
   margin: 0;
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.78rem, 2.2vw, 0.86rem);
-  font-weight: 800;
-  color: #22201d;
-  letter-spacing: 0.04em;
+  font-family: 'Cinzel', 'Cairo', serif;
+  font-size: clamp(0.72rem, 2vw, 0.8rem);
+  font-weight: 700;
+  color: #7D7368;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-/* Couple Royal Arched Portrait Frame */
+/* 4. Couple Royal Arched Portrait Frame */
 .card-couple-photo-wrapper {
   position: relative;
   width: 100%;
   max-width: 275px;
-  margin: clamp(0.15rem, 0.5vh, 0.4rem) auto 0;
+  margin: clamp(0.15rem, 0.5vh, 0.35rem) auto 0;
   display: flex;
   justify-content: center;
   flex: 1;
@@ -381,13 +372,13 @@
 .couple-arched-frame {
   position: relative;
   width: 100%;
-  border-radius: 42px 42px 16px 16px;
+  border-radius: 38px 38px 14px 14px;
   overflow: hidden;
-  border: 2px solid rgba(212, 185, 140, 0.75);
+  border: 1.5px solid rgba(175, 160, 142, 0.55);
   box-shadow:
-    0 8px 24px rgba(110, 95, 80, 0.16),
-    inset 0 0 10px rgba(212, 185, 140, 0.15);
-  background: #f4ede4;
+    0 6px 18px rgba(85, 72, 60, 0.12),
+    inset 0 0 10px rgba(175, 160, 142, 0.15);
+  background: #D9CEBF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -396,18 +387,18 @@
 .card-couple-img {
   width: 100%;
   height: 100%;
-  max-height: clamp(140px, 24vh, 210px);
+  max-height: clamp(135px, 23vh, 205px);
   object-fit: cover;
   object-position: center 25%;
   display: block;
 }
 
-/* Stable Interactive Action Bar & Button */
+/* 5. Stable Interactive Action Bar & Button */
 .card-action-bar {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: clamp(0.3rem, 1vh, 0.6rem);
+  margin-top: clamp(0.3rem, 0.9vh, 0.55rem);
   position: relative;
   z-index: 15;
 }
@@ -418,26 +409,28 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: clamp(0.6rem, 1.5vh, 0.8rem) clamp(1.4rem, 4vw, 2rem);
+  padding: clamp(0.55rem, 1.4vh, 0.75rem) clamp(1.4rem, 4vw, 2rem);
   border-radius: 30px;
-  border: 1.5px solid #e2b45e;
-  background: linear-gradient(135deg, #d4a24c 0%, #b88636 50%, #956622 100%);
-  color: #ffffff;
-  font-family: 'Cairo', sans-serif;
-  font-size: clamp(0.88rem, 2.4vw, 0.98rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  border: 1px solid rgba(225, 215, 202, 0.45);
+  background: linear-gradient(135deg, #7A7065 0%, #5A5148 100%);
+  color: #F8F4EE;
+  font-family: 'Cairo', 'Cinzel', sans-serif;
+  font-size: clamp(0.86rem, 2.3vw, 0.96rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(184, 134, 54, 0.35);
+  box-shadow: 0 4px 16px rgba(85, 75, 65, 0.25);
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
   overflow: hidden;
 }
 
 .royal-open-invitation-btn:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 22px rgba(184, 134, 54, 0.45);
+  box-shadow: 0 6px 20px rgba(85, 75, 65, 0.35);
+  background: linear-gradient(135deg, #857B70 0%, #635A50 100%);
 }
 
 .royal-open-invitation-btn:active {
@@ -445,18 +438,17 @@
 }
 
 .btn-sparkle-icon {
-  color: #fff3db;
+  color: #EFE7DE;
   font-size: 0.95rem;
 }
 
 .btn-arrow-icon {
-  color: #fff3db;
+  color: #EFE7DE;
   font-size: 0.85rem;
 }
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-
   .arched-card-container,
   .royal-open-invitation-btn,
   .corner-pearl-tr,
